@@ -26,7 +26,7 @@
     --maxw: 1160px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{ scroll-behavior:smooth; overflow-x:hidden; max-width:100%; }
   body{
     background:var(--paper);
     color:var(--text);
@@ -34,6 +34,8 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    max-width:100%;
+    position:relative;
   }
   ::selection{ background:var(--gold-soft); color:var(--ink); }
   img{max-width:100%; display:block;}
@@ -525,6 +527,16 @@
     }
     .hero-stats .stat b{ font-size:14px; }
     .hero-stats .stat span{ font-size:9px; }
+    /* Contain / simplify decorative motion on phones — avoids any risk of
+       horizontal overflow and reduces animation load for smoother scrolling. */
+    .about-photos{ overflow:hidden; padding:20px; }
+    .about-orbit .float-icon{ animation:none; }
+    .about-orbit .fi-3, .about-orbit .fi-5{ left:2%; }
+    .about-orbit .fi-2, .about-orbit .fi-4, .about-orbit .fi-6{ right:2%; }
+    .seal-ring{ animation:none; }
+    .nav-cta{ animation:none; }
+    .pc-dot-field{ display:none; }
+    .pc-bar.profit{ animation:none; }
   }
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
@@ -874,6 +886,7 @@
       <input type="hidden" name="_subject" id="formSubject" value="New Service Booking">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://anilkumarhotta.vercel.app/?booked=1#contact">
       <input type="hidden" name="Service" id="formService" value="">
 
       <div class="form-grid">
@@ -937,6 +950,17 @@
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ================= BOOKING CONFIRMATION TOAST ================= */
+if(new URLSearchParams(window.location.search).get('booked') === '1'){
+  const toast = document.createElement('div');
+  toast.textContent = "Thanks — your request has been sent. I'll get back to you soon.";
+  toast.style.cssText = 'position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#16233f; color:#f8f6f1; padding:14px 22px; border-radius:8px; font-family:Inter,sans-serif; font-size:13.5px; z-index:900; box-shadow:0 14px 34px -12px rgba(0,0,0,0.4); max-width:88vw; text-align:center;';
+  document.body.appendChild(toast);
+  setTimeout(()=>{ toast.style.transition='opacity .5s ease'; toast.style.opacity='0'; setTimeout(()=>toast.remove(), 500); }, 4500);
+  // clean the URL so refreshing doesn't re-show the toast
+  window.history.replaceState({}, '', window.location.pathname + '#contact');
+}
 
 /* ================= MOBILE NAV ================= */
 const burger = document.getElementById('burgerBtn');
@@ -1306,11 +1330,32 @@ function openModal(service){
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+function resetBookingForm(){
+  const form = document.getElementById('bookingForm');
+  if(form) form.reset();
+  // clear file list preview
+  const fileList = document.getElementById('fileList');
+  if(fileList) fileList.innerHTML = '';
+  // reset word counter
+  const wordCount = document.getElementById('wordCount');
+  if(wordCount) wordCount.textContent = '0';
+  // reset dial code + country back to India default, and state back to blank placeholder
+  if(dialSel) dialSel.value = '91';
+  if(countrySel) countrySel.value = 'IN';
+  refreshStates();
+  refreshPhoneLimit();
+}
 function closeModal(){
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  resetBookingForm();
 }
 function closeModalBg(e){ if(e.target.id === 'modalOverlay') closeModal(); }
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape' && document.getElementById('modalOverlay').classList.contains('open')){
+    closeModal();
+  }
+});
 
 /* ================= SMART EMAIL LINK ================= */
 /* Mobile (Android/iOS): mailto: — triggers the device's native mail app chooser
