@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anil Kumar Hotta — CA Intermediate · AI-Assisted Web Developer · Graphic Designer</title>
+<meta name="description" content="Anil Kumar Hotta — CA Intermediate, AI-assisted web developer and graphic designer. Finance, AI & geopolitics enthusiast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,560;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --paper:#f8f6f1;
+    --paper-dim:#f1eee6;
+    --ink:#16223f;
+    --ink-soft:#3c4864;
+    --gold:#a97e3f;
+    --gold-soft:#d9b878;
+    --line:#ddd6c4;
+    --text:#242a35;
+    --text-dim:#5b6373;
+    --white:#ffffff;
+    --shadow: 0 20px 50px -25px rgba(22,34,63,0.35);
+    --radius: 4px;
+    --maxw: 1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--gold-soft); color:var(--ink); }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:560; color:var(--ink); letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:1px;
+    background:var(--gold);
+  }
+  /* ledger rule motif */
+  .ledger-rule{
+    height:6px;
+    background-image:
+      linear-gradient(var(--line), var(--line)),
+      linear-gradient(var(--line), var(--line));
+    background-size:100% 1px;
+    background-position:top, bottom;
+    background-repeat:no-repeat;
+  }
+  section{ position:relative; padding:96px 0; }
+  section.tight{ padding:72px 0; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(28px,4vw,40px); line-height:1.15; }
+  .section-head p{ color:var(--text-dim); font-size:16px; margin-top:14px; max-width:560px;}
+
+  /* ===== NAV ===== */
+  header#topnav{
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    background:rgba(248,246,241,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .3s;
+  }
+  header#topnav .wrap{ display:flex; align-items:center; justify-content:space-between; height:74px; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:650; font-size:19px; color:var(--ink);}
+  .brand .mark{
+    width:34px; height:34px; border-radius:50%;
+    border:1.5px solid var(--gold); overflow:hidden; flex:none;
+  }
+  .brand .mark img{ width:100%; height:100%; object-fit:cover; display:block; }
+  nav.links{ display:flex; gap:34px; align-items:center; }
+  nav.links a{
+    font-size:13.5px; font-weight:500; color:var(--ink-soft);
+    letter-spacing:0.02em; position:relative; padding:6px 0;
+  }
+  nav.links a::after{
+    content:""; position:absolute; left:0; bottom:0; height:1px; width:0%;
+    background:var(--gold); transition:width .25s ease;
+  }
+  nav.links a:hover::after{ width:100%; }
+  .nav-cta{
+    background:var(--ink); color:var(--paper) !important;
+    padding:11px 32px; border-radius:999px; font-size:13px; font-weight:600;
+    letter-spacing:0.02em; display:inline-flex; align-items:center; gap:7px;
+    position:relative; overflow:hidden; box-shadow:0 0 0 0 rgba(169,126,63,0.35);
+    animation:navCtaPulse 3.2s ease-in-out infinite;
+    transition:background .25s ease, transform .2s ease;
+  }
+  .nav-cta::after{ display:none; content:none; }
+  .nav-cta:hover{ background:var(--gold); transform:translateY(-1px); animation-play-state:paused; box-shadow:none; }
+  @keyframes navCtaPulse{
+    0%, 100%{ box-shadow:0 0 0 0 rgba(169,126,63,0.28); }
+    50%{ box-shadow:0 0 0 6px rgba(169,126,63,0); }
+  }
+  .burger{ display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; }
+  .burger span{ width:24px; height:2px; background:var(--ink); display:block; }
+
+  /* ===== HERO ===== */
+  #hero{
+    padding-top:170px; padding-bottom:90px;
+    background:
+      repeating-linear-gradient(180deg, transparent, transparent 38px, rgba(169,126,63,0.055) 39px);
+  }
+  .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center; }
+  .hero-eyebrow{ font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--gold); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:22px; font-weight:600;}
+  #hero h1{ font-size:clamp(38px,5.2vw,64px); line-height:1.06; margin-bottom:22px; }
+  #hero h1 em{ font-style:normal; color:var(--gold); }
+  .typewriter-line{
+    font-family:'JetBrains Mono',monospace; font-size:clamp(15px,2vw,18px);
+    color:var(--ink-soft); min-height:28px; margin-bottom:26px; font-weight:500;
+  }
+  .typewriter-line .cursor{ display:inline-block; width:2px; background:var(--gold); margin-left:2px; animation:blink 0.9s step-end infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
+  .hero-sub{ font-size:17px; color:var(--text-dim); max-width:480px; margin-bottom:36px; }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 26px; font-size:14px; font-weight:600; letter-spacing:0.02em;
+    border-radius:2px; cursor:pointer; border:1px solid transparent; transition:all .2s ease;
+    font-family:'Inter',sans-serif;
+  }
+  .btn-primary{ background:var(--ink); color:var(--paper); }
+  .btn-primary:hover{ background:var(--gold); transform:translateY(-1px); }
+  .btn-ghost{ border-color:var(--ink); color:var(--ink); background:transparent; }
+  .btn-ghost:hover{ background:var(--ink); color:var(--paper); }
+  .btn-gold{ background:var(--gold); color:var(--white); }
+  .btn-gold:hover{ background:var(--ink); }
+
+  .hero-photo-wrap{ position:relative; display:flex; justify-content:center; }
+  .seal-ring{
+    position:absolute; inset:-18px;
+    border:1px dashed var(--gold-soft);
+    border-radius:50%;
+    animation:spin 40s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .hero-photo{
+    width:320px; height:320px; border-radius:50%;
+    overflow:hidden; border:3px solid var(--white);
+    box-shadow:var(--shadow); position:relative; z-index:2;
+  }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; }
+  .hero-stats{
+    position:absolute; bottom:-22px; left:50%; transform:translateX(-50%);
+    background:var(--white); border:1px solid var(--line); border-radius:3px;
+    padding:12px 22px; box-shadow:var(--shadow); z-index:3;
+    display:flex; gap:22px; white-space:nowrap;
+  }
+  .hero-stats .stat{ text-align:center; }
+  .hero-stats .stat b{ display:block; font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:16px; }
+  .hero-stats .stat span{ font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.06em; }
+
+  .role-strip{ margin-top:64px; display:flex; flex-wrap:wrap; gap:12px; }
+  .role-chip{
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-soft);
+    border:1px solid var(--line); padding:8px 14px; border-radius:20px; background:var(--white);
+  }
+
+  /* ===== ABOUT ===== */
+  #about{ background:var(--white); }
+  .about-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center; }
+  .about-photos{ position:relative; display:flex; justify-content:center; align-items:center; padding:36px; }
+  .about-photo-main{
+    border-radius:10px; overflow:hidden; box-shadow:var(--shadow);
+    width:100%; max-width:280px; aspect-ratio:2/3; background:var(--paper-dim); position:relative; z-index:3;
+  }
+  .about-photo-main img{ width:100%; height:100%; display:block; object-fit:cover; }
+  .about-orbit{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+  .about-orbit .float-icon{
+    position:absolute; display:flex; align-items:center; justify-content:center;
+    width:44px; height:44px; border-radius:12px; background:var(--white); border:1px solid var(--line);
+    box-shadow:0 10px 24px -14px rgba(22,34,63,0.35); color:var(--gold); font-family:'JetBrains Mono',monospace;
+    font-size:17px; font-weight:700; animation:floatY 5.5s ease-in-out infinite;
+  }
+  .about-orbit .fi-1{ top:4%;  left:2%;  animation-delay:0s; }
+  .about-orbit .fi-2{ top:12%; right:0%; animation-delay:.8s; color:var(--ink-soft); }
+  .about-orbit .fi-3{ bottom:14%; left:-2%; animation-delay:1.6s; }
+  .about-orbit .fi-4{ bottom:2%; right:8%; animation-delay:2.4s; color:var(--ink-soft); }
+  .about-orbit .fi-5{ top:44%; left:-6%; animation-delay:1.1s; font-size:14px; }
+  .about-orbit .fi-6{ top:52%; right:-6%; animation-delay:1.9s; font-size:14px; color:var(--ink-soft); }
+  @keyframes floatY{
+    0%, 100%{ transform:translateY(0) rotate(0deg); }
+    50%{ transform:translateY(-14px) rotate(-4deg); }
+  }
+  .about-text p{ font-size:16px; color:var(--text-dim); margin-bottom:16px; }
+  .about-text strong{ color:var(--ink); font-weight:600; }
+  .precision-box{
+    margin-top:30px; padding:26px 28px; background:var(--paper-dim); border-left:3px solid var(--gold);
+    border-radius:2px;
+  }
+  .precision-box p{ font-size:14.5px; color:var(--ink-soft); font-style:italic; margin:0; }
+
+  /* ===== EDUCATION TIMELINE (horizontal, self-playing) ===== */
+  #education{ background:var(--paper); overflow:hidden; }
+  .hz-timeline{ position:relative; max-width:820px; margin:0 auto 56px; padding:0 10px; }
+  .hz-line-wrap{ position:relative; height:64px; }
+  .hz-line{
+    position:absolute; left:0; right:0; top:50%; height:2px; transform:translateY(-50%);
+    background:linear-gradient(90deg, transparent 0%, var(--line) 8%, var(--line) 92%, transparent 100%);
+  }
+  .hz-points{ position:absolute; inset:0; display:flex; justify-content:space-between; align-items:center; }
+  .hz-point{ position:relative; display:flex; flex-direction:column; align-items:center; }
+  .hz-dot{
+    width:15px; height:15px; border-radius:50%; background:var(--paper); border:2.5px solid var(--gold-soft);
+    transition:all .5s cubic-bezier(.65,0,.35,1); z-index:2;
+  }
+  .hz-point.active .hz-dot{ background:var(--gold); border-color:var(--gold); transform:scale(1.35); box-shadow:0 0 0 7px rgba(169,126,63,0.16); }
+  .hz-year{ margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--text-dim); letter-spacing:0.03em; transition:color .4s ease; white-space:nowrap; }
+  .hz-point.active .hz-year{ color:var(--gold); font-weight:600; }
+  .hz-marker{
+    position:absolute; top:50%; width:26px; height:26px; margin:-13px 0 0 -13px;
+    border-radius:50%; border:1.5px dashed var(--gold-soft); z-index:1;
+    transition:left .9s cubic-bezier(.65,0,.35,1); pointer-events:none;
+  }
+  .hz-detail-wrap{ position:relative; min-height:220px; max-width:760px; margin:0 auto; }
+  .hz-detail{
+    position:absolute; inset:0; opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease;
+    text-align:center; pointer-events:none;
+  }
+  .hz-detail.active{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .hz-detail h3{ font-size:22px; margin-bottom:10px; }
+  .hz-detail p{ color:var(--text-dim); font-size:14.5px; max-width:680px; margin:0 auto; }
+  .hz-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; justify-content:center; }
+  .hz-tags span{ font-size:11.5px; font-family:'JetBrains Mono',monospace; background:var(--white); border:1px solid var(--line); padding:5px 10px; border-radius:14px; color:var(--ink-soft); }
+  @media (max-width:700px){
+    .hz-year{ font-size:9.5px; }
+    .hz-detail h3{ font-size:19px; }
+  }
+
+  /* ===== CERTIFICATIONS (one-at-a-time sliding carousel) ===== */
+  #certs{ background:var(--white); }
+  .cert-carousel-wrap{ position:relative; max-width:1080px; margin:0 auto; padding:0 60px; }
+  .cert-viewport{ overflow:hidden; }
+  .cert-track{ display:flex; transition:transform .6s cubic-bezier(.65,0,.35,1); }
+  .cert-slide{
+    flex:0 0 100%; display:grid; grid-template-columns:1.1fr 0.9fr; gap:44px; align-items:center; padding:8px;
+  }
+  .cert-copy .cert-kicker{ font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--gold); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px; }
+  .cert-copy h3{ font-size:23px; margin-bottom:14px; }
+  .cert-copy p{ font-size:14.5px; color:var(--text-dim); line-height:1.7; margin-bottom:16px; }
+  .cert-copy .cert-issuer{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-soft); }
+  .cert-image{ border-radius:8px; overflow:hidden; box-shadow:var(--shadow); cursor:pointer; border:1px solid var(--line); }
+  .cert-image img{ width:100%; display:block; transition:transform .4s ease; }
+  .cert-image:hover img{ transform:scale(1.03); }
+  .cert-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer;
+    font-family:'Fraunces',serif; font-weight:300; font-size:40px; color:var(--ink-soft); z-index:5; padding:6px 8px;
+    transition:color .2s ease;
+  }
+  .cert-arrow:hover{ color:var(--gold); }
+  .cert-arrow.cleft{ left:0; }
+  .cert-arrow.cright{ right:0; }
+  .cert-dots{ display:flex; justify-content:center; gap:7px; margin-top:30px; }
+  .cert-dots span{ width:6px; height:6px; border-radius:50%; background:var(--line); cursor:pointer; transition:background .2s; }
+  .cert-dots span.active{ background:var(--gold); }
+  @media (max-width:760px){
+    .cert-carousel-wrap{ padding:0 36px; }
+    .cert-slide{ grid-template-columns:1fr; }
+    .cert-image{ order:-1; }
+    .cert-arrow{ font-size:30px; }
+  }
+
+  /* cert lightbox */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(22,34,63,0.92); z-index:500;
+    display:none; align-items:center; justify-content:center; padding:40px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{ max-width:min(900px,90vw); max-height:85vh; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-close{
+    position:absolute; top:26px; right:32px; color:var(--paper); font-size:32px; cursor:pointer; font-family:'Inter';
+    line-height:1; background:none; border:none;
+  }
+
+  /* ===== SERVICES ===== */
+  #services{ background:var(--ink); color:var(--paper); }
+  #services .section-head p{ color:#b7c0d6; }
+  #services .eyebrow{ color:var(--gold-soft); }
+  #services .eyebrow::before{ background:var(--gold-soft); }
+  #services h2{ color:var(--paper); }
+  .service-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .service-card{
+    background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.12);
+    border-radius:8px; padding:38px; position:relative; overflow:hidden;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .service-card:hover{ border-color:var(--gold-soft); background:rgba(255,255,255,0.05); }
+  .service-num{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gold-soft); letter-spacing:0.1em; margin-bottom:22px; display:block; }
+  .service-card h3{ color:var(--paper); font-size:24px; margin-bottom:14px; }
+  .service-card p{ color:#b7c0d6; font-size:14.5px; margin-bottom:26px; }
+  .service-list{ list-style:none; margin-bottom:30px; }
+  .service-list li{ font-size:13.5px; color:#d7dcea; padding:7px 0; border-top:1px solid rgba(255,255,255,0.08); }
+  .service-list li:first-child{ border-top:none; }
+  .service-list li::before{ content:"— "; color:var(--gold-soft); }
+  .book-btn{
+    background:var(--gold); color:var(--ink); border:none; padding:13px 24px;
+    font-weight:700; font-size:13.5px; letter-spacing:0.02em; border-radius:2px; cursor:pointer;
+    font-family:'Inter',sans-serif; transition:all .2s ease;
+  }
+  .book-btn:hover{ background:var(--gold-soft); transform:translateY(-1px); }
+  .service-quality{
+    margin-top:44px; padding-top:34px; border-top:1px solid rgba(255,255,255,0.14);
+    max-width:760px;
+  }
+  .service-quality p{ color:#c7cee0; font-size:15px; font-style:italic; line-height:1.7; }
+
+  /* ===== PROJECTS ===== */
+  #projects{ background:var(--paper); overflow:hidden; }
+  .project-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; }
+  .project-copy .eyebrow{ margin-bottom:14px; }
+  .project-copy h3{ font-size:26px; margin-bottom:14px; line-height:1.25; }
+  .project-copy p{ color:var(--text-dim); font-size:15px; margin-bottom:14px; }
+  .project-meta{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 24px; }
+  .project-meta span{ font-size:11.5px; font-family:'JetBrains Mono',monospace; background:var(--white); border:1px solid var(--line); padding:6px 12px; border-radius:14px; color:var(--ink-soft); }
+  .project-stats{ display:flex; gap:28px; margin-bottom:26px; flex-wrap:wrap; }
+  .project-stats .pstat b{ display:block; font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:20px; }
+  .project-stats .pstat span{ font-size:11px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; }
+  .project-chart{
+    position:relative; background:var(--ink); border-radius:12px; padding:36px 30px 26px;
+    box-shadow:var(--shadow); overflow:hidden;
+  }
+  .project-chart .pc-label{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gold-soft); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:22px; }
+  .pc-bars{ display:flex; align-items:flex-end; gap:16px; height:170px; }
+  .pc-bar-group{ flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .pc-bar-pair{ display:flex; align-items:flex-end; gap:5px; height:130px; width:100%; justify-content:center; }
+  .pc-bar{ width:14px; border-radius:3px 3px 0 0; transform:scaleY(0); transform-origin:bottom; transition:transform 1.1s cubic-bezier(.2,.8,.2,1); }
+  .pc-bar.sales{ background:var(--gold-soft); }
+  .pc-bar.profit{ background:var(--gold); animation:pulseBar 3.2s ease-in-out infinite; }
+  .reveal.in .pc-bar{ transform:scaleY(1); }
+  .pc-bar-group:nth-child(1) .pc-bar{ transition-delay:.05s; }
+  .pc-bar-group:nth-child(2) .pc-bar{ transition-delay:.2s; }
+  .pc-bar-group:nth-child(3) .pc-bar{ transition-delay:.35s; }
+  .pc-bar-group span{ font-family:'JetBrains Mono',monospace; font-size:10.5px; color:#9aa4bd; }
+  @keyframes pulseBar{ 0%,100%{ filter:brightness(1); } 50%{ filter:brightness(1.25); } }
+  .pc-legend{ display:flex; gap:18px; margin-top:18px; }
+  .pc-legend span{ display:flex; align-items:center; gap:6px; font-size:11px; color:#c7cee0; font-family:'JetBrains Mono',monospace; }
+  .pc-legend i{ width:9px; height:9px; border-radius:2px; display:inline-block; }
+  .pc-dot-field{ position:absolute; inset:0; pointer-events:none; opacity:0.5; }
+  .pc-dot-field span{
+    position:absolute; width:3px; height:3px; border-radius:50%; background:var(--gold-soft);
+    animation:driftDot 6s linear infinite;
+  }
+  @keyframes driftDot{ 0%{ transform:translateY(0); opacity:0; } 15%{ opacity:.8; } 100%{ transform:translateY(-140px); opacity:0; } }
+  @media (max-width:900px){
+    .project-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ===== QUOTES CAROUSEL (single card, sliding track) ===== */
+  #quotes{ background:var(--paper-dim); position:relative; }
+  .quotes-carousel-wrap{ position:relative; max-width:760px; margin:0 auto; padding:0 60px; }
+  .quotes-viewport{ overflow:hidden; }
+  .quotes-track{ display:flex; transition:transform .6s cubic-bezier(.65,0,.35,1); }
+  .quote-card{
+    flex:0 0 100%; background:var(--white); border:1px solid var(--line); border-radius:22px;
+    padding:52px 48px; box-shadow:0 24px 50px -26px rgba(22,34,63,0.4);
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px;
+    min-height:260px; justify-content:center; position:relative; overflow:hidden;
+  }
+  .quote-card::before{
+    content:"\201C"; position:absolute; top:-18px; left:22px; font-family:'Fraunces',serif;
+    font-size:120px; color:var(--paper-dim); line-height:1; z-index:0; pointer-events:none;
+  }
+  .quote-card p{
+    font-family:'Fraunces',serif; font-size:clamp(18px,2.4vw,25px); color:var(--ink); font-weight:450;
+    line-height:1.5; position:relative; z-index:1;
+  }
+  .quote-card .qwho{ position:relative; z-index:1; }
+  .quote-card .qwho b{ display:block; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--ink); letter-spacing:0.03em; }
+  .quote-card .qwho span{ display:block; font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:0.06em; margin-top:4px; }
+  .quote-slide-in{ animation:quoteIn .6s cubic-bezier(.2,.8,.2,1); }
+  @keyframes quoteIn{
+    from{ opacity:0; transform:translateY(14px) scale(0.97); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+  .quote-arrow{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:none; border:none; cursor:pointer; z-index:5; padding:8px 10px;
+    font-family:'Fraunces',serif; font-weight:300; font-size:44px; line-height:1;
+    color:var(--ink-soft); transition:color .2s ease, transform .2s ease;
+  }
+  .quote-arrow:hover{ color:var(--gold); transform:translateY(-50%) scale(1.1); }
+  .quote-arrow.qleft{ left:0; }
+  .quote-arrow.qright{ right:0; }
+  .car-dots{ display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:32px; }
+  .car-dots span{ width:6px; height:6px; border-radius:50%; background:var(--line); cursor:pointer; transition:background .2s, transform .2s; }
+  .car-dots span.active{ background:var(--gold); transform:scale(1.3); }
+  @media (max-width: 900px){
+    .quotes-carousel-wrap{ padding:0 40px; }
+    .quote-card{ padding:40px 26px; }
+    .quote-arrow{ font-size:34px; }
+  }
+
+  /* ===== LEARNING QUOTE ===== */
+  #learning{
+    background:var(--ink); color:var(--paper); text-align:center; padding:110px 0;
+    background-image:repeating-linear-gradient(180deg, transparent, transparent 42px, rgba(255,255,255,0.03) 43px);
+  }
+  #learning .wrap{ max-width:780px; align-items:stretch; }
+  #learning .eyebrow{ justify-content:center; color:var(--gold-soft); }
+  #learning .eyebrow::before{ background:var(--gold-soft); }
+  #learning .learning-photo{ display:flex; align-items:center; justify-content:center; height:100%; }
+  #learning .learning-photo img{
+    height:100%; width:auto; aspect-ratio:1/1; object-fit:cover; border-radius:50%;
+    border:3px solid rgba(255,255,255,0.15); filter:grayscale(1) contrast(1.05); max-height:260px;
+  }
+  #learning blockquote{
+    font-family:'Fraunces',serif; font-size:clamp(15px,1.5vw,17px); line-height:1.6; font-weight:450; color:var(--paper);
+  }
+  #learning cite{ display:block; margin-top:22px; font-family:'JetBrains Mono',monospace; font-style:normal; font-size:12px; color:var(--gold-soft); letter-spacing:0.06em; }
+
+
+  /* ===== CONTACT ===== */
+  #contact{ background:var(--paper); }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .contact-card{
+    border:1px solid var(--line); border-radius:8px; padding:34px; background:var(--white);
+    display:flex; align-items:center; gap:20px; transition:all .2s ease;
+  }
+  .contact-card:hover{ border-color:var(--gold); transform:translateY(-3px); box-shadow:var(--shadow); }
+  .contact-icon{
+    width:52px; height:52px; border-radius:50%; background:var(--paper-dim); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .contact-icon svg{ width:22px; height:22px; stroke:var(--ink); }
+  .contact-card b{ display:block; font-size:15px; color:var(--ink); margin-bottom:3px; }
+  .contact-card span{ font-size:13.5px; color:var(--text-dim); word-break:break-word; }
+
+  /* ===== FOOTER ===== */
+  footer{ background:var(--ink); color:#8b94ac; padding:44px 0; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  footer .foot-brand{ font-family:'Fraunces',serif; color:var(--paper); font-size:16px; }
+  footer .foot-links{ display:flex; gap:22px; }
+  footer .foot-links a{ font-size:13px; }
+  footer .foot-links a:hover{ color:var(--gold-soft); }
+  footer small{ display:block; margin-top:18px; font-size:11.5px; color:#5c6580; }
+
+  /* ===== MODAL / FORM ===== */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(22,34,63,0.6); backdrop-filter:blur(3px);
+    z-index:600; display:none; align-items:flex-start; justify-content:center; padding:50px 20px; overflow-y:auto;
+  }
+  .modal-overlay.open{ display:flex; }
+  .modal-box{
+    background:var(--white); max-width:640px; width:100%; border-radius:8px; padding:40px 42px 44px;
+    box-shadow:0 30px 80px rgba(0,0,0,0.4); position:relative; margin-bottom:40px;
+  }
+  .modal-close{
+    position:absolute; top:20px; right:22px; background:none; border:none; font-size:26px; cursor:pointer; color:var(--text-dim);
+  }
+  .modal-box h3{ font-size:24px; margin-bottom:6px; }
+  .modal-sub{ color:var(--text-dim); font-size:13.5px; margin-bottom:28px; }
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px 18px; }
+  .form-field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+  .form-field.full{ grid-column:1 / -1; }
+  .form-field label{ font-size:12px; font-weight:600; color:var(--ink-soft); letter-spacing:0.02em; }
+  .form-field input, .form-field select, .form-field textarea{
+    border:1px solid var(--line); border-radius:4px; padding:11px 13px; font-size:14px; font-family:'Inter',sans-serif;
+    background:var(--paper); color:var(--text); outline:none; transition:border-color .2s;
+  }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus{ border-color:var(--gold); }
+  .phone-row{ display:flex; gap:8px; }
+  .phone-row select{ flex:0 0 118px; }
+  .phone-row input{ flex:1; }
+  .char-count{ font-size:11px; color:var(--text-dim); text-align:right; margin-top:4px; }
+  .file-drop{
+    border:1.5px dashed var(--line); border-radius:6px; padding:20px; text-align:center; cursor:pointer;
+    font-size:13px; color:var(--text-dim); background:var(--paper); transition:border-color .2s;
+  }
+  .file-drop:hover{ border-color:var(--gold); }
+  .file-list{ margin-top:10px; font-size:12px; color:var(--ink-soft); display:flex; flex-direction:column; gap:4px; }
+  .form-submit{
+    margin-top:10px; width:100%; background:var(--ink); color:var(--paper); border:none; padding:15px;
+    font-size:14.5px; font-weight:700; letter-spacing:0.02em; border-radius:4px; cursor:pointer; transition:background .2s;
+  }
+  .form-submit:hover{ background:var(--gold); }
+  .form-note{ font-size:11.5px; color:var(--text-dim); margin-top:12px; text-align:center; }
+  .hidden{ display:none !important; }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px){
+    nav.links{ display:none; }
+    .burger{ display:flex; }
+    .hero-grid, .about-grid, .quotes-layout, .contact-grid{ grid-template-columns:1fr; }
+    .hero-photo-wrap{ order:-1; margin-bottom:20px; }
+    #learning .wrap{ grid-template-columns:1fr !important; text-align:center !important; }
+    #learning .eyebrow{ justify-content:center !important; }
+    .form-grid{ grid-template-columns:1fr; }
+    .phone-row{ flex-direction:column; }
+    .phone-row select{ flex:1; }
+  }
+  @media (max-width: 620px){
+    .wrap{ padding:0 20px; }
+    section{ padding:64px 0; }
+    .service-grid{ grid-template-columns:1fr; }
+    .hero-stats{ flex-wrap:wrap; justify-content:center; gap:14px 20px; padding:14px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header id="topnav">
+  <div class="wrap">
+    <a href="#hero" class="brand"><span class="mark"><img src="assets/hero-professional.jpg" alt="Anil Kumar Hotta"></span> Anil Kumar Hotta</a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#certs">Certifications</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#quotes">Quotes</a>
+      <a href="#learning">My Learnings</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div id="mobileMenu" style="display:none; position:fixed; inset:74px 0 0 0; background:var(--paper); z-index:190; padding:30px 24px;">
+  <div style="display:flex; flex-direction:column; gap:26px; font-size:17px; font-family:'Fraunces',serif;">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#certs">Certifications</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#quotes">Quotes</a>
+    <a href="#learning">My Learnings</a>
+    <a href="#contact">Get in touch</a>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow">CA Intermediate · Brahmapur, Odisha, India</div>
+      <h1>Anil Kumar Hotta</h1>
+      <div class="typewriter-line"><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
+      <p class="hero-sub">Finance, AI &amp; geopolitics enthusiast building precise, dependable work at the intersection of numbers and design — from ledgers to layouts, code to certificates.</p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-primary">View services</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="role-strip">
+        <span class="role-chip">CA Intermediate</span>
+        <span class="role-chip">AI-Assisted Web Developer</span>
+        <span class="role-chip">Graphic Designer</span>
+        <span class="role-chip">Touch Typist · 80+ WPM</span>
+        <span class="role-chip">Finance &amp; Geopolitics</span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="seal-ring"></div>
+      <div class="hero-photo"><img src="assets/hero-professional.jpg" alt="Anil Kumar Hotta"></div>
+      <div class="hero-stats">
+        <div class="stat"><b>80+</b><span>WPM Typing</span></div>
+        <div class="stat"><b>Top 5%</b><span>World Typists</span></div>
+        <div class="stat"><b>4</b><span>Certifications</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="ledger-rule wrap"></div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photos reveal">
+      <div class="about-orbit">
+        <span class="float-icon fi-1">₹</span>
+        <span class="float-icon fi-2">&lt;/&gt;</span>
+        <span class="float-icon fi-3">%</span>
+        <span class="float-icon fi-4">✎</span>
+        <span class="float-icon fi-5">∑</span>
+        <span class="float-icon fi-6">◧</span>
+      </div>
+      <div class="about-photo-main"><img src="assets/about-adventure.jpg" alt="Anil Kumar Hotta"></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="eyebrow">About</div>
+      <h2 style="font-size:clamp(26px,3.4vw,36px); margin-bottom:22px;">Numbers by training, design and code by curiosity.</h2>
+      <p>I'm <strong>Anil Kumar Hotta</strong> — a <strong>CA Intermediate</strong> student pursuing Chartered Accountancy under the Institute of Chartered Accountants of India (ICAI). I've also graduated with a Bachelor of Commerce (Hons) from Khallikote Unitary University, Brahmapur.</p>
+      <p>Outside the ledger, I work as an <strong>AI-assisted web developer</strong> and <strong>graphic designer</strong>, and I follow finance, artificial intelligence and geopolitics closely — I like understanding how systems, markets and technology actually move.</p>
+      <p>Mathematics has been a constant thread through my life — from winning school-level scholarship exams like PMSTS to applying that same analytical discipline to accounting, taxation, audit and financial management today. I also hold a certified typing speed of <strong>80+ WPM</strong>, placing me in the top 5% of typists worldwide.</p>
+      <div class="precision-box">
+        <p>"The process is always in our hands; the result never fully is. Yet the world remembers results, not excuses."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Education</div>
+      <h2>A record, kept in order.</h2>
+      <p>Schooling through commerce to Chartered Accountancy — each stage building on the last.</p>
+    </div>
+
+    <div class="hz-timeline reveal">
+      <div class="hz-line-wrap">
+        <div class="hz-line"></div>
+        <div class="hz-marker" id="hzMarker"></div>
+        <div class="hz-points" id="hzPoints">
+          <div class="hz-point" data-i="0"><div class="hz-dot"></div><div class="hz-year">2009 — 2023</div></div>
+          <div class="hz-point" data-i="1"><div class="hz-dot"></div><div class="hz-year">2023 — 2026</div></div>
+          <div class="hz-point" data-i="2"><div class="hz-dot"></div><div class="hz-year">2023 — Present</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hz-detail-wrap reveal">
+      <div class="hz-detail" data-i="0">
+        <h3>Saraswati Shishu Vidya Mandir, Neelakantha Nagar</h3>
+        <p>Schooling from Kindergarten through +2 Science (Physics, Chemistry, Mathematics, Electronics, English, Sanskrit) — Class 10th under BSE Odisha, +2 under CHSE Odisha, scoring an average of about 92% in both board exams. Won multiple scholarship awards for academic excellence, notably in Mathematics (PMSTS), and was consistently recognised for mathematics ability. Took part in School Parade, Drawing, Debate, Essay Writing, and cultural and academic events; won an inter-school science quiz and a school science exhibition.</p>
+        <div class="hz-tags"><span>Mathematics</span><span>PMSTS Scholar</span><span>~92% Boards</span><span>Science Exhibition Winner</span></div>
+      </div>
+      <div class="hz-detail" data-i="1">
+        <h3>Khallikote Unitary University, Brahmapur</h3>
+        <p>Bachelor of Commerce (Hons) — the switch from science to commerce, building the foundation for a career in finance and accountancy. Graduated with a CGPA of 8.63. As my final-year project, I researched and wrote "Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City," analysing the financial performance and tax compliance behaviour of seven Brahmapur businesses.</p>
+        <div class="hz-tags"><span>B.Com (Hons) — Graduated</span><span>8.63 CGPA</span></div>
+      </div>
+      <div class="hz-detail" data-i="2">
+        <h3>The Institute of Chartered Accountants of India</h3>
+        <p>Pursuing Chartered Accountancy, currently at the CA Intermediate stage. Scored 256 out of 400 in CA Foundation, including 92 marks in Paper 3 (Business Mathematics, Logical Reasoning & Statistics), and 173 out of 300 in Group 2 of CA Intermediate, including 79 marks in Cost & Management Accounting. Built working knowledge of Accounting, Taxation (Income Tax, GST), Financial Management, Audit, and Corporate Law, and attended conferences hosted by ICAI.</p>
+        <div class="hz-tags"><span>CA Intermediate</span><span>Foundation: 256/400</span><span>Inter Group 2: 173/300</span><span>Taxation</span><span>Audit</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section id="certs" class="tight">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Certifications</div>
+      <h2>Verified, on record.</h2>
+      <p>Click a certificate image to view it in full.</p>
+    </div>
+    <div class="reveal">
+      <div class="cert-carousel-wrap">
+        <button class="cert-arrow cleft" onclick="certMove(-1)" aria-label="Previous certificate">&#8249;</button>
+        <div class="cert-viewport">
+          <div class="cert-track" id="certTrack"></div>
+        </div>
+        <button class="cert-arrow cright" onclick="certMove(1)" aria-label="Next certificate">&#8250;</button>
+      </div>
+      <div class="cert-dots" id="certDots"></div>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+  <img id="lightboxImg" src="" alt="Certificate preview">
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Services</div>
+      <h2>What I can build for you.</h2>
+      <p>Two things I do well — pick one, tell me what you need, and I'll take it from there.</p>
+    </div>
+    <div class="service-grid reveal">
+      <div class="service-card">
+        <h3>AI-Assisted Web Development</h3>
+        <p>Clean, functional, professional websites built with modern AI-assisted workflows — fast to deliver, easy to maintain.</p>
+        <ul class="service-list">
+          <li>Personal &amp; business websites</li>
+          <li>Landing pages &amp; portfolios</li>
+          <li>Forms, dashboards &amp; small tools</li>
+          <li>GitHub &amp; Vercel deployment guidance</li>
+        </ul>
+        <button class="book-btn" onclick="openModal('Web Development')">Book this service</button>
+      </div>
+      <div class="service-card">
+        <h3>Graphic Designing</h3>
+        <p>Sharp, on-brand visuals — designed with an eye for detail and finished the way it was meant to look, every time.</p>
+        <ul class="service-list">
+          <li>Logos &amp; brand identity</li>
+          <li>Social media creatives</li>
+          <li>Certificates, posters &amp; presentations</li>
+          <li>Business cards &amp; stationery</li>
+        </ul>
+        <button class="book-btn" onclick="openModal('Graphic Designing')">Book this service</button>
+      </div>
+    </div>
+    <div class="service-quality reveal">
+      <p>Every project I take on is handled with the same discipline I bring to a balance sheet — precision in the detail, accuracy in the execution, and a finished result that holds up under scrutiny. No shortcuts, no half-finished edges — just work that's checked, rechecked, and delivered the way it was promised.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap project-grid">
+    <div class="project-copy reveal">
+      <div class="eyebrow">Projects</div>
+      <h3>Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City</h3>
+      <p>My B.Com (Hons) final-year research project at Khallikote Unitary University, guided by Dr. Annapurna Sahoo, Head of the Department of Commerce.</p>
+      <p>The study examines the financial performance and tax compliance behaviour of seven businesses across Brahmapur — spanning retail, manufacturing, FMCG trading, and services — over three financial years (2022–23 to 2024–25). Using ratio analysis, trend analysis, cash flow analysis, and correlation analysis on real profit &amp; loss accounts and balance sheets, it evaluates profitability, liquidity, solvency, and how business structure shapes tax reporting.</p>
+      <p>A key finding: sales and net profit show an exceptionally strong positive correlation (above 0.99) across all three years, while service and retail businesses consistently posted higher margins than volume-driven manufacturing and trading units.</p>
+      <div class="project-stats">
+        <div class="pstat"><b>7</b><span>Businesses Studied</span></div>
+        <div class="pstat"><b>3</b><span>Years Analysed</span></div>
+        <div class="pstat"><b>0.99+</b><span>Sales–Profit Correlation</span></div>
+      </div>
+      <div class="project-meta">
+        <span>Ratio Analysis</span><span>Trend Analysis</span><span>Cash Flow Analysis</span>
+        <span>Correlation Analysis</span><span>MS Excel</span><span>SPSS</span>
+      </div>
+      <a href="assets/Financial-Performance-Analysis-Brahmapur-AKH.pdf" target="_blank" class="btn btn-primary">View full project (PDF)</a>
+    </div>
+
+    <div class="project-chart reveal">
+      <div class="pc-dot-field" id="pcDots"></div>
+      <div class="pc-label">Net Profit Growth · Illustrative</div>
+      <div class="pc-bars">
+        <div class="pc-bar-group">
+          <div class="pc-bar-pair">
+            <div class="pc-bar sales" style="height:38%"></div>
+            <div class="pc-bar profit" style="height:22%"></div>
+          </div>
+          <span>2022-23</span>
+        </div>
+        <div class="pc-bar-group">
+          <div class="pc-bar-pair">
+            <div class="pc-bar sales" style="height:64%"></div>
+            <div class="pc-bar profit" style="height:48%"></div>
+          </div>
+          <span>2023-24</span>
+        </div>
+        <div class="pc-bar-group">
+          <div class="pc-bar-pair">
+            <div class="pc-bar sales" style="height:88%"></div>
+            <div class="pc-bar profit" style="height:70%"></div>
+          </div>
+          <span>2024-25</span>
+        </div>
+      </div>
+      <div class="pc-legend">
+        <span><i style="background:var(--gold-soft)"></i>Sales</span>
+        <span><i style="background:var(--gold)"></i>Net Profit</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTES CAROUSEL ================= -->
+<section id="quotes">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin:0 auto 48px; text-align:center; max-width:600px;">
+      <div class="eyebrow" style="justify-content:center;">Words that stay with me</div>
+      <h2>Quotes I keep coming back to.</h2>
+    </div>
+    <div class="reveal">
+      <div class="quotes-carousel-wrap">
+        <button class="quote-arrow qleft" onclick="quoteMove(-1)" aria-label="Previous quote">&#8249;</button>
+        <div class="quotes-viewport">
+          <div class="quotes-track" id="quotesTrack"></div>
+        </div>
+        <button class="quote-arrow qright" onclick="quoteMove(1)" aria-label="Next quote">&#8250;</button>
+      </div>
+      <div class="car-dots" id="quoteDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEARNING QUOTE ================= -->
+<section id="learning">
+  <div class="wrap" style="max-width:960px; display:grid; grid-template-columns:0.8fr 1.6fr; gap:48px; align-items:stretch; text-align:left;">
+    <div class="reveal learning-photo">
+      <img src="assets/quote-portrait.jpg" alt="Anil Kumar Hotta">
+    </div>
+    <div>
+      <div class="eyebrow" style="justify-content:flex-start;">My learning from experience</div>
+      <blockquote class="reveal">
+        "The process is always in our hands; the result never fully is. Yet the world remembers results, not excuses. Luck can influence the outcome, but it is beyond our control. What we can control is our preparation, discipline, consistency, and the courage to keep moving forward. Trust the process, embrace the uncertainty, and strive to become so capable that when luck finally knocks, you're ready to turn opportunity into success."
+        <cite>— Anil Kumar Hotta</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's talk.</h2>
+      <p>Reach out directly, or use the booking form on any service above.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="contact-card" id="emailContactLink" href="mailto:anilhotta24@gmail.com">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <div><b>Email</b><span>anilhotta24@gmail.com</span></div>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/anil-kumar-hotta/" target="_blank" rel="noopener">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div><b>LinkedIn</b><span>linkedin.com/in/anil-kumar-hotta</span></div>
+      </a>
+      <a class="contact-card" href="https://instagram.com/anil.hotta" target="_blank" rel="noopener">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+        <div><b>Instagram</b><span>@anil.hotta</span></div>
+      </a>
+      <a class="contact-card" href="#services">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+        <div><b>Book a service</b><span>AI-assisted web dev &amp; graphic design</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">Anil Kumar Hotta</div>
+    <div class="foot-links">
+      <a href="mailto:anilhotta24@gmail.com" id="emailFooterLink">Email</a>
+      <a href="https://www.linkedin.com/in/anil-kumar-hotta/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://instagram.com/anil.hotta" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="wrap"><small>&copy; <span id="year"></span> Anil Kumar Hotta. All rights reserved.</small></div>
+</footer>
+
+<!-- ================= BOOKING MODAL ================= -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalBg(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h3 id="modalTitle">Book a Service</h3>
+    <p class="modal-sub">Fill in your details below — this sends straight to my inbox and I'll get back to you shortly.</p>
+
+    <form id="bookingForm" action="https://formsubmit.co/anilhotta24@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" id="formSubject" value="New Service Booking">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="Service" id="formService" value="">
+
+      <div class="form-grid">
+        <div class="form-field full">
+          <label for="f_name">Full name</label>
+          <input type="text" id="f_name" name="Name" required placeholder="Your full name">
+        </div>
+
+        <div class="form-field full">
+          <label for="f_email">Email address</label>
+          <input type="email" id="f_email" name="Email" required placeholder="you@example.com">
+        </div>
+
+        <div class="form-field full">
+          <label for="f_phone">Phone number</label>
+          <div class="phone-row">
+            <select id="f_dialcode" name="Dial Code"></select>
+            <input type="tel" id="f_phone" name="Phone Number" required placeholder="Phone number" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="f_country">Country</label>
+          <select id="f_country" name="Country" required></select>
+        </div>
+
+        <div class="form-field" id="stateFieldWrap">
+          <label for="f_state">State / Province</label>
+          <select id="f_state" name="State"></select>
+        </div>
+
+        <div class="form-field full">
+          <label for="f_city">City</label>
+          <input type="text" id="f_city" name="City" required placeholder="Your city">
+        </div>
+
+        <div class="form-field full">
+          <label for="f_address">Address</label>
+          <input type="text" id="f_address" name="Address" required placeholder="Street address">
+        </div>
+
+        <div class="form-field full">
+          <label for="f_req">Your requirement <span style="font-weight:400; color:var(--text-dim);">(max 100 words)</span></label>
+          <textarea id="f_req" name="Requirement" rows="4" required placeholder="Briefly describe what you need..." oninput="limitWords(this)"></textarea>
+          <div class="char-count"><span id="wordCount">0</span> / 100 words</div>
+        </div>
+
+        <div class="form-field full">
+          <label>Attach files <span style="font-weight:400; color:var(--text-dim);">(up to 10)</span></label>
+          <div class="file-drop" onclick="document.getElementById('f_files').click()">Click to choose files — up to 10</div>
+          <input type="file" id="f_files" name="Attachments[]" multiple style="display:none" onchange="handleFiles(this)">
+          <div class="file-list" id="fileList"></div>
+        </div>
+      </div>
+
+      <button type="submit" class="form-submit">Book service</button>
+      <p class="form-note">On first submission, FormSubmit will send a one-time confirmation link to anilhotta24@gmail.com — click it once to activate delivery for this form.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ================= MOBILE NAV ================= */
+const burger = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+  mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.style.display = 'none'));
+
+/* ================= TYPEWRITER ================= */
+const roles = [
+  "CA Intermediate — ICAI",
+  "AI-Assisted Web Developer",
+  "Graphic Designer",
+  "Finance, AI & Geopolitics Enthusiast",
+  "Touch Typist — 80+ WPM"
+];
+const twEl = document.getElementById('typewriter');
+let rIdx = 0, cIdx = 0, deleting = false;
+function typeLoop(){
+  const full = roles[rIdx];
+  if(!deleting){
+    cIdx++;
+    twEl.textContent = full.slice(0, cIdx);
+    if(cIdx === full.length){ deleting = true; setTimeout(typeLoop, 1400); return; }
+  } else {
+    cIdx--;
+    twEl.textContent = full.slice(0, cIdx);
+    if(cIdx === 0){ deleting = false; rIdx = (rIdx+1) % roles.length; }
+  }
+  setTimeout(typeLoop, deleting ? 35 : 65);
+}
+typeLoop();
+
+/* ================= SCROLL REVEAL ================= */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.15});
+revealEls.forEach(el=>io.observe(el));
+
+/* ================= PROJECTS CHART — decorative drifting dots ================= */
+const pcDots = document.getElementById('pcDots');
+if(pcDots){
+  for(let i=0; i<14; i++){
+    const d = document.createElement('span');
+    d.style.left = (Math.random()*94 + 3) + '%';
+    d.style.bottom = (Math.random()*20) + 'px';
+    d.style.animationDelay = (Math.random()*6) + 's';
+    d.style.animationDuration = (5 + Math.random()*3) + 's';
+    pcDots.appendChild(d);
+  }
+}
+
+/* ================= HORIZONTAL EDUCATION TIMELINE (self-playing) ================= */
+/* Auto-advances through each stage, highlighting one at a time in a ping-pong
+   loop: 0 -> 1 -> 2 -> 1 -> 0 -> 1 -> 2 ... — never a hard jump back. */
+const hzPoints = document.querySelectorAll('.hz-point');
+const hzDetails = document.querySelectorAll('.hz-detail');
+const hzMarker = document.getElementById('hzMarker');
+const HZ_N = hzPoints.length;
+let hzIdx = 0, hzDir = 1;
+
+function setHzActive(i){
+  hzPoints.forEach(p => p.classList.toggle('active', Number(p.dataset.i) === i));
+  hzDetails.forEach(d => d.classList.toggle('active', Number(d.dataset.i) === i));
+  const target = hzPoints[i];
+  if(target && hzMarker){
+    const wrap = target.closest('.hz-line-wrap');
+    const wrapRect = wrap.getBoundingClientRect();
+    const dotRect = target.querySelector('.hz-dot').getBoundingClientRect();
+    hzMarker.style.left = (dotRect.left - wrapRect.left + dotRect.width/2) + 'px';
+  }
+}
+function hzStep(){
+  if(hzIdx === HZ_N - 1) hzDir = -1;
+  else if(hzIdx === 0) hzDir = 1;
+  hzIdx += hzDir;
+  setHzActive(hzIdx);
+}
+setHzActive(0);
+window.addEventListener('resize', ()=> setHzActive(hzIdx));
+setInterval(hzStep, 7000);
+
+/* ================= LIGHTBOX ================= */
+function openLightbox(src){
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(e){
+  if(e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')){
+    document.getElementById('lightbox').classList.remove('open');
+  }
+}
+
+/* ================= CERTIFICATIONS CAROUSEL (one at a time, infinite) ================= */
+const certs = [
+  {
+    kicker: "ICAI · Orientation Course",
+    title: "ICITSS — Orientation Course",
+    img: "assets/cert-icitss-oc.jpg",
+    about: "In this course, I got to learn public speaking and presentation skills, along with effective communication. It also helped me build a stronger sense of team work, team leadership, and the basics of management — skills that go well beyond the numbers side of being a CA.",
+    issuer: "The Institute of Chartered Accountants of India — Bhubaneswar Branch"
+  },
+  {
+    kicker: "ICAI · Information Technology",
+    title: "ICITSS — Information Technology",
+    img: "assets/cert-icitss-itt.jpg",
+    about: "Through this course, I got to learn Microsoft Excel, Microsoft Word, and Microsoft Access in depth, along with Generative AI tools, Tally Prime, CaseWare IDEA, and Zoho. These are tools I now use regularly, both in my CA work and in my freelance projects.",
+    issuer: "The Institute of Chartered Accountants of India — Bhubaneswar Branch"
+  },
+  {
+    kicker: "be10x · AI Tools Workshop",
+    title: "AI Tools & ChatGPT Workshop",
+    img: "assets/cert-b10x.jpg",
+    about: "In this workshop, I got to learn how to use various AI tools for different purposes, along with the fundamentals of prompt engineering. It shaped how I now use AI to build presentations, analyse data, and write and debug code faster.",
+    issuer: "be10x"
+  },
+  {
+    kicker: "Canva Design School",
+    title: "Graphic Design Essentials",
+    img: "assets/cert-canva.jpg",
+    about: "In this course, I got to learn the essentials and basics of graphic design, along with how to use the various design tools within Canva. It laid the foundation for the design work I now take on for clients.",
+    issuer: "Canva Design School"
+  }
+];
+const CN = certs.length;
+const CV = 1; // one clone each side — only one slide visible at a time
+const certTrackData = [...certs.slice(-CV), ...certs, ...certs.slice(0, CV)];
+const certTrack = document.getElementById('certTrack');
+const certDots = document.getElementById('certDots');
+
+certTrackData.forEach(c=>{
+  const slide = document.createElement('div');
+  slide.className = 'cert-slide';
+  slide.innerHTML = `
+    <div class="cert-copy">
+      <div class="cert-kicker">${c.kicker}</div>
+      <h3>${c.title}</h3>
+      <p>${c.about}</p>
+      <div class="cert-issuer">${c.issuer}</div>
+    </div>
+    <div class="cert-image" onclick="openLightbox('${c.img}')"><img src="${c.img}" alt="${c.title}"></div>`;
+  certTrack.appendChild(slide);
+});
+certs.forEach((_,i)=>{
+  const dot = document.createElement('span');
+  if(i===0) dot.classList.add('active');
+  dot.addEventListener('click', ()=> certGoTo(i));
+  certDots.appendChild(dot);
+});
+
+let certIdx = CV;
+function certMoveTrack(withTransition = true){
+  certTrack.style.transition = withTransition ? 'transform .6s cubic-bezier(.65,0,.35,1)' : 'none';
+  certTrack.style.transform = `translateX(-${certIdx * 100}%)`;
+  const realIdx = ((certIdx - CV) % CN + CN) % CN;
+  Array.from(certDots.children).forEach((d,i)=> d.classList.toggle('active', i === realIdx));
+}
+certTrack.addEventListener('transitionend', ()=>{
+  if(certIdx >= CN + CV){ certIdx -= CN; certMoveTrack(false); void certTrack.offsetWidth; }
+  else if(certIdx < CV){ certIdx += CN; certMoveTrack(false); void certTrack.offsetWidth; }
+});
+function certMove(dir){ certIdx += dir; certMoveTrack(true); resetCertAuto(); }
+function certGoTo(i){ certIdx = CV + i; certMoveTrack(true); resetCertAuto(); }
+let certAuto = setInterval(()=>{ certIdx += 1; certMoveTrack(true); }, 5000);
+function resetCertAuto(){ clearInterval(certAuto); certAuto = setInterval(()=>{ certIdx += 1; certMoveTrack(true); }, 5000); }
+window.addEventListener('resize', ()=> certMoveTrack(false));
+certMoveTrack(false);
+
+/* ================= QUOTES CAROUSEL (single card, infinite) ================= */
+/* Same sliding + infinite-wrap mechanic as the certifications carousel, but one
+   quote fully visible at a time — clean, centered, and never clipped. */
+const quotes = [
+  {text:"Work like hell.", who:"Elon Musk", tag:"Entrepreneur & Innovator"},
+  {text:"I don't believe in taking right decisions, I take decisions and make them right.", who:"Ratan Tata", tag:"Industrialist"},
+  {text:"Today is difficult, tomorrow is much more difficult, but the day after tomorrow is beautiful. Most people die at tomorrow evening.", who:"Jack Ma", tag:"Entrepreneur"},
+  {text:"Arise, awake, and stop not till the goal is reached.", who:"Swami Vivekananda", tag:"Philosopher & Monk"},
+  {text:"If you're born poor, it's not your mistake. But if you die poor, it is your mistake.", who:"Bill Gates", tag:"Philanthropist"},
+  {text:"Be fearful when others are greedy, and greedy when others are fearful.", who:"Warren Buffett", tag:"Investor"},
+  {text:"Rule No. 1 is never lose money. Rule No. 2 is never forget Rule No. 1.", who:"Warren Buffett", tag:"Investor"},
+  {text:"Believe you can and you're halfway there.", who:"Theodore Roosevelt", tag:"US President"},
+  {text:"You miss 100% of the shots you don't take.", who:"Wayne Gretzky", tag:"Ice Hockey Legend"},
+  {text:"The way to get started is to quit talking and begin doing.", who:"Walt Disney", tag:"Animator & Entrepreneur"},
+  {text:"The greatest glory in living lies not in never falling, but in rising every time we fall.", who:"Nelson Mandela", tag:"Statesman"},
+  {text:"When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.", who:"Henry Ford", tag:"Industrialist"},
+  {text:"You become what you believe.", who:"Oprah Winfrey", tag:"Media Executive"},
+  {text:"Strive not to be a success, but rather to be of value.", who:"Albert Einstein", tag:"Physicist"},
+  {text:"Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.", who:"Martin Luther King Jr.", tag:"Civil Rights Leader"}
+];
+const QN = quotes.length;
+const QV = 1; // one clone each side — one card visible at a time
+const quoteTrackData = [...quotes.slice(-QV), ...quotes, ...quotes.slice(0, QV)];
+
+const quotesTrack = document.getElementById('quotesTrack');
+const quoteDots = document.getElementById('quoteDots');
+
+quoteTrackData.forEach(q=>{
+  const el = document.createElement('div');
+  el.className = 'quote-card';
+  el.innerHTML = `<p>&ldquo;${q.text}&rdquo;</p><div class="qwho"><b>— ${q.who}</b><span>${q.tag}</span></div>`;
+  quotesTrack.appendChild(el);
+});
+quotes.forEach((_,i)=>{
+  const dot = document.createElement('span');
+  if(i===0) dot.classList.add('active');
+  dot.addEventListener('click', ()=> quoteGoTo(i));
+  quoteDots.appendChild(dot);
+});
+
+let quoteIdx = QV;
+function quoteMoveTrack(withTransition = true){
+  quotesTrack.style.transition = withTransition ? 'transform .6s cubic-bezier(.65,0,.35,1)' : 'none';
+  quotesTrack.style.transform = `translateX(-${quoteIdx * 100}%)`;
+  const realIdx = ((quoteIdx - QV) % QN + QN) % QN;
+  Array.from(quoteDots.children).forEach((d,i)=> d.classList.toggle('active', i === realIdx));
+  const activeCard = quotesTrack.children[quoteIdx];
+  if(activeCard){
+    activeCard.classList.remove('quote-slide-in');
+    void activeCard.offsetWidth;
+    activeCard.classList.add('quote-slide-in');
+  }
+}
+quotesTrack.addEventListener('transitionend', ()=>{
+  if(quoteIdx >= QN + QV){ quoteIdx -= QN; quoteMoveTrack(false); void quotesTrack.offsetWidth; }
+  else if(quoteIdx < QV){ quoteIdx += QN; quoteMoveTrack(false); void quotesTrack.offsetWidth; }
+});
+function quoteMove(dir){ quoteIdx += dir; quoteMoveTrack(true); resetQuoteAuto(); }
+function quoteGoTo(i){ quoteIdx = QV + i; quoteMoveTrack(true); resetQuoteAuto(); }
+let quoteAuto = setInterval(()=>{ quoteIdx += 1; quoteMoveTrack(true); }, 5500);
+function resetQuoteAuto(){ clearInterval(quoteAuto); quoteAuto = setInterval(()=>{ quoteIdx += 1; quoteMoveTrack(true); }, 5500); }
+window.addEventListener('resize', ()=> quoteMoveTrack(false));
+quoteMoveTrack(false);
+moveTrack(false);
+
+/* ================= COUNTRY / DIAL CODE / STATE DATA ================= */
+const countries = [
+["Afghanistan","AF","93"],["Albania","AL","355"],["Algeria","DZ","213"],["Argentina","AR","54"],
+["Armenia","AM","374"],["Australia","AU","61"],["Austria","AT","43"],["Azerbaijan","AZ","994"],
+["Bahrain","BH","973"],["Bangladesh","BD","880"],["Belarus","BY","375"],["Belgium","BE","32"],
+["Bhutan","BT","975"],["Bolivia","BO","591"],["Bosnia and Herzegovina","BA","387"],["Brazil","BR","55"],
+["Brunei","BN","673"],["Bulgaria","BG","359"],["Cambodia","KH","855"],["Cameroon","CM","237"],
+["Canada","CA","1"],["Chile","CL","56"],["China","CN","86"],["Colombia","CO","57"],
+["Costa Rica","CR","506"],["Croatia","HR","385"],["Cuba","CU","53"],["Cyprus","CY","357"],
+["Czech Republic","CZ","420"],["Denmark","DK","45"],["Ecuador","EC","593"],["Egypt","EG","20"],
+["Estonia","EE","372"],["Ethiopia","ET","251"],["Finland","FI","358"],["France","FR","33"],
+["Georgia","GE","995"],["Germany","DE","49"],["Ghana","GH","233"],["Greece","GR","30"],
+["Hong Kong","HK","852"],["Hungary","HU","36"],["Iceland","IS","354"],["India","IN","91"],
+["Indonesia","ID","62"],["Iran","IR","98"],["Iraq","IQ","964"],["Ireland","IE","353"],
+["Israel","IL","972"],["Italy","IT","39"],["Japan","JP","81"],["Jordan","JO","962"],
+["Kazakhstan","KZ","7"],["Kenya","KE","254"],["Kuwait","KW","965"],["Kyrgyzstan","KG","996"],
+["Laos","LA","856"],["Latvia","LV","371"],["Lebanon","LB","961"],["Lithuania","LT","370"],
+["Luxembourg","LU","352"],["Malaysia","MY","60"],["Maldives","MV","960"],["Malta","MT","356"],
+["Mauritius","MU","230"],["Mexico","MX","52"],["Moldova","MD","373"],["Mongolia","MN","976"],
+["Morocco","MA","212"],["Myanmar","MM","95"],["Nepal","NP","977"],["Netherlands","NL","31"],
+["New Zealand","NZ","64"],["Nigeria","NG","234"],["North Macedonia","MK","389"],["Norway","NO","47"],
+["Oman","OM","968"],["Pakistan","PK","92"],["Panama","PA","507"],["Paraguay","PY","595"],
+["Peru","PE","51"],["Philippines","PH","63"],["Poland","PL","48"],["Portugal","PT","351"],
+["Qatar","QA","974"],["Romania","RO","40"],["Russia","RU","7"],["Rwanda","RW","250"],
+["Saudi Arabia","SA","966"],["Serbia","RS","381"],["Singapore","SG","65"],["Slovakia","SK","421"],
+["Slovenia","SI","386"],["South Africa","ZA","27"],["South Korea","KR","82"],["Spain","ES","34"],
+["Sri Lanka","LK","94"],["Sudan","SD","249"],["Sweden","SE","46"],["Switzerland","CH","41"],
+["Taiwan","TW","886"],["Tanzania","TZ","255"],["Thailand","TH","66"],["Tunisia","TN","216"],
+["Turkey","TR","90"],["Uganda","UG","256"],["Ukraine","UA","380"],["United Arab Emirates","AE","971"],
+["United Kingdom","GB","44"],["United States","US","1"],["Uruguay","UY","598"],["Uzbekistan","UZ","998"],
+["Vietnam","VN","84"],["Yemen","YE","967"],["Zambia","ZM","260"],["Zimbabwe","ZW","263"]
+];
+
+const statesByCountry = {
+  "IN": ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry"],
+  "US": ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming","District of Columbia"],
+  "CA": ["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Nova Scotia","Ontario","Prince Edward Island","Quebec","Saskatchewan","Northwest Territories","Nunavut","Yukon"],
+  "AU": ["New South Wales","Queensland","South Australia","Tasmania","Victoria","Western Australia","Australian Capital Territory","Northern Territory"],
+  "GB": ["England","Scotland","Wales","Northern Ireland"],
+  "AE": ["Abu Dhabi","Dubai","Sharjah","Ajman","Umm Al Quwain","Ras Al Khaimah","Fujairah"],
+  "PK": ["Punjab","Sindh","Khyber Pakhtunkhwa","Balochistan","Gilgit-Baltistan","Islamabad Capital Territory","Azad Kashmir"],
+  "BD": ["Barisal","Chittagong","Dhaka","Khulna","Mymensingh","Rajshahi","Rangpur","Sylhet"],
+  "NP": ["Koshi","Madhesh","Bagmati","Gandaki","Lumbini","Karnali","Sudurpashchim"],
+  "DE": ["Baden-Württemberg","Bavaria","Berlin","Brandenburg","Bremen","Hamburg","Hesse","Lower Saxony","Mecklenburg-Vorpommern","North Rhine-Westphalia","Rhineland-Palatinate","Saarland","Saxony","Saxony-Anhalt","Schleswig-Holstein","Thuringia"],
+  "BR": ["Acre","Alagoas","Amapá","Amazonas","Bahia","Ceará","Distrito Federal","Espírito Santo","Goiás","Maranhão","Mato Grosso","Mato Grosso do Sul","Minas Gerais","Pará","Paraíba","Paraná","Pernambuco","Piauí","Rio de Janeiro","Rio Grande do Norte","Rio Grande do Sul","Rondônia","Roraima","Santa Catarina","São Paulo","Sergipe","Tocantins"],
+  "ZA": ["Eastern Cape","Free State","Gauteng","KwaZulu-Natal","Limpopo","Mpumalanga","Northern Cape","North West","Western Cape"],
+  "NG": ["Abuja FCT","Lagos","Kano","Rivers","Oyo","Kaduna","Ogun","Enugu","Delta","Edo"],
+  "MY": ["Johor","Kedah","Kelantan","Kuala Lumpur","Malacca","Negeri Sembilan","Pahang","Penang","Perak","Perlis","Sabah","Sarawak","Selangor","Terengganu"]
+};
+
+/* Approx local phone number length (digits) for restricting input */
+const phoneDigits = {"IN":10,"US":10,"CA":10,"GB":10,"AU":9,"AE":9,"PK":10,"BD":10,"NP":10,"DE":11,"BR":11,"ZA":9,"NG":10,"MY":9,"SG":8,"CN":11,"JP":10,"FR":9,"IT":10,"ES":9,"RU":10,"SA":9,"QA":8,"KW":8,"OM":8,"BH":8,"NZ":9,"LK":9,"MM":9,"KH":9,"TH":9,"VN":10,"PH":10,"ID":11,"KR":10,"HK":8,"TW":9};
+
+const dialSel = document.getElementById('f_dialcode');
+const countrySel = document.getElementById('f_country');
+const stateSel = document.getElementById('f_state');
+const stateWrap = document.getElementById('stateFieldWrap');
+const phoneInput = document.getElementById('f_phone');
+
+countries.forEach(([name, iso, dial])=>{
+  const opt1 = document.createElement('option');
+  opt1.value = dial; opt1.dataset.iso = iso;
+  opt1.textContent = `+${dial} (${iso})`;
+  dialSel.appendChild(opt1);
+
+  const opt2 = document.createElement('option');
+  opt2.value = iso; opt2.textContent = name;
+  countrySel.appendChild(opt2);
+});
+/* default: India, as the site owner is India-based */
+dialSel.value = "91";
+countrySel.value = "IN";
+
+function refreshStates(){
+  const iso = countrySel.value;
+  const list = statesByCountry[iso];
+  const currentEl = document.getElementById('f_state'); // always re-query: outerHTML swaps create a new node each time
+  if(list && list.length){
+    let html = '<select id="f_state" name="State" required><option value="" disabled selected>Your State</option>';
+    list.forEach(s=>{ html += `<option value="${s}">${s}</option>`; });
+    html += '</select>';
+    currentEl.outerHTML = html;
+  } else {
+    currentEl.outerHTML = '<input type="text" id="f_state" name="State" required placeholder="Your State" value="">';
+  }
+}
+countrySel.addEventListener('change', refreshStates);
+refreshStates(); // blank "Your State" placeholder on load — no state pre-selected
+
+function refreshPhoneLimit(){
+  const iso = dialSel.selectedOptions[0].dataset.iso;
+  const digits = phoneDigits[iso] || 12;
+  phoneInput.setAttribute('maxlength', digits);
+  phoneInput.placeholder = `Phone number (${digits} digits)`;
+}
+dialSel.addEventListener('change', refreshPhoneLimit);
+refreshPhoneLimit();
+phoneInput.addEventListener('input', ()=>{ phoneInput.value = phoneInput.value.replace(/\D/g,''); });
+
+/* ================= WORD LIMIT ================= */
+function limitWords(el){
+  let words = el.value.trim().split(/\s+/).filter(Boolean);
+  if(words.length > 100){
+    el.value = words.slice(0,100).join(' ');
+    words = words.slice(0,100);
+  }
+  document.getElementById('wordCount').textContent = el.value.trim() ? words.length : 0;
+}
+
+/* ================= FILE ATTACH (max 10) ================= */
+function handleFiles(input){
+  const list = document.getElementById('fileList');
+  list.innerHTML = "";
+  if(input.files.length > 10){
+    alert("Please select up to 10 files only. Only the first 10 will be attached.");
+    const dt = new DataTransfer();
+    for(let i=0;i<10;i++) dt.items.add(input.files[i]);
+    input.files = dt.files;
+  }
+  Array.from(input.files).forEach(f=>{
+    const row = document.createElement('div');
+    row.textContent = `• ${f.name} (${(f.size/1024).toFixed(0)} KB)`;
+    list.appendChild(row);
+  });
+}
+
+/* ================= MODAL ================= */
+function openModal(service){
+  document.getElementById('modalTitle').textContent = `Book ${service}`;
+  document.getElementById('formSubject').value = `New Booking — ${service}`;
+  document.getElementById('formService').value = service;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalBg(e){ if(e.target.id === 'modalOverlay') closeModal(); }
+
+/* ================= SMART EMAIL LINK ================= */
+/* Mobile (Android/iOS): mailto: — triggers the device's native mail app chooser
+   (opens the Gmail app directly when it's installed). Desktop: Gmail's own
+   web compose URL, so clicking opens a new Gmail compose tab. */
+(function setupEmailLinks(){
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const address = "anilhotta24@gmail.com";
+  const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${address}`;
+  const mailtoUrl = `mailto:${address}`;
+  ['emailContactLink','emailFooterLink'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(!el) return;
+    if(isMobile){
+      el.href = mailtoUrl;
+    } else {
+      el.href = gmailWebUrl;
+      el.target = "_blank";
+      el.rel = "noopener";
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
