@@ -1194,7 +1194,6 @@ let quoteAuto = setInterval(()=>{ quoteIdx += 1; quoteMoveTrack(true); }, 5500);
 function resetQuoteAuto(){ clearInterval(quoteAuto); quoteAuto = setInterval(()=>{ quoteIdx += 1; quoteMoveTrack(true); }, 5500); }
 window.addEventListener('resize', ()=> quoteMoveTrack(false));
 quoteMoveTrack(false);
-moveTrack(false);
 
 /* ================= COUNTRY / DIAL CODE / STATE DATA ================= */
 const countries = [
