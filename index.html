@@ -140,8 +140,14 @@
     display:inline-flex; align-items:center; gap:10px;
     padding:14px 26px; font-size:14px; font-weight:600; letter-spacing:0.02em;
     border-radius:2px; cursor:pointer; border:1px solid transparent; transition:all .2s ease;
-    font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif; position:relative; overflow:hidden;
   }
+  .btn::after, .book-btn::after{
+    content:""; position:absolute; top:0; left:-120%; width:60%; height:100%;
+    background:linear-gradient(115deg, transparent, rgba(255,255,255,0.35), transparent);
+    transition:left .55s ease;
+  }
+  .btn:hover::after, .book-btn:hover::after{ left:130%; }
   .btn-primary{ background:var(--ink); color:var(--paper); }
   .btn-primary:hover{ background:var(--gold); transform:translateY(-1px); }
   .btn-ghost{ border-color:var(--ink); color:var(--ink); background:transparent; }
@@ -183,11 +189,17 @@
   #about{ background:var(--white); }
   .about-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center; }
   .about-photos{ position:relative; display:flex; justify-content:center; align-items:center; padding:36px; }
+  .about-photo-frame{ position:relative; width:100%; max-width:280px; z-index:2; }
   .about-photo-main{
     border-radius:10px; overflow:hidden; box-shadow:var(--shadow);
-    width:100%; max-width:280px; aspect-ratio:2/3; background:var(--paper-dim); position:relative; z-index:3;
+    width:100%; aspect-ratio:2/3; background:var(--paper-dim); position:relative; z-index:2;
   }
   .about-photo-main img{ width:100%; height:100%; display:block; object-fit:cover; }
+  .about-ring{
+    position:absolute; inset:-22px; z-index:1; border:1px dashed var(--gold-soft); border-radius:26px;
+    animation:spin 34s linear infinite; pointer-events:none;
+  }
+  .about-ring.ring-2{ inset:-40px; border-radius:36px; border-color:rgba(169,126,63,0.3); animation-duration:50s; animation-direction:reverse; }
   .about-orbit{ position:absolute; inset:0; z-index:1; pointer-events:none; }
   .about-orbit .float-icon{
     position:absolute; display:flex; align-items:center; justify-content:center;
@@ -422,10 +434,16 @@
   #learning .eyebrow{ justify-content:center; color:var(--gold-soft); }
   #learning .eyebrow::before{ background:var(--gold-soft); }
   #learning .learning-photo{ display:flex; align-items:center; justify-content:center; height:100%; }
-  #learning .learning-photo img{
-    height:100%; width:auto; aspect-ratio:1/1; object-fit:cover; border-radius:50%;
-    border:3px solid rgba(255,255,255,0.15); filter:grayscale(1) contrast(1.05); max-height:260px;
+  #learning .learning-photo-inner{ position:relative; height:100%; max-height:260px; aspect-ratio:1/1; }
+  #learning .learning-photo-inner img{
+    width:100%; height:100%; object-fit:cover; border-radius:50%; position:relative; z-index:2;
+    border:3px solid rgba(255,255,255,0.15); filter:grayscale(1) contrast(1.05);
   }
+  .learning-ring{
+    position:absolute; inset:-16px; z-index:1; border:1px dashed rgba(217,184,128,0.5); border-radius:50%;
+    animation:spin 38s linear infinite; pointer-events:none;
+  }
+  .learning-ring.ring-2{ inset:-30px; border-color:rgba(217,184,128,0.25); animation-duration:55s; animation-direction:reverse; }
   #learning blockquote{
     font-family:'Fraunces',serif; font-size:clamp(15px,1.5vw,17px); line-height:1.6; font-weight:450; color:var(--paper);
   }
@@ -434,9 +452,28 @@
 
   /* ===== CONTACT ===== */
   #contact{ background:var(--paper); }
-  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .contact-layout{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:start; }
+  .contact-form-card{
+    background:var(--white); border:1px solid var(--line); border-radius:12px; padding:38px 36px;
+    box-shadow:var(--shadow);
+  }
+  .contact-form-card .form-field{ margin-bottom:18px; }
+  .send-btn-wrap{ position:relative; display:inline-block; margin-top:6px; }
+  .send-btn-wrap::before{
+    content:""; position:absolute; inset:-8px; border:1.5px dashed var(--gold-soft); border-radius:999px;
+    opacity:0; transform:scale(0.85); transition:opacity .35s ease, transform .35s ease;
+    animation:spin 12s linear infinite; animation-play-state:paused; pointer-events:none;
+  }
+  .send-btn-wrap:hover::before{ opacity:1; transform:scale(1); animation-play-state:running; }
+  .send-btn{
+    background:var(--ink); color:var(--paper); border:none; padding:14px 34px; border-radius:999px;
+    font-size:14px; font-weight:700; letter-spacing:0.02em; cursor:pointer; position:relative; z-index:1;
+    transition:background .25s ease, transform .2s ease; font-family:'Inter',sans-serif;
+  }
+  .send-btn:hover{ background:var(--gold); transform:translateY(-1px); }
+  .contact-links{ display:flex; flex-direction:column; gap:16px; }
   .contact-card{
-    border:1px solid var(--line); border-radius:8px; padding:34px; background:var(--white);
+    border:1px solid var(--line); border-radius:8px; padding:26px; background:var(--white);
     display:flex; align-items:center; gap:20px; transition:all .2s ease;
   }
   .contact-card:hover{ border-color:var(--gold); transform:translateY(-3px); box-shadow:var(--shadow); }
@@ -507,7 +544,7 @@
   @media (max-width: 980px){
     nav.links{ display:none; }
     .burger{ display:flex; }
-    .hero-grid, .about-grid, .quotes-layout, .contact-grid{ grid-template-columns:1fr; }
+    .hero-grid, .about-grid, .quotes-layout, .contact-layout{ grid-template-columns:1fr; }
     .hero-photo-wrap{ order:-1; margin-bottom:20px; }
     #learning .wrap{ grid-template-columns:1fr !important; text-align:center !important; }
     #learning .eyebrow{ justify-content:center !important; }
@@ -534,6 +571,7 @@
     .about-orbit .fi-3, .about-orbit .fi-5{ left:2%; }
     .about-orbit .fi-2, .about-orbit .fi-4, .about-orbit .fi-6{ right:2%; }
     .seal-ring{ animation:none; }
+    .about-ring, .learning-ring{ animation:none; }
     .nav-cta{ animation:none; }
     .pc-dot-field{ display:none; }
     .pc-bar.profit{ animation:none; }
@@ -541,9 +579,20 @@
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
   }
+
+  /* ===== CURSOR GLOW (mouse/trackpad devices only) ===== */
+  #cursorGlow{
+    position:fixed; top:0; left:0; width:420px; height:420px; margin:-210px 0 0 -210px;
+    border-radius:50%; pointer-events:none; z-index:1;
+    background:radial-gradient(circle, rgba(169,126,63,0.16) 0%, rgba(169,126,63,0.07) 40%, transparent 70%);
+    opacity:0; transition:opacity .4s ease; will-change:transform;
+  }
+  #cursorGlow.on{ opacity:1; }
 </style>
 </head>
 <body>
+
+<div id="cursorGlow"></div>
 
 <!-- ================= NAV ================= -->
 <header id="topnav">
@@ -557,7 +606,7 @@
       <a href="#projects">Projects</a>
       <a href="#quotes">Quotes</a>
       <a href="#learning">My Learnings</a>
-      <a href="#contact" class="nav-cta">Get in touch</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </nav>
     <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -573,7 +622,7 @@
     <a href="#projects">Projects</a>
     <a href="#quotes">Quotes</a>
     <a href="#learning">My Learnings</a>
-    <a href="#contact">Get in touch</a>
+    <a href="#contact">Contact</a>
   </div>
 </div>
 
@@ -622,7 +671,11 @@
         <span class="float-icon fi-5">∑</span>
         <span class="float-icon fi-6">◧</span>
       </div>
-      <div class="about-photo-main"><img src="assets/about-adventure.jpg" alt="Anil Kumar Hotta"></div>
+      <div class="about-photo-frame">
+        <div class="about-ring"></div>
+        <div class="about-ring ring-2"></div>
+        <div class="about-photo-main"><img src="assets/about-adventure.jpg" alt="Anil Kumar Hotta"></div>
+      </div>
     </div>
     <div class="about-text reveal">
       <div class="eyebrow">About</div>
@@ -821,7 +874,11 @@
 <section id="learning">
   <div class="wrap" style="max-width:960px; display:grid; grid-template-columns:0.8fr 1.6fr; gap:48px; align-items:stretch; text-align:left;">
     <div class="reveal learning-photo">
-      <img src="assets/quote-portrait.jpg" alt="Anil Kumar Hotta">
+      <div class="learning-photo-inner">
+        <div class="learning-ring"></div>
+        <div class="learning-ring ring-2"></div>
+        <img src="assets/quote-portrait.jpg" alt="Anil Kumar Hotta">
+      </div>
     </div>
     <div>
       <div class="eyebrow" style="justify-content:flex-start;">My learning from experience</div>
@@ -839,25 +896,51 @@
     <div class="section-head reveal">
       <div class="eyebrow">Contact</div>
       <h2>Let's talk.</h2>
-      <p>Reach out directly, or use the booking form on any service above.</p>
+      <p>Send a message directly, or reach out through any of the links.</p>
     </div>
-    <div class="contact-grid reveal">
-      <a class="contact-card" id="emailContactLink" href="mailto:anilhotta24@gmail.com">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
-        <div><b>Email</b><span>anilhotta24@gmail.com</span></div>
-      </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/anil-kumar-hotta/" target="_blank" rel="noopener">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
-        <div><b>LinkedIn</b><span>linkedin.com/in/anil-kumar-hotta</span></div>
-      </a>
-      <a class="contact-card" href="https://instagram.com/anil.hotta" target="_blank" rel="noopener">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
-        <div><b>Instagram</b><span>@anil.hotta</span></div>
-      </a>
-      <a class="contact-card" href="#services">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
-        <div><b>Book a service</b><span>AI-assisted web dev &amp; graphic design</span></div>
-      </a>
+    <div class="contact-layout reveal">
+      <div class="contact-form-card">
+        <form id="contactForm" action="https://formsubmit.co/anilhotta24@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from anilkumarhotta.vercel.app">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://anilkumarhotta.vercel.app/?contacted=1#contact">
+          <div class="form-field">
+            <label for="c_name">Your name</label>
+            <input type="text" id="c_name" name="Name" required placeholder="Your full name">
+          </div>
+          <div class="form-field">
+            <label for="c_email">Email address</label>
+            <input type="email" id="c_email" name="Email" required placeholder="you@example.com">
+          </div>
+          <div class="form-field">
+            <label for="c_message">Message</label>
+            <textarea id="c_message" name="Message" rows="5" required placeholder="What would you like to talk about?"></textarea>
+          </div>
+          <div class="send-btn-wrap">
+            <button type="submit" class="send-btn">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-links">
+        <a class="contact-card" id="emailContactLink" href="mailto:anilhotta24@gmail.com">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+          <div><b>Email</b><span>anilhotta24@gmail.com</span></div>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/anil-kumar-hotta/" target="_blank" rel="noopener">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <div><b>LinkedIn</b><span>linkedin.com/in/anil-kumar-hotta</span></div>
+        </a>
+        <a class="contact-card" href="https://instagram.com/anil.hotta" target="_blank" rel="noopener">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+          <div><b>Instagram</b><span>@anil.hotta</span></div>
+        </a>
+        <a class="contact-card" href="#services">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+          <div><b>Book a service</b><span>AI-assisted web dev &amp; graphic design</span></div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -935,9 +1018,10 @@
         </div>
 
         <div class="form-field full">
-          <label>Attach files <span style="font-weight:400; color:var(--text-dim);">(up to 10)</span></label>
+          <label>Attach files <span style="font-weight:400; color:var(--text-dim);">(up to 10 · 10MB total)</span></label>
           <div class="file-drop" onclick="document.getElementById('f_files').click()">Click to choose files — up to 10</div>
-          <input type="file" id="f_files" name="Attachments[]" multiple style="display:none" onchange="handleFiles(this)">
+          <input type="file" id="f_files" multiple style="display:none" onchange="handleFiles(this)">
+          <div id="hiddenFileInputs" style="display:none"></div>
           <div class="file-list" id="fileList"></div>
         </div>
       </div>
@@ -951,16 +1035,50 @@
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* ================= BOOKING CONFIRMATION TOAST ================= */
-if(new URLSearchParams(window.location.search).get('booked') === '1'){
+/* ================= CONFIRMATION TOAST (reusable) ================= */
+function showToast(message){
   const toast = document.createElement('div');
-  toast.textContent = "Thanks — your request has been sent. I'll get back to you soon.";
+  toast.textContent = message;
   toast.style.cssText = 'position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#16233f; color:#f8f6f1; padding:14px 22px; border-radius:8px; font-family:Inter,sans-serif; font-size:13.5px; z-index:900; box-shadow:0 14px 34px -12px rgba(0,0,0,0.4); max-width:88vw; text-align:center;';
   document.body.appendChild(toast);
   setTimeout(()=>{ toast.style.transition='opacity .5s ease'; toast.style.opacity='0'; setTimeout(()=>toast.remove(), 500); }, 4500);
-  // clean the URL so refreshing doesn't re-show the toast
+}
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get('booked') === '1'){
+  showToast("Thanks — your request has been sent. I'll get back to you soon.");
   window.history.replaceState({}, '', window.location.pathname + '#contact');
 }
+if(urlParams.get('contacted') === '1'){
+  showToast("Thanks for the message — I'll get back to you soon.");
+  window.history.replaceState({}, '', window.location.pathname + '#contact');
+}
+
+/* ================= CURSOR GLOW (mouse/trackpad devices only) ================= */
+(function cursorGlowInit(){
+  const glow = document.getElementById('cursorGlow');
+  if(!glow) return;
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!canHover || reduceMotion) return;
+
+  let targetX = window.innerWidth/2, targetY = window.innerHeight/2;
+  let curX = targetX, curY = targetY;
+  let active = false;
+
+  window.addEventListener('mousemove', (e)=>{
+    targetX = e.clientX; targetY = e.clientY;
+    if(!active){ active = true; glow.classList.add('on'); }
+  }, {passive:true});
+  document.addEventListener('mouseleave', ()=> glow.classList.remove('on'));
+
+  function loop(){
+    curX += (targetX - curX) * 0.12;
+    curY += (targetY - curY) * 0.12;
+    glow.style.transform = `translate(${curX}px, ${curY}px)`;
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
 
 /* ================= MOBILE NAV ================= */
 const burger = document.getElementById('burgerBtn');
@@ -1307,16 +1425,36 @@ function limitWords(el){
 /* ================= FILE ATTACH (max 10) ================= */
 function handleFiles(input){
   const list = document.getElementById('fileList');
+  const hiddenWrap = document.getElementById('hiddenFileInputs');
   list.innerHTML = "";
-  if(input.files.length > 10){
+  hiddenWrap.innerHTML = "";
+
+  let files = Array.from(input.files);
+  if(files.length > 10){
     alert("Please select up to 10 files only. Only the first 10 will be attached.");
-    const dt = new DataTransfer();
-    for(let i=0;i<10;i++) dt.items.add(input.files[i]);
-    input.files = dt.files;
+    files = files.slice(0, 10);
   }
-  Array.from(input.files).forEach(f=>{
+
+  const totalBytes = files.reduce((sum,f)=> sum + f.size, 0);
+  if(totalBytes > 10 * 1024 * 1024){
+    alert("Total attachment size is over 10MB — the email service can't deliver files larger than that combined. Please remove or compress a file and reselect.");
+  }
+
+  // FormSubmit only reliably attaches files that arrive as separate, uniquely-named
+  // file input fields — not several files bundled into one multi-file field. So each
+  // picked file gets its own hidden <input type="file"> built via DataTransfer.
+  files.forEach((file, i)=>{
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    const hiddenInput = document.createElement('input');
+    hiddenInput.type = 'file';
+    hiddenInput.name = `Attachment ${i + 1}`;
+    hiddenInput.style.display = 'none';
+    hiddenInput.files = dt.files;
+    hiddenWrap.appendChild(hiddenInput);
+
     const row = document.createElement('div');
-    row.textContent = `• ${f.name} (${(f.size/1024).toFixed(0)} KB)`;
+    row.textContent = `• ${file.name} (${(file.size/1024).toFixed(0)} KB)`;
     list.appendChild(row);
   });
 }
@@ -1335,6 +1473,8 @@ function resetBookingForm(){
   // clear file list preview
   const fileList = document.getElementById('fileList');
   if(fileList) fileList.innerHTML = '';
+  const hiddenFileInputs = document.getElementById('hiddenFileInputs');
+  if(hiddenFileInputs) hiddenFileInputs.innerHTML = '';
   // reset word counter
   const wordCount = document.getElementById('wordCount');
   if(wordCount) wordCount.textContent = '0';
