@@ -327,9 +327,8 @@
   .book-btn{
     background:var(--gold); color:var(--ink); border:none; padding:13px 24px;
     font-weight:700; font-size:13.5px; letter-spacing:0.02em; border-radius:2px; cursor:pointer;
-    font-family:'Inter',sans-serif; transition:all .2s ease;
+    font-family:'Inter',sans-serif; position:relative; overflow:hidden;
   }
-  .book-btn:hover{ background:var(--gold-soft); transform:translateY(-1px); }
   .service-quality{
     margin-top:44px; padding-top:34px; border-top:1px solid rgba(255,255,255,0.14);
     max-width:760px;
@@ -643,7 +642,7 @@
       <div class="hero-stats">
         <div class="stat"><b>80+</b><span>WPM Typing</span></div>
         <div class="stat"><b>Top 5%</b><span>World Typists</span></div>
-        <div class="stat"><b>4</b><span>Certifications</span></div>
+        <div class="stat"><b id="certCount">13</b><span>Certifications</span></div>
       </div>
     </div>
   </div>
@@ -1260,6 +1259,8 @@ const certs = [
   }
 ];
 const CN = certs.length;
+const certCountEl = document.getElementById('certCount');
+if(certCountEl) certCountEl.textContent = CN;
 const CV = 1; // one clone each side — only one slide visible at a time
 const certTrackData = [...certs.slice(-CV), ...certs, ...certs.slice(0, CV)];
 const certTrack = document.getElementById('certTrack');
