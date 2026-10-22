@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anil Kumar Hotta — CA Intermediate · AI-Assisted Web Developer · Graphic Designer</title>
-<meta name="description" content="Anil Kumar Hotta — CA Intermediate, AI-assisted web developer and graphic designer. Finance, AI & geopolitics enthusiast.">
+<title>Anil Kumar Hotta — CA Intermediate · Finance, AI &amp; Geopolitics Enthusiast</title>
+<meta name="description" content="Anil Kumar Hotta — CA Intermediate and B.Com (Hons) graduate from Brahmapur, Odisha. Finance, AI & geopolitics enthusiast.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,560;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -139,12 +139,12 @@
     border-radius:2px; cursor:pointer; border:1px solid transparent; transition:all .2s ease;
     font-family:'Inter',sans-serif; position:relative; overflow:hidden;
   }
-  .btn::after, .book-btn::after{
+  .btn::after{
     content:""; position:absolute; top:0; left:-120%; width:60%; height:100%;
     background:linear-gradient(115deg, transparent, rgba(255,255,255,0.35), transparent);
     transition:left .55s ease;
   }
-  .btn:hover::after, .book-btn:hover::after{ left:130%; }
+  .btn:hover::after{ left:130%; }
   .btn-primary{ background:var(--ink); color:var(--paper); }
   .btn-primary:hover{ background:var(--gold); transform:translateY(-1px); }
   .btn-ghost{ border-color:var(--ink); color:var(--ink); background:transparent; }
@@ -304,37 +304,6 @@
     line-height:1; background:none; border:none;
   }
 
-  /* ===== SERVICES ===== */
-  #services{ background:var(--ink); color:var(--paper); }
-  #services .section-head p{ color:#b7c0d6; }
-  #services .eyebrow{ color:var(--gold-soft); }
-  #services .eyebrow::before{ background:var(--gold-soft); }
-  #services h2{ color:var(--paper); }
-  .service-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
-  .service-card{
-    background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.12);
-    border-radius:8px; padding:38px; position:relative; overflow:hidden;
-    transition:border-color .25s ease, background .25s ease;
-  }
-  .service-card:hover{ border-color:var(--gold-soft); background:rgba(255,255,255,0.05); }
-  .service-num{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gold-soft); letter-spacing:0.1em; margin-bottom:22px; display:block; }
-  .service-card h3{ color:var(--paper); font-size:24px; margin-bottom:14px; }
-  .service-card p{ color:#b7c0d6; font-size:14.5px; margin-bottom:26px; }
-  .service-list{ list-style:none; margin-bottom:30px; }
-  .service-list li{ font-size:13.5px; color:#d7dcea; padding:7px 0; border-top:1px solid rgba(255,255,255,0.08); }
-  .service-list li:first-child{ border-top:none; }
-  .service-list li::before{ content:"— "; color:var(--gold-soft); }
-  .book-btn{
-    background:var(--gold); color:var(--ink); border:none; padding:13px 24px;
-    font-weight:700; font-size:13.5px; letter-spacing:0.02em; border-radius:2px; cursor:pointer;
-    font-family:'Inter',sans-serif; position:relative; overflow:hidden;
-  }
-  .service-quality{
-    margin-top:44px; padding-top:34px; border-top:1px solid rgba(255,255,255,0.14);
-    max-width:760px;
-  }
-  .service-quality p{ color:#c7cee0; font-size:15px; font-style:italic; line-height:1.7; }
-
   /* ===== PROJECTS ===== */
   #projects{ background:var(--paper); overflow:hidden; }
   .project-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; }
@@ -490,46 +459,14 @@
   footer .foot-links a:hover{ color:var(--gold-soft); }
   footer small{ display:block; margin-top:18px; font-size:11.5px; color:#5c6580; }
 
-  /* ===== MODAL / FORM ===== */
-  .modal-overlay{
-    position:fixed; inset:0; background:rgba(22,34,63,0.6); backdrop-filter:blur(3px);
-    z-index:600; display:none; align-items:flex-start; justify-content:center; padding:50px 20px; overflow-y:auto;
-  }
-  .modal-overlay.open{ display:flex; }
-  .modal-box{
-    background:var(--white); max-width:640px; width:100%; border-radius:8px; padding:40px 42px 44px;
-    box-shadow:0 30px 80px rgba(0,0,0,0.4); position:relative; margin-bottom:40px;
-  }
-  .modal-close{
-    position:absolute; top:20px; right:22px; background:none; border:none; font-size:26px; cursor:pointer; color:var(--text-dim);
-  }
-  .modal-box h3{ font-size:24px; margin-bottom:6px; }
-  .modal-sub{ color:var(--text-dim); font-size:13.5px; margin-bottom:28px; }
-  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px 18px; }
+  /* ===== FORM FIELDS ===== */
   .form-field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
-  .form-field.full{ grid-column:1 / -1; }
   .form-field label{ font-size:12px; font-weight:600; color:var(--ink-soft); letter-spacing:0.02em; }
   .form-field input, .form-field select, .form-field textarea{
     border:1px solid var(--line); border-radius:4px; padding:11px 13px; font-size:14px; font-family:'Inter',sans-serif;
     background:var(--paper); color:var(--text); outline:none; transition:border-color .2s;
   }
   .form-field input:focus, .form-field select:focus, .form-field textarea:focus{ border-color:var(--gold); }
-  .phone-row{ display:flex; gap:8px; }
-  .phone-row select{ flex:0 0 118px; }
-  .phone-row input{ flex:1; }
-  .char-count{ font-size:11px; color:var(--text-dim); text-align:right; margin-top:4px; }
-  .file-drop{
-    border:1.5px dashed var(--line); border-radius:6px; padding:20px; text-align:center; cursor:pointer;
-    font-size:13px; color:var(--text-dim); background:var(--paper); transition:border-color .2s;
-  }
-  .file-drop:hover{ border-color:var(--gold); }
-  .file-list{ margin-top:10px; font-size:12px; color:var(--ink-soft); display:flex; flex-direction:column; gap:4px; }
-  .form-submit{
-    margin-top:10px; width:100%; background:var(--ink); color:var(--paper); border:none; padding:15px;
-    font-size:14.5px; font-weight:700; letter-spacing:0.02em; border-radius:4px; cursor:pointer; transition:background .2s;
-  }
-  .form-submit:hover{ background:var(--gold); }
-  .form-note{ font-size:11.5px; color:var(--text-dim); margin-top:12px; text-align:center; }
   .hidden{ display:none !important; }
 
   /* ===== SCROLL REVEAL ===== */
@@ -544,14 +481,10 @@
     .hero-photo-wrap{ order:-1; margin-bottom:20px; }
     #learning .wrap{ grid-template-columns:1fr !important; text-align:center !important; }
     #learning .eyebrow{ justify-content:center !important; }
-    .form-grid{ grid-template-columns:1fr; }
-    .phone-row{ flex-direction:column; }
-    .phone-row select{ flex:1; }
   }
   @media (max-width: 620px){
     .wrap{ padding:0 20px; }
     section{ padding:64px 0; }
-    .service-grid{ grid-template-columns:1fr; }
     .hero-photo-wrap{ padding-bottom:0; flex-direction:column; align-items:center; }
     .hero-stats{
       position:static; transform:none; margin:20px auto 0;
@@ -592,7 +525,6 @@
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#certs">Certifications</a>
-      <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#quotes">Quotes</a>
       <a href="#learning">My Learnings</a>
@@ -608,7 +540,6 @@
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#certs">Certifications</a>
-    <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#quotes">Quotes</a>
     <a href="#learning">My Learnings</a>
@@ -623,25 +554,23 @@
       <div class="hero-eyebrow">CA Intermediate · Brahmapur, Odisha, India</div>
       <h1>Anil Kumar Hotta</h1>
       <div class="typewriter-line"><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
-      <p class="hero-sub">Finance, AI &amp; geopolitics enthusiast building precise, dependable work at the intersection of numbers and design — from ledgers to layouts, code to certificates.</p>
+      <p class="hero-sub">Finance, AI &amp; geopolitics enthusiast pursuing Chartered Accountancy — with a focus on precision, accuracy and dependable work, from ledgers to audit files.</p>
       <div class="hero-ctas">
-        <a href="#services" class="btn btn-primary">View services</a>
+        <a href="#projects" class="btn btn-primary">View projects</a>
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
       <div class="role-strip">
         <span class="role-chip">CA Intermediate</span>
-        <span class="role-chip">AI-Assisted Web Developer</span>
-        <span class="role-chip">Graphic Designer</span>
-        <span class="role-chip">Touch Typist · 80+ WPM</span>
-        <span class="role-chip">Finance &amp; Geopolitics</span>
+        <span class="role-chip">B.Com (Hons) Graduate</span>
+        <span class="role-chip">Finance, AI &amp; Geopolitics Enthusiast</span>
       </div>
     </div>
     <div class="hero-photo-wrap">
       <div class="seal-ring"></div>
       <div class="hero-photo"><img src="assets/hero-professional.jpg" alt="Anil Kumar Hotta"></div>
       <div class="hero-stats">
-        <div class="stat"><b>80+</b><span>WPM Typing</span></div>
-        <div class="stat"><b>Top 5%</b><span>World Typists</span></div>
+        <div class="stat"><b>8.63</b><span>B.Com CGPA</span></div>
+        <div class="stat"><b>~92%</b><span>Board Exams</span></div>
         <div class="stat"><b id="certCount">13</b><span>Certifications</span></div>
       </div>
     </div>
@@ -655,11 +584,11 @@
     <div class="about-photos reveal">
       <div class="about-orbit">
         <span class="float-icon fi-1">₹</span>
-        <span class="float-icon fi-2">&lt;/&gt;</span>
+        <span class="float-icon fi-2">⚖</span>
         <span class="float-icon fi-3">%</span>
-        <span class="float-icon fi-4">✎</span>
+        <span class="float-icon fi-4">$</span>
         <span class="float-icon fi-5">∑</span>
-        <span class="float-icon fi-6">◧</span>
+        <span class="float-icon fi-6">✓</span>
       </div>
       <div class="about-photo-frame">
         <div class="about-ring"></div>
@@ -669,10 +598,10 @@
     </div>
     <div class="about-text reveal">
       <div class="eyebrow">About</div>
-      <h2 style="font-size:clamp(26px,3.4vw,36px); margin-bottom:22px;">Numbers by training, design and code by curiosity.</h2>
+      <h2 style="font-size:clamp(26px,3.4vw,36px); margin-bottom:22px;">Numbers by training, curiosity by nature.</h2>
       <p>I'm <strong>Anil Kumar Hotta</strong> — a <strong>CA Intermediate</strong> student pursuing Chartered Accountancy under the Institute of Chartered Accountants of India (ICAI). I've also graduated with a Bachelor of Commerce (Hons) from Khallikote Unitary University, Brahmapur.</p>
-      <p>Outside the ledger, I work as an <strong>AI-assisted web developer</strong> and <strong>graphic designer</strong>, and I follow finance, artificial intelligence and geopolitics closely — I like understanding how systems, markets and technology actually move.</p>
-      <p>Mathematics has been a constant thread through my life — from winning school-level scholarship exams like PMSTS to applying that same analytical discipline to accounting, taxation, audit and financial management today. I also hold a certified typing speed of <strong>80+ WPM</strong>, placing me in the top 5% of typists worldwide.</p>
+      <p>Alongside my studies, I follow <strong>finance, artificial intelligence and geopolitics</strong> closely — I like understanding how systems, markets and technology actually move.</p>
+      <p>Mathematics has been a constant thread through my life — from winning school-level scholarship exams like PMSTS to applying that same analytical discipline to accounting, taxation, audit and financial management today.</p>
       <div class="precision-box">
         <p>"The process is always in our hands; the result never fully is. Yet the world remembers results, not excuses."</p>
       </div>
@@ -746,44 +675,6 @@
   <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
   <img id="lightboxImg" src="" alt="Certificate preview">
 </div>
-
-<!-- ================= SERVICES ================= -->
-<section id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Services</div>
-      <h2>What I can build for you.</h2>
-      <p>Two things I do well — pick one, tell me what you need, and I'll take it from there.</p>
-    </div>
-    <div class="service-grid reveal">
-      <div class="service-card">
-        <h3>AI-Assisted Web Development</h3>
-        <p>Clean, functional, professional websites built with modern AI-assisted workflows — fast to deliver, easy to maintain.</p>
-        <ul class="service-list">
-          <li>Personal &amp; business websites</li>
-          <li>Landing pages &amp; portfolios</li>
-          <li>Forms, dashboards &amp; small tools</li>
-          <li>GitHub &amp; Vercel deployment guidance</li>
-        </ul>
-        <button class="book-btn" onclick="openModal('Web Development')">Book this service</button>
-      </div>
-      <div class="service-card">
-        <h3>Graphic Designing</h3>
-        <p>Sharp, on-brand visuals — designed with an eye for detail and finished the way it was meant to look, every time.</p>
-        <ul class="service-list">
-          <li>Logos &amp; brand identity</li>
-          <li>Social media creatives</li>
-          <li>Certificates, posters &amp; presentations</li>
-          <li>Business cards &amp; stationery</li>
-        </ul>
-        <button class="book-btn" onclick="openModal('Graphic Designing')">Book this service</button>
-      </div>
-    </div>
-    <div class="service-quality reveal">
-      <p>Every project I take on is handled with the same discipline I bring to a balance sheet — precision in the detail, accuracy in the execution, and a finished result that holds up under scrutiny. No shortcuts, no half-finished edges — just work that's checked, rechecked, and delivered the way it was promised.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ================= PROJECTS ================= -->
 <section id="projects">
@@ -926,10 +817,6 @@
           <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
           <div><b>Instagram</b><span>@anil.hotta</span></div>
         </a>
-        <a class="contact-card" href="#services">
-          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
-          <div><b>Book a service</b><span>AI-assisted web dev &amp; graphic design</span></div>
-        </a>
       </div>
     </div>
   </div>
@@ -948,80 +835,6 @@
   <div class="wrap"><small>&copy; <span id="year"></span> Anil Kumar Hotta. All rights reserved.</small></div>
 </footer>
 
-<!-- ================= BOOKING MODAL ================= -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalBg(event)">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h3 id="modalTitle">Book a Service</h3>
-    <p class="modal-sub">Fill in your details below — this sends straight to my inbox and I'll get back to you shortly.</p>
-
-    <form id="bookingForm" action="https://formsubmit.co/anilhotta24@gmail.com" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" id="formSubject" value="New Service Booking">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://anilkumarhotta.vercel.app/?booked=1#contact">
-      <input type="hidden" name="Service" id="formService" value="">
-
-      <div class="form-grid">
-        <div class="form-field full">
-          <label for="f_name">Full name</label>
-          <input type="text" id="f_name" name="Name" required placeholder="Your full name">
-        </div>
-
-        <div class="form-field full">
-          <label for="f_email">Email address</label>
-          <input type="email" id="f_email" name="Email" required placeholder="you@example.com">
-        </div>
-
-        <div class="form-field full">
-          <label for="f_phone">Phone number</label>
-          <div class="phone-row">
-            <select id="f_dialcode" name="Dial Code"></select>
-            <input type="tel" id="f_phone" name="Phone Number" required placeholder="Phone number" inputmode="numeric">
-          </div>
-        </div>
-
-        <div class="form-field">
-          <label for="f_country">Country</label>
-          <select id="f_country" name="Country" required></select>
-        </div>
-
-        <div class="form-field" id="stateFieldWrap">
-          <label for="f_state">State / Province</label>
-          <select id="f_state" name="State"></select>
-        </div>
-
-        <div class="form-field full">
-          <label for="f_city">City</label>
-          <input type="text" id="f_city" name="City" required placeholder="Your city">
-        </div>
-
-        <div class="form-field full">
-          <label for="f_address">Address</label>
-          <input type="text" id="f_address" name="Address" required placeholder="Street address">
-        </div>
-
-        <div class="form-field full">
-          <label for="f_req">Your requirement <span style="font-weight:400; color:var(--text-dim);">(max 100 words)</span></label>
-          <textarea id="f_req" name="Requirement" rows="4" required placeholder="Briefly describe what you need..." oninput="limitWords(this)"></textarea>
-          <div class="char-count"><span id="wordCount">0</span> / 100 words</div>
-        </div>
-
-        <div class="form-field full">
-          <label>Attach files <span style="font-weight:400; color:var(--text-dim);">(up to 10 · 10MB total)</span></label>
-          <div class="file-drop" onclick="document.getElementById('f_files').click()">Click to choose files — up to 10</div>
-          <input type="file" id="f_files" multiple style="display:none" onchange="handleFiles(this)">
-          <div id="hiddenFileInputs" style="display:none"></div>
-          <div class="file-list" id="fileList"></div>
-        </div>
-      </div>
-
-      <button type="submit" class="form-submit">Book service</button>
-      <p class="form-note">On first submission, FormSubmit will send a one-time confirmation link to anilhotta24@gmail.com — click it once to activate delivery for this form.</p>
-    </form>
-  </div>
-</div>
-
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1034,10 +847,6 @@ function showToast(message){
   setTimeout(()=>{ toast.style.transition='opacity .5s ease'; toast.style.opacity='0'; setTimeout(()=>toast.remove(), 500); }, 4500);
 }
 const urlParams = new URLSearchParams(window.location.search);
-if(urlParams.get('booked') === '1'){
-  showToast("Thanks — your request has been sent. I'll get back to you soon.");
-  window.history.replaceState({}, '', window.location.pathname + '#contact');
-}
 if(urlParams.get('contacted') === '1'){
   showToast("Thanks for the message — I'll get back to you soon.");
   window.history.replaceState({}, '', window.location.pathname + '#contact');
@@ -1081,10 +890,7 @@ mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
 /* ================= TYPEWRITER ================= */
 const roles = [
   "CA Intermediate — ICAI",
-  "AI-Assisted Web Developer",
-  "Graphic Designer",
-  "Finance, AI & Geopolitics Enthusiast",
-  "Touch Typist — 80+ WPM"
+  "Finance, AI & Geopolitics Enthusiast"
 ];
 const twEl = document.getElementById('typewriter');
 let rIdx = 0, cIdx = 0, deleting = false;
@@ -1177,21 +983,21 @@ const certs = [
     kicker: "ICAI · Information Technology",
     title: "ICITSS — Information Technology",
     img: "assets/cert-icitss-itt.jpg",
-    about: "Through this course, I got to learn Microsoft Excel, Microsoft Word, and Microsoft Access in depth, along with Generative AI tools, Tally Prime, CaseWare IDEA, and Zoho. These are tools I now use regularly, both in my CA work and in my freelance projects.",
+    about: "Through this course, I got to learn Microsoft Excel, Microsoft Word, and Microsoft Access in depth, along with Generative AI tools, Tally Prime, CaseWare IDEA, and Zoho. These are tools I now use regularly in my CA studies and work.",
     issuer: "The Institute of Chartered Accountants of India — Bhubaneswar Branch"
   },
   {
     kicker: "be10x · AI Tools Workshop",
     title: "AI Tools & ChatGPT Workshop",
     img: "assets/cert-b10x.jpg",
-    about: "In this workshop, I got to learn how to use various AI tools for different purposes, along with the fundamentals of prompt engineering. It shaped how I now use AI to build presentations, analyse data, and write and debug code faster.",
+    about: "In this workshop, I got to learn how to use various AI tools for different purposes, along with the fundamentals of prompt engineering. It shaped how I now use AI to build presentations and analyse data faster.",
     issuer: "be10x"
   },
   {
     kicker: "Canva Design School",
     title: "Graphic Design Essentials",
     img: "assets/cert-canva.jpg",
-    about: "In this course, I got to learn the essentials and basics of graphic design, along with how to use the various design tools within Canva. It laid the foundation for the design work I now take on for clients.",
+    about: "In this course, I got to learn the essentials and basics of graphic design, along with how to use the various design tools within Canva. It gave me a good understanding of visual communication.",
     issuer: "Canva Design School · March 2025"
   },
   {
@@ -1367,189 +1173,6 @@ let quoteAuto = setInterval(()=>{ quoteIdx += 1; quoteMoveTrack(true); }, 5500);
 function resetQuoteAuto(){ clearInterval(quoteAuto); quoteAuto = setInterval(()=>{ quoteIdx += 1; quoteMoveTrack(true); }, 5500); }
 window.addEventListener('resize', ()=> quoteMoveTrack(false));
 quoteMoveTrack(false);
-
-/* ================= COUNTRY / DIAL CODE / STATE DATA ================= */
-const countries = [
-["Afghanistan","AF","93"],["Albania","AL","355"],["Algeria","DZ","213"],["Argentina","AR","54"],
-["Armenia","AM","374"],["Australia","AU","61"],["Austria","AT","43"],["Azerbaijan","AZ","994"],
-["Bahrain","BH","973"],["Bangladesh","BD","880"],["Belarus","BY","375"],["Belgium","BE","32"],
-["Bhutan","BT","975"],["Bolivia","BO","591"],["Bosnia and Herzegovina","BA","387"],["Brazil","BR","55"],
-["Brunei","BN","673"],["Bulgaria","BG","359"],["Cambodia","KH","855"],["Cameroon","CM","237"],
-["Canada","CA","1"],["Chile","CL","56"],["China","CN","86"],["Colombia","CO","57"],
-["Costa Rica","CR","506"],["Croatia","HR","385"],["Cuba","CU","53"],["Cyprus","CY","357"],
-["Czech Republic","CZ","420"],["Denmark","DK","45"],["Ecuador","EC","593"],["Egypt","EG","20"],
-["Estonia","EE","372"],["Ethiopia","ET","251"],["Finland","FI","358"],["France","FR","33"],
-["Georgia","GE","995"],["Germany","DE","49"],["Ghana","GH","233"],["Greece","GR","30"],
-["Hong Kong","HK","852"],["Hungary","HU","36"],["Iceland","IS","354"],["India","IN","91"],
-["Indonesia","ID","62"],["Iran","IR","98"],["Iraq","IQ","964"],["Ireland","IE","353"],
-["Israel","IL","972"],["Italy","IT","39"],["Japan","JP","81"],["Jordan","JO","962"],
-["Kazakhstan","KZ","7"],["Kenya","KE","254"],["Kuwait","KW","965"],["Kyrgyzstan","KG","996"],
-["Laos","LA","856"],["Latvia","LV","371"],["Lebanon","LB","961"],["Lithuania","LT","370"],
-["Luxembourg","LU","352"],["Malaysia","MY","60"],["Maldives","MV","960"],["Malta","MT","356"],
-["Mauritius","MU","230"],["Mexico","MX","52"],["Moldova","MD","373"],["Mongolia","MN","976"],
-["Morocco","MA","212"],["Myanmar","MM","95"],["Nepal","NP","977"],["Netherlands","NL","31"],
-["New Zealand","NZ","64"],["Nigeria","NG","234"],["North Macedonia","MK","389"],["Norway","NO","47"],
-["Oman","OM","968"],["Pakistan","PK","92"],["Panama","PA","507"],["Paraguay","PY","595"],
-["Peru","PE","51"],["Philippines","PH","63"],["Poland","PL","48"],["Portugal","PT","351"],
-["Qatar","QA","974"],["Romania","RO","40"],["Russia","RU","7"],["Rwanda","RW","250"],
-["Saudi Arabia","SA","966"],["Serbia","RS","381"],["Singapore","SG","65"],["Slovakia","SK","421"],
-["Slovenia","SI","386"],["South Africa","ZA","27"],["South Korea","KR","82"],["Spain","ES","34"],
-["Sri Lanka","LK","94"],["Sudan","SD","249"],["Sweden","SE","46"],["Switzerland","CH","41"],
-["Taiwan","TW","886"],["Tanzania","TZ","255"],["Thailand","TH","66"],["Tunisia","TN","216"],
-["Turkey","TR","90"],["Uganda","UG","256"],["Ukraine","UA","380"],["United Arab Emirates","AE","971"],
-["United Kingdom","GB","44"],["United States","US","1"],["Uruguay","UY","598"],["Uzbekistan","UZ","998"],
-["Vietnam","VN","84"],["Yemen","YE","967"],["Zambia","ZM","260"],["Zimbabwe","ZW","263"]
-];
-
-const statesByCountry = {
-  "IN": ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry"],
-  "US": ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming","District of Columbia"],
-  "CA": ["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Nova Scotia","Ontario","Prince Edward Island","Quebec","Saskatchewan","Northwest Territories","Nunavut","Yukon"],
-  "AU": ["New South Wales","Queensland","South Australia","Tasmania","Victoria","Western Australia","Australian Capital Territory","Northern Territory"],
-  "GB": ["England","Scotland","Wales","Northern Ireland"],
-  "AE": ["Abu Dhabi","Dubai","Sharjah","Ajman","Umm Al Quwain","Ras Al Khaimah","Fujairah"],
-  "PK": ["Punjab","Sindh","Khyber Pakhtunkhwa","Balochistan","Gilgit-Baltistan","Islamabad Capital Territory","Azad Kashmir"],
-  "BD": ["Barisal","Chittagong","Dhaka","Khulna","Mymensingh","Rajshahi","Rangpur","Sylhet"],
-  "NP": ["Koshi","Madhesh","Bagmati","Gandaki","Lumbini","Karnali","Sudurpashchim"],
-  "DE": ["Baden-Württemberg","Bavaria","Berlin","Brandenburg","Bremen","Hamburg","Hesse","Lower Saxony","Mecklenburg-Vorpommern","North Rhine-Westphalia","Rhineland-Palatinate","Saarland","Saxony","Saxony-Anhalt","Schleswig-Holstein","Thuringia"],
-  "BR": ["Acre","Alagoas","Amapá","Amazonas","Bahia","Ceará","Distrito Federal","Espírito Santo","Goiás","Maranhão","Mato Grosso","Mato Grosso do Sul","Minas Gerais","Pará","Paraíba","Paraná","Pernambuco","Piauí","Rio de Janeiro","Rio Grande do Norte","Rio Grande do Sul","Rondônia","Roraima","Santa Catarina","São Paulo","Sergipe","Tocantins"],
-  "ZA": ["Eastern Cape","Free State","Gauteng","KwaZulu-Natal","Limpopo","Mpumalanga","Northern Cape","North West","Western Cape"],
-  "NG": ["Abuja FCT","Lagos","Kano","Rivers","Oyo","Kaduna","Ogun","Enugu","Delta","Edo"],
-  "MY": ["Johor","Kedah","Kelantan","Kuala Lumpur","Malacca","Negeri Sembilan","Pahang","Penang","Perak","Perlis","Sabah","Sarawak","Selangor","Terengganu"]
-};
-
-/* Approx local phone number length (digits) for restricting input */
-const phoneDigits = {"IN":10,"US":10,"CA":10,"GB":10,"AU":9,"AE":9,"PK":10,"BD":10,"NP":10,"DE":11,"BR":11,"ZA":9,"NG":10,"MY":9,"SG":8,"CN":11,"JP":10,"FR":9,"IT":10,"ES":9,"RU":10,"SA":9,"QA":8,"KW":8,"OM":8,"BH":8,"NZ":9,"LK":9,"MM":9,"KH":9,"TH":9,"VN":10,"PH":10,"ID":11,"KR":10,"HK":8,"TW":9};
-
-const dialSel = document.getElementById('f_dialcode');
-const countrySel = document.getElementById('f_country');
-const stateSel = document.getElementById('f_state');
-const stateWrap = document.getElementById('stateFieldWrap');
-const phoneInput = document.getElementById('f_phone');
-
-countries.forEach(([name, iso, dial])=>{
-  const opt1 = document.createElement('option');
-  opt1.value = dial; opt1.dataset.iso = iso;
-  opt1.textContent = `+${dial} (${iso})`;
-  dialSel.appendChild(opt1);
-
-  const opt2 = document.createElement('option');
-  opt2.value = iso; opt2.textContent = name;
-  countrySel.appendChild(opt2);
-});
-/* default: India, as the site owner is India-based */
-dialSel.value = "91";
-countrySel.value = "IN";
-
-function refreshStates(){
-  const iso = countrySel.value;
-  const list = statesByCountry[iso];
-  const currentEl = document.getElementById('f_state'); // always re-query: outerHTML swaps create a new node each time
-  if(list && list.length){
-    let html = '<select id="f_state" name="State" required><option value="" disabled selected>Your State</option>';
-    list.forEach(s=>{ html += `<option value="${s}">${s}</option>`; });
-    html += '</select>';
-    currentEl.outerHTML = html;
-  } else {
-    currentEl.outerHTML = '<input type="text" id="f_state" name="State" required placeholder="Your State" value="">';
-  }
-}
-countrySel.addEventListener('change', refreshStates);
-refreshStates(); // blank "Your State" placeholder on load — no state pre-selected
-
-function refreshPhoneLimit(){
-  const iso = dialSel.selectedOptions[0].dataset.iso;
-  const digits = phoneDigits[iso] || 12;
-  phoneInput.setAttribute('maxlength', digits);
-  phoneInput.placeholder = `Phone number (${digits} digits)`;
-}
-dialSel.addEventListener('change', refreshPhoneLimit);
-refreshPhoneLimit();
-phoneInput.addEventListener('input', ()=>{ phoneInput.value = phoneInput.value.replace(/\D/g,''); });
-
-/* ================= WORD LIMIT ================= */
-function limitWords(el){
-  let words = el.value.trim().split(/\s+/).filter(Boolean);
-  if(words.length > 100){
-    el.value = words.slice(0,100).join(' ');
-    words = words.slice(0,100);
-  }
-  document.getElementById('wordCount').textContent = el.value.trim() ? words.length : 0;
-}
-
-/* ================= FILE ATTACH (max 10) ================= */
-function handleFiles(input){
-  const list = document.getElementById('fileList');
-  const hiddenWrap = document.getElementById('hiddenFileInputs');
-  list.innerHTML = "";
-  hiddenWrap.innerHTML = "";
-
-  let files = Array.from(input.files);
-  if(files.length > 10){
-    alert("Please select up to 10 files only. Only the first 10 will be attached.");
-    files = files.slice(0, 10);
-  }
-
-  const totalBytes = files.reduce((sum,f)=> sum + f.size, 0);
-  if(totalBytes > 10 * 1024 * 1024){
-    alert("Total attachment size is over 10MB — the email service can't deliver files larger than that combined. Please remove or compress a file and reselect.");
-  }
-
-  // FormSubmit only reliably attaches files that arrive as separate, uniquely-named
-  // file input fields — not several files bundled into one multi-file field. So each
-  // picked file gets its own hidden <input type="file"> built via DataTransfer.
-  files.forEach((file, i)=>{
-    const dt = new DataTransfer();
-    dt.items.add(file);
-    const hiddenInput = document.createElement('input');
-    hiddenInput.type = 'file';
-    hiddenInput.name = `Attachment ${i + 1}`;
-    hiddenInput.style.display = 'none';
-    hiddenInput.files = dt.files;
-    hiddenWrap.appendChild(hiddenInput);
-
-    const row = document.createElement('div');
-    row.textContent = `• ${file.name} (${(file.size/1024).toFixed(0)} KB)`;
-    list.appendChild(row);
-  });
-}
-
-/* ================= MODAL ================= */
-function openModal(service){
-  document.getElementById('modalTitle').textContent = `Book ${service}`;
-  document.getElementById('formSubject').value = `New Booking — ${service}`;
-  document.getElementById('formService').value = service;
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function resetBookingForm(){
-  const form = document.getElementById('bookingForm');
-  if(form) form.reset();
-  // clear file list preview
-  const fileList = document.getElementById('fileList');
-  if(fileList) fileList.innerHTML = '';
-  const hiddenFileInputs = document.getElementById('hiddenFileInputs');
-  if(hiddenFileInputs) hiddenFileInputs.innerHTML = '';
-  // reset word counter
-  const wordCount = document.getElementById('wordCount');
-  if(wordCount) wordCount.textContent = '0';
-  // reset dial code + country back to India default, and state back to blank placeholder
-  if(dialSel) dialSel.value = '91';
-  if(countrySel) countrySel.value = 'IN';
-  refreshStates();
-  refreshPhoneLimit();
-}
-function closeModal(){
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-  resetBookingForm();
-}
-function closeModalBg(e){ if(e.target.id === 'modalOverlay') closeModal(); }
-document.addEventListener('keydown', (e)=>{
-  if(e.key === 'Escape' && document.getElementById('modalOverlay').classList.contains('open')){
-    closeModal();
-  }
-});
 
 /* ================= SMART EMAIL LINK ================= */
 /* Mobile (Android/iOS): mailto: — triggers the device's native mail app chooser
