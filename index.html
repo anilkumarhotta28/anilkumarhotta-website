@@ -271,8 +271,8 @@
   .cert-copy h3{ font-size:23px; margin-bottom:14px; }
   .cert-copy p{ font-size:14.5px; color:var(--text-dim); line-height:1.7; margin-bottom:16px; }
   .cert-copy .cert-issuer{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-soft); }
-  .cert-image{ border-radius:8px; overflow:hidden; box-shadow:var(--shadow); cursor:pointer; border:1px solid var(--line); aspect-ratio:3/2; }
-  .cert-image img{ width:100%; height:100%; display:block; object-fit:cover; transition:transform .4s ease; }
+  .cert-image{ border-radius:8px; overflow:hidden; box-shadow:var(--shadow); cursor:pointer; border:1px solid var(--line); aspect-ratio:1.414/1; background:#fff; }
+  .cert-image img{ width:100%; height:100%; display:block; object-fit:contain; transition:transform .4s ease; }
   .cert-image:hover img{ transform:scale(1.03); }
   .cert-arrow{
     position:absolute; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer;
@@ -561,17 +561,11 @@
     }
     .hero-stats .stat b{ font-size:14px; }
     .hero-stats .stat span{ font-size:9px; }
-    /* Contain / simplify decorative motion on phones — avoids any risk of
-       horizontal overflow and reduces animation load for smoother scrolling. */
+    /* Keep decorative motion contained on phones — no horizontal overflow risk —
+       but let the animations themselves actually play, same as desktop. */
     .about-photos{ overflow:hidden; padding:20px; }
-    .about-orbit .float-icon{ animation:none; }
     .about-orbit .fi-3, .about-orbit .fi-5{ left:2%; }
     .about-orbit .fi-2, .about-orbit .fi-4, .about-orbit .fi-6{ right:2%; }
-    .seal-ring{ animation:none; }
-    .about-ring, .learning-ring{ animation:none; }
-    .nav-cta{ animation:none; }
-    .pc-dot-field{ display:none; }
-    .pc-bar.profit{ animation:none; }
   }
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
@@ -1199,7 +1193,70 @@ const certs = [
     title: "Graphic Design Essentials",
     img: "assets/cert-canva.jpg",
     about: "In this course, I got to learn the essentials and basics of graphic design, along with how to use the various design tools within Canva. It laid the foundation for the design work I now take on for clients.",
-    issuer: "Canva Design School"
+    issuer: "Canva Design School · March 2025"
+  },
+  {
+    kicker: "Simplilearn SkillUP · Corporate Finance",
+    title: "Fundamentals of Corporate Finance",
+    img: "assets/cert-corpfin.jpg",
+    about: "Through this online course, I got to learn the core ideas behind corporate finance — how businesses raise, invest, and manage money to create value. It strengthened the finance foundation I am building alongside my CA studies.",
+    issuer: "Simplilearn SkillUP · October 2026"
+  },
+  {
+    kicker: "EY × Microsoft · AI Skills Passport",
+    title: "AI Skills Passport",
+    img: "assets/cert-ey-ai.jpg",
+    about: "In this course offered by EY and Microsoft, I got to learn how AI is applied in real working environments, covering both the general and the employability sections of the programme. It deepened my understanding of using AI responsibly and effectively at work.",
+    issuer: "EY and Microsoft"
+  },
+  {
+    kicker: "Fidelity International · Forage",
+    title: "Investment Management Job Simulation",
+    img: "assets/cert-fidelity.jpg",
+    about: "In this job simulation, I got to work on practical investment management tasks. I learned how to answer a client's investment questions, optimise a managed portfolio, evaluate a listed stock, analyse fixed income investments, and build an optimised multi-asset portfolio.",
+    issuer: "Fidelity International via Forage · October 2026"
+  },
+  {
+    kicker: "Bank of America · Forage",
+    title: "Investment Banking Job Simulation",
+    img: "assets/cert-boa.jpg",
+    about: "In this simulation, I got to learn how investment bankers think. I analysed a company's historical financial performance with a SWOT analysis, explored strategic alternatives, practised financial modelling, and learned how to communicate clearly and build long-term client relationships.",
+    issuer: "Bank of America via Forage · October 2026"
+  },
+  {
+    kicker: "PwC · Forage",
+    title: "Tax Simulation",
+    img: "assets/cert-pwc-tax.jpg",
+    about: "In this simulation, I got to learn how tax work is done in practice. I mapped a chart of accounts, identified book-to-tax differences, calculated taxable income, and prepared a tax summary and analysis — skills that connect directly to my taxation studies in CA.",
+    issuer: "PwC via Forage · September 2026"
+  },
+  {
+    kicker: "PwC · Forage",
+    title: "Audit Simulation",
+    img: "assets/cert-pwc-audit.jpg",
+    about: "Through this simulation, I got to learn how a real audit engagement runs. I worked on the purchasing process — preparing a walkthrough, a process flow with a risk and control matrix, a control-testing workpaper, and the related client correspondence.",
+    issuer: "PwC via Forage · September 2026"
+  },
+  {
+    kicker: "EY · Forage",
+    title: "Audit Job Simulation",
+    img: "assets/cert-ey-audit.jpg",
+    about: "In this job simulation, I got to learn how auditors approach a client. I understood the business and the growing importance of sustainability reporting, assessed significant accounts and risks, and carried out both control testing and substantive testing.",
+    issuer: "EY via Forage · October 2026"
+  },
+  {
+    kicker: "KPMG · Forage",
+    title: "Career Catalyst: Audit",
+    img: "assets/cert-kpmg.jpg",
+    about: "In this programme, I got to learn the full audit cycle at KPMG, from the big picture and the audit planning process to audit procedures for accounts receivable. I also practised communicating with a client, walking through a client's process, and presenting my findings.",
+    issuer: "KPMG via Forage · September 2026"
+  },
+  {
+    kicker: "Deloitte · Forage",
+    title: "Data Analytics Job Simulation",
+    img: "assets/cert-deloitte.jpg",
+    about: "In this job simulation, I got to learn how data analysis and forensic technology are used to answer real business questions. It showed me how analytics supports audit and investigation work.",
+    issuer: "Deloitte via Forage · September 2026"
   }
 ];
 const CN = certs.length;
