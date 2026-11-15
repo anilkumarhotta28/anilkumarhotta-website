@@ -9,7 +9,7 @@
 <script>try{var _t=localStorage.getItem("theme");if(_t==="light"||_t==="dark")document.documentElement.setAttribute("data-theme",_t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -31,7 +31,7 @@
   a{color:inherit;text-decoration:none}
   button{font-family:inherit}
   .mono{font-family:'JetBrains Mono',monospace}
-  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:600;color:#fff;letter-spacing:-.01em}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;color:#fff;letter-spacing:-.01em}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
   main{position:relative;z-index:2}
   section{position:relative;padding:110px 0}
@@ -137,7 +137,7 @@
   }
   header#topnav.scrolled{background:rgba(5,11,26,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
   header#topnav.scrolled .bar{height:64px}
-  .brand{display:flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:#fff}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:#fff}
   .brand .mark{width:38px;height:38px;border-radius:50%;overflow:hidden;border:1.5px solid var(--gold);flex:none;box-shadow:0 0 18px rgba(226,185,107,.35)}
   .brand .mark img{width:100%;height:100%;object-fit:cover}
   nav.links{display:flex;gap:30px;align-items:center}
@@ -171,7 +171,7 @@
   }
   #mobileMenu.open{opacity:1;pointer-events:auto}
   #mobileMenu a{
-    font-family:'Space Grotesk',sans-serif;font-size:30px;color:#fff;transform:translateX(-24px);opacity:0;
+    font-family:'Playfair Display',serif;font-size:30px;color:#fff;transform:translateX(-24px);opacity:0;
     transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .5s;
   }
   #mobileMenu.open a{transform:none;opacity:1}
@@ -386,7 +386,7 @@
     position:absolute;inset:0;border-radius:4px 12px 12px 4px;background:#f4f6fb;padding:24px 22px;color:#0b1630;
     transform:translateZ(-5px);display:flex;flex-direction:column;gap:10px;
   }
-  .report .inside h5{font-family:'Space Grotesk',sans-serif;font-size:15px;color:#0b1630}
+  .report .inside h5{font-family:'Playfair Display',serif;font-size:15px;color:#0b1630}
   .report .inside .mini{display:flex;align-items:flex-end;gap:7px;height:90px;margin-top:4px}
   .report .inside .mini i{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(#4f9dff,#1c4fa8);transform-origin:bottom;animation:grow 2.6s ease-in-out infinite alternate}
   .report .inside .mini i:nth-child(2n){background:linear-gradient(#e2b96b,#b8873a);animation-delay:.3s}
@@ -483,7 +483,7 @@
     flex:0 0 100%;padding:60px 52px;text-align:center;display:flex;flex-direction:column;gap:22px;align-items:center;justify-content:center;
     min-height:300px;position:relative;overflow:hidden;
   }
-  .quote-card::before{content:"\201C";position:absolute;top:-30px;left:24px;font-family:'Space Grotesk',sans-serif;font-size:170px;color:rgba(226,185,107,.14);line-height:1}
+  .quote-card::before{content:"\201C";position:absolute;top:-30px;left:24px;font-family:'Playfair Display',serif;font-size:170px;color:rgba(226,185,107,.14);line-height:1}
   .quote-card p{font-family:'Playfair Display',serif;font-size:clamp(19px,2.5vw,27px);line-height:1.5;font-weight:500;color:#fff;position:relative}
   .qwho b{display:block;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gold2);letter-spacing:.04em}
   .qwho span{display:block;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
@@ -527,7 +527,7 @@
   .contact-card span{font-size:13.5px;color:var(--dim);word-break:break-word}
   footer{position:relative;z-index:3;border-top:1px solid var(--line);background:rgba(5,11,26,.8);padding:42px 0 34px}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-  .foot-brand{font-family:'Space Grotesk',sans-serif;color:#fff;font-size:17px}
+  .foot-brand{font-family:'Playfair Display',serif;color:#fff;font-size:17px}
   .foot-links{display:flex;gap:22px}
   .foot-links a{font-size:13px;color:var(--dim);transition:color .25s}
   .foot-links a:hover{color:var(--gold)}
@@ -715,6 +715,93 @@
   html[data-theme="light"] .report .cover .uni{color:#b9c6e6}
   html[data-theme="light"] .report .cover .tag,html[data-theme="light"] .report .cover .seal{color:#f6dca0}
   html[data-theme="light"] .report .cover svg path{stroke:#f6dca0}
+
+  /* ===== V4: reference-style typography, one-screen sections ===== */
+  h1,h2,h3,h4{letter-spacing:0}
+  .brand{font-size:20px}
+  .brand-name{font-family:'Playfair Display',serif;font-weight:700;background:linear-gradient(100deg,#fff 0%,#fff 34%,#f6dca0 46%,#e2b96b 50%,#f6dca0 54%,#fff 66%,#fff 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brandShine 4.8s linear infinite}
+  @keyframes brandShine{from{background-position:130% 0}to{background-position:-130% 0}}
+  html[data-theme="light"] .brand-name{background-image:linear-gradient(100deg,#0b1630 0%,#0b1630 34%,#3b82f6 46%,#0d9488 50%,#3b82f6 54%,#0b1630 66%,#0b1630 100%)}
+  .section-head{margin-bottom:24px}
+  .section-head h2{font-size:clamp(26px,3vw,36px)}
+  .section-head h2::after{margin-top:12px}
+  .section-head p{font-size:14.5px;margin-top:10px}
+  .about-text h2{font-size:clamp(26px,2.8vw,34px);margin-bottom:16px}
+  .about-text p{font-size:14.5px;margin-bottom:12px}
+  .hero-quote em{font-style:italic;background:linear-gradient(100deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .typewriter-line{font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.26em;font-size:clamp(11px,1.2vw,14px);font-weight:500;color:var(--gold)}
+  .hero-sub{font-size:clamp(15px,1.4vw,18px);max-width:520px}
+  .vt-sum{font-size:13.5px;color:var(--dim);line-height:1.65}
+  .vt-more{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .vt-card{cursor:pointer}
+  #eduText{font-size:14.5px;color:var(--dim);line-height:1.75;margin:10px 0 16px}
+  .proj-center{display:flex;flex-direction:column;align-items:center}
+  @media (min-width:821px){
+    section:not(#hero){min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:74px 0 24px}
+    section:not(#hero)>.wrap{width:100%}
+    /* hero: photo left, text right, nothing overlapping */
+    #hero{display:grid;grid-template-columns:minmax(0,44%) minmax(0,1fr);align-items:end;height:100vh;height:100svh;min-height:480px}
+    .hero-photo-col{position:relative;left:auto;bottom:auto;width:100%;height:calc(100svh - 84px);align-self:end}
+    .hero-photo-col .cutout{left:50%;transform:translateX(-50%) translateY(calc(var(--sy,0) * -.05px))}
+    .hero-content{align-self:center;padding:64px 5vw 30px 1vw;max-width:780px}
+    #hero h1.hero-quote{font-size:clamp(30px,min(4.4vw,8.6vh),68px);line-height:1.12;font-weight:500;margin-bottom:16px}
+    .typewriter-line{margin-bottom:16px;min-height:20px}
+    .hero-sub{margin-bottom:26px}
+    .hero-ctas{margin-bottom:0}
+    /* about */
+    .about-grid{gap:48px}
+    .about-photos{padding:26px}
+    .about-photo-frame{max-width:min(250px,calc((100svh - 250px) * .75))}
+    .precision-box{margin-top:16px;padding:14px 22px}
+    /* education: three cards in a row, details on click */
+    .vt{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1120px;padding:14px 0 0}
+    .vt-line,.vt-fill,.vt-pointer{display:none}
+    .vt-item{display:block;margin:0}
+    .vt-card,.vt-item:nth-child(odd) .vt-card{margin:0;opacity:1;transform:none;padding:24px 22px 18px;height:100%;display:flex;flex-direction:column}
+    .vt-item .vt-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+    .vt-dot{left:22px;top:-7px;margin:0;width:14px;height:14px}
+    .vt-card h3{font-size:18px;margin-bottom:8px}
+    .vt-card .vt-tags{display:none}
+    .vt-more{margin-top:auto;padding-top:14px}
+    /* quotes: one-row heading */
+    #quotes .section-head{max-width:none;margin-bottom:20px}
+    #quotes .section-head h2{white-space:nowrap;font-size:clamp(24px,3vw,34px)}
+    .quotes-wrap{max-width:860px}
+    .quote-card{min-height:230px;padding:36px 44px;gap:16px}
+    .quote-card p{font-size:clamp(18px,1.9vw,24px)}
+    .quote-card::before{font-size:120px;top:-18px}
+    .dots{margin-top:20px}
+    /* learning */
+    #learning .lgrid{padding:30px 40px;gap:40px}
+    .lphoto{width:min(210px,calc(100svh - 300px))}
+    #learning blockquote{font-size:clamp(15px,1.5vw,17px);line-height:1.7}
+    /* contact */
+    #contact .section-head{margin-bottom:18px}
+    #contact .section-head p{display:none}
+    .contact-form-card{padding:24px 26px}
+    .form-field{margin-bottom:12px;gap:5px}
+    .form-field input,.form-field textarea{padding:10px 14px;font-size:14px}
+  }
+  @media (min-width:1061px){
+    .cert-slide{padding:20px 28px;gap:30px}
+    #certs .section-head{margin-bottom:14px}
+    #certs .section-head p{display:none}
+    .cert-copy h3{font-size:22px;margin-bottom:10px}
+    .cert-copy p{font-size:13.5px;line-height:1.65;margin-bottom:12px}
+    .cert-image{width:min(100%,calc((100svh - 300px) * 1.414));margin-left:auto}
+    .proj-center .report{width:min(340px,calc((100svh - 292px) * .72))}
+    .contact-layout{grid-template-columns:min(420px,calc(100svh - 230px)) minmax(0,1fr) 68px}
+    .globe-wrap{width:min(420px,calc(100svh - 230px))}
+  }
+  @media (max-width:820px){
+    .typewriter-line{font-size:11px;letter-spacing:.18em}
+    #hero h1.hero-quote{font-size:clamp(28px,8vw,40px);line-height:1.15;margin-bottom:14px}
+    .proj-center .report{width:min(260px,70vw)}
+    #quotes .section-head h2{font-size:24px}
+  }
+  #quotes .section-head h2::after{margin-left:auto;margin-right:auto}
+  @keyframes cutIn{from{opacity:0;clip-path:inset(-60px 100% 0 -60px)}to{opacity:1;clip-path:inset(-60px -60px 0 -60px)}}
+  @media (max-width:520px){#quotes .section-head h2{white-space:normal}}
 </style>
 </head>
 <body>
@@ -728,7 +815,7 @@
 <!-- ================= NAV ================= -->
 <header id="topnav">
   <div class="bar">
-    <a href="#hero" class="brand"><span class="mark"><img src="assets/hero-professional.jpg" alt="Anil Kumar Hotta"></span> Anil Kumar Hotta</a>
+    <a href="#hero" class="brand"><span class="mark"><img src="assets/hero-professional.jpg" alt="Anil Kumar Hotta"></span><span class="brand-name">Anil Kumar Hotta</span></a>
     <nav class="links">
       <a href="#about">About</a>
       <a href="#education">Education</a>
@@ -763,35 +850,17 @@
 <section id="hero">
   <div class="hero-photo-col">
     <div class="spot"></div>
-    <div class="ring r1"></div>
-    <div class="ring r2"></div>
     <img class="cutout" src="assets/hero-cutout.webp" alt="Anil Kumar Hotta" width="900" height="1154">
-    <div class="fchip c1"><i></i>CA Intermediate</div>
-    <div class="fchip c2"><i></i>B.Com (Hons) · 8.63 CGPA</div>
-    <div class="fchip c3"><i></i>13 Certifications</div>
   </div>
-
   <div class="hero-content">
-    <div class="hero-eyebrow">CA Intermediate · Brahmapur, Odisha, India</div>
-    <h1 class="split" data-split>Anil Kumar Hotta</h1>
     <div class="typewriter-line"><span id="typewriter"></span><span class="cursor"></span></div>
-    <p class="hero-sub" data-reveal>Finance, AI &amp; geopolitics enthusiast pursuing Chartered Accountancy — with a focus on precision, accuracy and dependable work, from ledgers to audit files.</p>
-    <div class="hero-ctas" data-reveal style="--d:.15s">
+    <h1 class="hero-quote" data-reveal>Every great decision begins with <em>numbers</em> that tell the truth.</h1>
+    <p class="hero-sub" data-reveal style="--d:.12s">I turn complex numbers into clear, dependable decisions.</p>
+    <div class="hero-ctas" data-reveal style="--d:.22s">
       <a href="#projects" class="btn btn-gold"><span class="bl">View projects</span></a>
       <a href="#contact" class="btn btn-ring"><i></i><span class="bl">Contact me</span></a>
     </div>
-    <div class="hstats" data-reveal style="--d:.25s">
-      <div class="hstat glass"><b data-count="8.63" data-dec="2">8.63</b><span>B.Com CGPA</span></div>
-      <div class="hstat glass"><b data-count="92" data-prefix="~" data-suffix="%">~92%</b><span>Board Exams</span></div>
-      <div class="hstat glass"><b data-count="13">13</b><span>Certifications</span></div>
-    </div>
-    <div class="role-strip" data-reveal style="--d:.35s">
-      <span class="role-chip">CA Intermediate</span>
-      <span class="role-chip">B.Com (Hons) Graduate</span>
-      <span class="role-chip">Finance, AI &amp; Geopolitics Enthusiast</span>
-    </div>
   </div>
-  <div class="scroll-cue"><div class="mouse"></div>Scroll</div>
 </section>
 
 <div class="ticker" aria-hidden="true">
@@ -845,33 +914,33 @@
       <div class="vt-fill" id="vtFill"></div>
       <div class="vt-pointer" id="vtPointer"></div>
 
-      <div class="vt-item">
+      <div class="vt-item" data-reveal style="--d:0s">
         <div class="vt-dot"></div>
         <div class="vt-card glass">
           <div class="vt-year">2009 — 2023</div>
           <h3>Saraswati Shishu Vidya Mandir, Neelakantha Nagar</h3>
-          <p>Schooling from Kindergarten through +2 Science (Physics, Chemistry, Mathematics, Electronics, English, Sanskrit) — Class 10th under BSE Odisha, +2 under CHSE Odisha, scoring an average of about 92% in both board exams. Won multiple scholarship awards for academic excellence, notably in Mathematics (PMSTS), and was consistently recognised for mathematics ability. Took part in School Parade, Drawing, Debate, Essay Writing, and cultural and academic events; won an inter-school science quiz and a school science exhibition.</p>
-          <div class="vt-tags"><span>Mathematics</span><span>PMSTS Scholar</span><span>~92% Boards</span><span>Science Exhibition Winner</span></div>
+          <p class="vt-sum">Kindergarten to +2 Science at Saraswati Shishu Vidya Mandir, with about 92% in both board exams and several scholarship and science-quiz recognitions.</p><div class="vt-full" hidden>Schooling from Kindergarten through +2 Science (Physics, Chemistry, Mathematics, Electronics, English, Sanskrit) — Class 10th under BSE Odisha, +2 under CHSE Odisha, scoring an average of about 92% in both board exams. Won multiple scholarship awards for academic excellence, notably in Mathematics (PMSTS), and was consistently recognised for mathematics ability. Took part in School Parade, Drawing, Debate, Essay Writing, and cultural and academic events; won an inter-school science quiz and a school science exhibition.</div>
+          <div class="vt-tags"><span>Mathematics</span><span>PMSTS Scholar</span><span>~92% Boards</span><span>Science Exhibition Winner</span></div><div class="vt-more">Click for full details →</div>
         </div>
       </div>
 
-      <div class="vt-item">
+      <div class="vt-item" data-reveal style="--d:.12s">
         <div class="vt-dot"></div>
         <div class="vt-card glass">
           <div class="vt-year">2023 — 2026</div>
           <h3>Khallikote Unitary University, Brahmapur</h3>
-          <p>Bachelor of Commerce (Hons) — the switch from science to commerce, building the foundation for a career in finance and accountancy. Graduated with a CGPA of 8.63. As my final-year project, I researched and wrote "Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City," analysing the financial performance and tax compliance behaviour of seven Brahmapur businesses.</p>
-          <div class="vt-tags"><span>B.Com (Hons) — Graduated</span><span>8.63 CGPA</span></div>
+          <p class="vt-sum">B.Com (Hons) — a switch from science to commerce. Graduated with 8.63 CGPA and a final-year research project on Brahmapur taxpayers.</p><div class="vt-full" hidden>Bachelor of Commerce (Hons) — the switch from science to commerce, building the foundation for a career in finance and accountancy. Graduated with a CGPA of 8.63. As my final-year project, I researched and wrote "Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City," analysing the financial performance and tax compliance behaviour of seven Brahmapur businesses.</div>
+          <div class="vt-tags"><span>B.Com (Hons) — Graduated</span><span>8.63 CGPA</span></div><div class="vt-more">Click for full details →</div>
         </div>
       </div>
 
-      <div class="vt-item">
+      <div class="vt-item" data-reveal style="--d:.24s">
         <div class="vt-dot"></div>
         <div class="vt-card glass">
           <div class="vt-year">2023 — Present</div>
           <h3>The Institute of Chartered Accountants of India</h3>
-          <p>Pursuing Chartered Accountancy, currently at the CA Intermediate stage. Scored 256 out of 400 in CA Foundation, including 92 marks in Paper 3 (Business Mathematics, Logical Reasoning &amp; Statistics), and 173 out of 300 in Group 2 of CA Intermediate, including 79 marks in Cost &amp; Management Accounting. Built working knowledge of Accounting, Taxation (Income Tax, GST), Financial Management, Audit, and Corporate Law, and attended conferences hosted by ICAI.</p>
-          <div class="vt-tags"><span>CA Intermediate</span><span>Foundation: 256/400</span><span>Inter Group 2: 173/300</span><span>Taxation</span><span>Audit</span></div>
+          <p class="vt-sum">Currently at CA Intermediate — Foundation 256/400 and Group 2 of Intermediate 173/300, with a working base in tax, audit and law.</p><div class="vt-full" hidden>Pursuing Chartered Accountancy, currently at the CA Intermediate stage. Scored 256 out of 400 in CA Foundation, including 92 marks in Paper 3 (Business Mathematics, Logical Reasoning &amp; Statistics), and 173 out of 300 in Group 2 of CA Intermediate, including 79 marks in Cost &amp; Management Accounting. Built working knowledge of Accounting, Taxation (Income Tax, GST), Financial Management, Audit, and Corporate Law, and attended conferences hosted by ICAI.</div>
+          <div class="vt-tags"><span>CA Intermediate</span><span>Foundation: 256/400</span><span>Inter Group 2: 173/300</span><span>Taxation</span><span>Audit</span></div><div class="vt-more">Click for full details →</div>
         </div>
       </div>
     </div>
@@ -903,10 +972,10 @@
     <div class="section-head" data-reveal>
       <div class="eyebrow">Projects</div>
       <h2>Research, in numbers.</h2>
-      <p>Click the book to step inside the analysis.</p>
+      
     </div>
-    <div class="proj-grid">
-      <div class="report-stage" data-reveal="left">
+    <div class="proj-center">
+      <div class="report-stage" data-reveal="zoom">
         <div class="report-float">
           <div class="report" id="report" tabindex="0" role="button" aria-label="Open the analysis">
             <div class="back"></div>
@@ -927,23 +996,9 @@
             </div>
           </div>
         </div>
-        <div class="report-hint"><i></i>Hover to peek · Click the book to go inside</div>
+        <div class="report-hint"><i></i>Click the book to open</div>
       </div>
-      <div class="proj-copy" data-reveal="right">
-        <div class="proj-tag">B.Com (Hons) final-year research · 2023–26</div>
-        <h3>Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City</h3>
-        <p>Guided by Dr. Annapurna Sahoo, Head of the Department of Commerce, Khallikote Unitary University. The study looks at the financial performance and tax compliance behaviour of seven Brahmapur businesses over three financial years, using ratio, trend, cash-flow and correlation analysis.</p>
-        <div class="project-stats">
-          <div class="pstat"><b data-count="7">7</b><span>Businesses</span></div>
-          <div class="pstat"><b data-count="3">3</b><span>Years analysed</span></div>
-          <div class="pstat"><b>0.99+</b><span>Sales–profit correlation</span></div>
-        </div>
-        <div class="project-meta"><span>Ratio Analysis</span><span>Trend Analysis</span><span>Cash Flow</span><span>Correlation</span><span>MS Excel</span><span>SPSS</span></div>
-        <div class="proj-actions">
-          <button class="btn btn-gold" id="openAnalysis"><span class="bl">Open the analysis</span></button>
-          <a class="btn btn-ring" href="assets/Financial-Performance-Analysis-Brahmapur-AKH.pdf" target="_blank" rel="noopener"><i></i><span class="bl">Read full PDF</span></a>
-        </div>
-      </div>
+      <button hidden id="openAnalysis" aria-hidden="true" tabindex="-1">Open</button>
     </div>
   </div>
 </section>
@@ -1006,7 +1061,7 @@
           <input type="hidden" name="_next" value="https://anilkumarhotta.vercel.app/?contacted=1#contact">
           <div class="form-field"><label for="c_name">Your name</label><input type="text" id="c_name" name="Name" required placeholder="Your full name"></div>
           <div class="form-field"><label for="c_email">Email address</label><input type="email" id="c_email" name="Email" required placeholder="you@example.com"></div>
-          <div class="form-field"><label for="c_message">Message</label><textarea id="c_message" name="Message" rows="5" required placeholder="What would you like to talk about?"></textarea></div>
+          <div class="form-field"><label for="c_message">Message</label><textarea id="c_message" name="Message" rows="3" required placeholder="What would you like to talk about?"></textarea></div>
           <div class="send-wrap"><button type="submit" class="btn btn-gold"><span class="bl">Send Message</span></button></div>
         </form>
       </div>
@@ -1053,6 +1108,17 @@
       <span>Figures taken from the project report (secondary data from seven assessees' financial statements).</span>
       <a class="btn btn-gold" href="assets/Financial-Performance-Analysis-Brahmapur-AKH.pdf" target="_blank" rel="noopener"><span class="bl">Read the full report (PDF)</span></a>
     </div>
+  </div>
+</div>
+
+<!-- education details -->
+<div class="modal" id="eduModal" role="dialog" aria-modal="true" aria-labelledby="eduTitle">
+  <div class="modal-panel glass" style="max-width:680px">
+    <button class="modal-close" id="eduClose" aria-label="Close">&times;</button>
+    <div class="vt-year" id="eduYear"></div>
+    <h3 id="eduTitle"></h3>
+    <p id="eduText"></p>
+    <div class="vt-tags" id="eduTags"></div>
   </div>
 </div>
 
@@ -1243,7 +1309,7 @@ safe('counters', ()=>{
 
 /* ================= TYPEWRITER ================= */
 safe('typewriter', ()=>{
-  const roles = ["CA Intermediate — ICAI", "Finance, AI & Geopolitics Enthusiast", "B.Com (Hons) Graduate"];
+  const roles = ["CA Intermediate", "Graphic Designer", "AI Assisted Web Developer", "Digital Marketer", "Finance, AI & Geopolitics Enthusiast"];
   const el = $('#typewriter');
   let r = 0, c = 0, del = false;
   (function loop(){
@@ -1305,6 +1371,20 @@ safe('spot', ()=>{
     const g = e.target.closest && e.target.closest('.glass');
     if(g && !g.contains(e.relatedTarget)){ g.style.removeProperty('--mx'); g.style.removeProperty('--my'); g.classList.remove('lit'); }
   });
+});
+
+safe('edu', ()=>{
+  const m = $('#eduModal'), yr = $('#eduYear'), tt = $('#eduTitle'), tx = $('#eduText'), tg = $('#eduTags');
+  const close = () => { m.classList.remove('open'); document.documentElement.style.overflow = ''; };
+  $$('.vt-card').forEach(c => {
+    const open = () => { yr.textContent = $('.vt-year', c).textContent; tt.textContent = $('h3', c).textContent; tx.textContent = $('.vt-full', c).textContent.trim(); tg.innerHTML = $('.vt-tags', c).innerHTML; m.classList.add('open'); document.documentElement.style.overflow = 'hidden'; };
+    c.tabIndex = 0; c.setAttribute('role', 'button');
+    c.addEventListener('click', open);
+    c.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+  });
+  $('#eduClose').addEventListener('click', close);
+  m.addEventListener('click', e => { if(e.target === m) close(); });
+  addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
 });
 
 safe('cursor', ()=>{
