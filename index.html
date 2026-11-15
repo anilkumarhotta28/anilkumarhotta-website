@@ -614,14 +614,14 @@
     .globe-cap{font-size:10.5px}
   }
   /* ===== V2: light theme ===== */
-  html[data-theme="light"]{--bg:#f3f6fc;--bg2:#e5ebf7;--panel:rgba(255,255,255,.84);--line:rgba(20,44,100,.14);--text:#0c1836;--dim:#46567c;--gold:#a9751b;--gold2:#85580c;--blue:#1d5fd1;--teal:#0e8f84;--grid:rgba(20,50,120,.065);--orb1:rgba(60,120,255,.16);--orb2:rgba(226,185,107,.2)}
+  html[data-theme="light"]{--bg:#f3f6fc;--bg2:#e5ebf7;--panel:rgba(255,255,255,.84);--line:rgba(20,44,100,.14);--text:#0c1836;--dim:#46567c;--gold:#1d4ed8;--gold2:#1e3a8a;--blue:#2563eb;--teal:#0d9488;--grid:rgba(20,50,120,.065);--orb1:rgba(60,120,255,.16);--orb2:rgba(226,185,107,.2)}
   html[data-theme="light"] .glass{box-shadow:0 24px 50px -30px rgba(20,44,100,.38)}
   html[data-theme="light"] h1,html[data-theme="light"] h2,html[data-theme="light"] h3,html[data-theme="light"] h4,
   html[data-theme="light"] .brand,html[data-theme="light"] .foot-brand,html[data-theme="light"] nav.links a:hover,html[data-theme="light"] nav.links a.active,
   html[data-theme="light"] .about-text strong,html[data-theme="light"] .contact-card b,html[data-theme="light"] .role-chip:hover,html[data-theme="light"] .btn-ring,
   html[data-theme="light"] .quote-card p,html[data-theme="light"] .find p strong,html[data-theme="light"] #mobileMenu a{color:#0b1630}
-  html[data-theme="light"] nav.links a.nav-cta,html[data-theme="light"] nav.links a.nav-cta:hover{color:#1a1204}
-  html[data-theme="light"] #hero h1 .w>span{background-image:linear-gradient(100deg,#0b1630 10%,#a9751b 45%,#0b1630 90%)}
+  html[data-theme="light"] nav.links a.nav-cta,html[data-theme="light"] nav.links a.nav-cta:hover{color:#fff}
+  html[data-theme="light"] #hero h1 .w>span{background-image:linear-gradient(100deg,#0b1630 10%,#1d4ed8 45%,#0b1630 90%)}
   html[data-theme="light"] header#topnav.scrolled{background:rgba(243,246,252,.82)}
   html[data-theme="light"] .burger span{background:#0b1630}
   html[data-theme="light"] #mobileMenu{background:rgba(243,246,252,.97)}
@@ -646,11 +646,81 @@
   html[data-theme="light"] .lphoto img{border-color:rgba(20,44,100,.2)}
   html[data-theme="light"] #cursorGlow{filter:opacity(.45)}
   html[data-theme="light"] .theme-toggle{background:rgba(20,44,100,.06)}
+
+  /* ===== V3 ===== */
+  :root{--spot:rgba(120,175,255,.20);--spotb:rgba(140,190,255,.55);--cg:rgba(79,157,255,.22);--cg2:rgba(53,208,194,.09);--shine:rgba(130,175,255,.075)}
+  html[data-theme="light"]{--spot:rgba(37,99,235,.13);--spotb:rgba(37,99,235,.45);--cg:rgba(37,99,235,.17);--cg2:rgba(13,148,136,.08);--shine:rgba(37,99,235,.06)}
+  /* shining background */
+  .bg-shine{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,transparent 38%,var(--shine) 50%,transparent 62%);background-size:260% 100%;animation:shineMove 16s ease-in-out infinite alternate}
+  @keyframes shineMove{from{background-position:100% 0}to{background-position:0 0}}
+  /* cursor light (page) + spotlight inside boxes */
+  #cursorGlow{width:520px;height:520px;margin:-260px 0 0 -260px;background:radial-gradient(circle,var(--cg) 0%,var(--cg2) 42%,transparent 70%)}
+  .glass{background-image:radial-gradient(300px circle at var(--mx,-999px) var(--my,-999px),var(--spot),transparent 62%)}
+  .glass.lit{border-color:var(--spotb)}
+  /* hero: fits one screen at 100% zoom */
+  @media (min-width:821px){
+    #hero{height:100vh;height:100svh;min-height:560px}
+    .hero-photo-col{--ph:min(70vh,44vw)}
+    .hero-content{padding:84px 4vw 34px calc(min(70vh,44vw) * .8 + 3vw)}
+    #hero h1{font-size:clamp(38px,min(5.4vw,9.4vh),84px);margin-bottom:12px}
+    .hero-eyebrow{margin-bottom:12px}
+    .typewriter-line{margin-bottom:12px;min-height:26px}
+    .hero-sub{font-size:clamp(14.5px,2.1vh,17px);margin-bottom:20px}
+    .hero-ctas{margin-bottom:22px}
+    .hstats{margin-bottom:16px}
+    .hstat{padding:10px 18px}
+    .hstat b{font-size:clamp(20px,3.2vh,26px)}
+    .scroll-cue{display:none}
+  }
+  /* projects: small book + text */
+  .proj-grid{grid-template-columns:.8fr 1.2fr;gap:56px}
+  .report-stage{padding:10px}
+  .proj-grid .report{width:min(250px,64vw)}
+  .proj-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  /* contact: globe | form | icons */
+  .contact-globe{display:flex;flex-direction:column;align-items:center;margin:0}
+  .globe-wrap{width:min(420px,84vw);aspect-ratio:1}
+  .globe-cap{margin-top:0;font-size:10.5px;letter-spacing:.06em}
+  .contact-links{flex-direction:column;gap:16px;align-items:center}
+  .contact-card{width:68px;height:68px;padding:0;justify-content:center;gap:0;border-radius:20px}
+  .contact-card img{width:38px;height:38px}
+  .contact-card:hover{transform:translateY(-5px) scale(1.06)}
+  @media (min-width:1061px){
+    .contact-layout{grid-template-columns:420px minmax(0,1fr) 68px;gap:28px;align-items:center}
+  }
+  @media (max-width:1060px){
+    .contact-layout{grid-template-columns:1fr;gap:30px;justify-items:center}
+    .contact-form-card{width:100%}
+    .contact-links{flex-direction:row;justify-content:center}
+  }
+  /* light theme: blue instead of gold */
+  html[data-theme="light"] ::selection{color:#fff}
+  html[data-theme="light"] .btn-gold,html[data-theme="light"] nav.links a.nav-cta,html[data-theme="light"] .tab.active{color:#fff;background:linear-gradient(120deg,#3b7bf5,#1d4ed8 55%,#1536a0);background-size:200% 100%;box-shadow:0 14px 30px -12px rgba(29,78,216,.6)}
+  html[data-theme="light"] .btn-gold:hover,html[data-theme="light"] nav.links a.nav-cta:hover{box-shadow:0 20px 40px -10px rgba(29,78,216,.7)}
+  html[data-theme="light"] .arrow:hover,html[data-theme="light"] .modal-close:hover{color:#fff}
+  html[data-theme="light"] .hero-photo-col .r1{border-color:rgba(29,78,216,.45)}
+  html[data-theme="light"] .hero-photo-col .r1::after{box-shadow:0 0 14px 3px rgba(29,78,216,.6)}
+  html[data-theme="light"] .hero-photo-col .spot{background:radial-gradient(closest-side,rgba(37,99,235,.28),rgba(37,99,235,.08) 58%,transparent 76%)}
+  html[data-theme="light"] .hero-photo-col .cutout{filter:drop-shadow(0 0 16px rgba(37,99,235,.25)) drop-shadow(0 22px 34px rgba(20,44,100,.35))}
+  html[data-theme="light"] .fchip,html[data-theme="light"] .about-photo-main,html[data-theme="light"] .about-ring,html[data-theme="light"] .lring,html[data-theme="light"] .vt-dot{border-color:rgba(29,78,216,.4)}
+  html[data-theme="light"] .brand .mark{box-shadow:0 0 14px rgba(29,78,216,.3)}
+  html[data-theme="light"] .vt-fill,html[data-theme="light"] .vt-pointer{box-shadow:0 0 18px rgba(29,78,216,.5)}
+  html[data-theme="light"] .vt-item.active .vt-card{border-color:rgba(29,78,216,.5);box-shadow:0 26px 50px -30px rgba(29,78,216,.45)}
+  html[data-theme="light"] .vt-item.active .vt-dot{box-shadow:0 0 0 6px rgba(29,78,216,.16),0 0 18px rgba(29,78,216,.6)}
+  html[data-theme="light"] .precision-box::before{background:linear-gradient(100deg,transparent,rgba(37,99,235,.1),transparent)}
+  html[data-theme="light"] .quote-card::before{color:rgba(29,78,216,.14)}
+  html[data-theme="light"] #learning .lgrid::before{background:radial-gradient(circle,rgba(37,99,235,.16),transparent 70%)}
+  html[data-theme="light"] .form-field input:focus,html[data-theme="light"] .form-field textarea:focus{box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+  html[data-theme="light"] .contact-card:hover{box-shadow:0 20px 40px -22px rgba(29,78,216,.5)}
+  html[data-theme="light"] .report .cover .uni{color:#b9c6e6}
+  html[data-theme="light"] .report .cover .tag,html[data-theme="light"] .report .cover .seal{color:#f6dca0}
+  html[data-theme="light"] .report .cover svg path{stroke:#f6dca0}
 </style>
 </head>
 <body>
 
 <div class="bg-base"></div>
+<div class="bg-shine"></div>
 <canvas id="bgCanvas"></canvas>
 <div id="cursorGlow"></div>
 <div id="progress"></div>
@@ -833,10 +903,10 @@
     <div class="section-head" data-reveal>
       <div class="eyebrow">Projects</div>
       <h2>Research, in numbers.</h2>
-      <p>Click the book to step inside the analysis behind my B.Com (Hons) project.</p>
+      <p>Click the book to step inside the analysis.</p>
     </div>
-    <div class="proj-center">
-      <div class="report-stage" data-reveal="zoom">
+    <div class="proj-grid">
+      <div class="report-stage" data-reveal="left">
         <div class="report-float">
           <div class="report" id="report" tabindex="0" role="button" aria-label="Open the analysis">
             <div class="back"></div>
@@ -859,10 +929,20 @@
         </div>
         <div class="report-hint"><i></i>Hover to peek · Click the book to go inside</div>
       </div>
-      <div class="proj-cap" data-reveal style="--d:.1s">
+      <div class="proj-copy" data-reveal="right">
+        <div class="proj-tag">B.Com (Hons) final-year research · 2023–26</div>
         <h3>Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City</h3>
-        <p>Final-year research at Khallikote Unitary University — ratio, trend, cash-flow and correlation analysis of seven Brahmapur businesses.</p>
-        <button class="btn btn-gold" id="openAnalysis"><span class="bl">Open the analysis</span></button>
+        <p>Guided by Dr. Annapurna Sahoo, Head of the Department of Commerce, Khallikote Unitary University. The study looks at the financial performance and tax compliance behaviour of seven Brahmapur businesses over three financial years, using ratio, trend, cash-flow and correlation analysis.</p>
+        <div class="project-stats">
+          <div class="pstat"><b data-count="7">7</b><span>Businesses</span></div>
+          <div class="pstat"><b data-count="3">3</b><span>Years analysed</span></div>
+          <div class="pstat"><b>0.99+</b><span>Sales–profit correlation</span></div>
+        </div>
+        <div class="project-meta"><span>Ratio Analysis</span><span>Trend Analysis</span><span>Cash Flow</span><span>Correlation</span><span>MS Excel</span><span>SPSS</span></div>
+        <div class="proj-actions">
+          <button class="btn btn-gold" id="openAnalysis"><span class="bl">Open the analysis</span></button>
+          <a class="btn btn-ring" href="assets/Financial-Performance-Analysis-Brahmapur-AKH.pdf" target="_blank" rel="noopener"><i></i><span class="bl">Read full PDF</span></a>
+        </div>
       </div>
     </div>
   </div>
@@ -913,11 +993,11 @@
       <h2>Let's talk.</h2>
       <p>Wherever you are in the world — send a message and it will find its way to me.</p>
     </div>
-    <div class="contact-globe" data-reveal="zoom">
-      <div class="globe-wrap"><canvas id="globeCanvas" role="img" aria-label="Rotating globe with messages from around the world travelling to Brahmapur, India"></canvas></div>
-      <div class="globe-cap"><i></i>Brahmapur, Odisha, India · open to messages from every corner of the world</div>
-    </div>
     <div class="contact-layout">
+      <div class="contact-globe" data-reveal="left">
+        <div class="globe-wrap"><canvas id="globeCanvas" role="img" aria-label="Rotating globe with messages from around the world travelling to Brahmapur, India"></canvas></div>
+        <div class="globe-cap"><i></i>Brahmapur, India · reachable worldwide</div>
+      </div>
       <div class="contact-form-card glass" data-reveal="left">
         <form id="contactForm" action="https://formsubmit.co/anilhotta24@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New message from anilkumarhotta.vercel.app">
@@ -931,17 +1011,17 @@
         </form>
       </div>
       <div class="contact-links" data-stagger>
-        <a class="contact-card glass" id="emailContactLink" href="mailto:anilhotta24@gmail.com" data-reveal="right">
+        <a class="contact-card glass" id="emailContactLink" title="Email" aria-label="Email" href="mailto:anilhotta24@gmail.com" data-reveal="right">
           <img src="assets/logo-gmail.png" alt="Gmail" width="54" height="54">
-          <div><b>Email</b><span>anilhotta24@gmail.com</span></div>
+          
         </a>
-        <a class="contact-card glass" href="https://www.linkedin.com/in/anil-kumar-hotta/" target="_blank" rel="noopener" data-reveal="right">
+        <a class="contact-card glass" title="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/anil-kumar-hotta/" target="_blank" rel="noopener" data-reveal="right">
           <img src="assets/logo-linkedin.png" alt="LinkedIn" width="54" height="54">
-          <div><b>LinkedIn</b><span>linkedin.com/in/anil-kumar-hotta</span></div>
+          
         </a>
-        <a class="contact-card glass" href="https://instagram.com/anil.hotta" target="_blank" rel="noopener" data-reveal="right">
+        <a class="contact-card glass" title="Instagram" aria-label="Instagram" href="https://instagram.com/anil.hotta" target="_blank" rel="noopener" data-reveal="right">
           <img src="assets/logo-instagram.png" alt="Instagram" width="54" height="54">
-          <div><b>Instagram</b><span>@anil.hotta</span></div>
+          
         </a>
       </div>
     </div>
@@ -1213,6 +1293,20 @@ safe('nav', ()=>{
 });
 
 /* ================= CURSOR GLOW (mouse devices only) ================= */
+safe('spot', ()=>{
+  if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  document.addEventListener('pointermove', e => {
+    const g = e.target.closest && e.target.closest('.glass'); if(!g) return;
+    const r = g.getBoundingClientRect();
+    g.style.setProperty('--mx', (e.clientX - r.left) + 'px'); g.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    g.classList.add('lit');
+  }, { passive: true });
+  document.addEventListener('pointerout', e => {
+    const g = e.target.closest && e.target.closest('.glass');
+    if(g && !g.contains(e.relatedTarget)){ g.style.removeProperty('--mx'); g.style.removeProperty('--my'); g.classList.remove('lit'); }
+  });
+});
+
 safe('cursor', ()=>{
   const glow = $('#cursorGlow');
   if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches || reduceMotion) return;
@@ -1299,7 +1393,7 @@ safe('background', ()=>{
 
   const isLight = () => document.documentElement.getAttribute('data-theme') === 'light';
   const PD = { a:.95, glow:'rgba(79,157,255,.25)', glow0:'rgba(79,157,255,0)', b0:'rgba(40,100,200,.8)', b1:'rgba(7,18,48,.95)', rim:'rgba(120,180,255,.6)', grat:'rgba(130,175,255,.2)', dot:'#8cc4ff', arc:'rgba(226,185,107,.65)', pulse:'#fff3cf', pg:'rgba(226,185,107,.28)', gold:'#e2b96b', ring:'rgba(226,185,107,' };
-  const PL = { a:.95, glow:'rgba(29,95,209,.14)', glow0:'rgba(29,95,209,0)', b0:'rgba(150,190,245,.6)', b1:'rgba(232,240,255,.95)', rim:'rgba(29,95,209,.5)', grat:'rgba(29,95,209,.15)', dot:'#1d5fd1', arc:'rgba(169,117,27,.75)', pulse:'#7a4f0a', pg:'rgba(169,117,27,.25)', gold:'#a9751b', ring:'rgba(169,117,27,' };
+  const PL = { a:.95, glow:'rgba(29,95,209,.14)', glow0:'rgba(29,95,209,0)', b0:'rgba(150,190,245,.6)', b1:'rgba(232,240,255,.95)', rim:'rgba(29,95,209,.5)', grat:'rgba(29,95,209,.15)', dot:'#1d5fd1', arc:'rgba(13,148,136,.8)', pulse:'#064e48', pg:'rgba(13,148,136,.25)', gold:'#0d9488', ring:'rgba(13,148,136,' };
   function drawGlobe(ctx, cx, cy, R, lon0, tilt, t, P){
     ctx.globalAlpha = P.a;
     const glow = ctx.createRadialGradient(cx, cy, R * 0.92, cx, cy, R * 1.28);
@@ -1384,7 +1478,7 @@ safe('background', ()=>{
       if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     }
     const lastX = (n - 1 - frac) * dx;
-    ctx.strokeStyle = L ? 'rgba(169,117,27,.30)' : 'rgba(226,185,107,.26)'; ctx.lineWidth = 1.4; ctx.stroke();
+    ctx.strokeStyle = L ? 'rgba(29,78,216,.26)' : 'rgba(226,185,107,.26)'; ctx.lineWidth = 1.4; ctx.stroke();
     ctx.lineTo(lastX, H); ctx.lineTo(-frac * dx, H); ctx.closePath();
     const gr = ctx.createLinearGradient(0, H * 0.7, 0, H);
     gr.addColorStop(0, L ? 'rgba(14,143,132,.10)' : 'rgba(53,208,194,.09)'); gr.addColorStop(1, 'rgba(53,208,194,0)');
