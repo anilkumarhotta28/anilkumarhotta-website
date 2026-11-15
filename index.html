@@ -808,13 +808,13 @@
   #quotes .section-head h2{font-size:clamp(22px,2.6vw,32px)}
   #learning blockquote{font-family:'Plus Jakarta Sans',sans-serif;font-weight:500}
   .about-text p{font-size:15px;line-height:1.7}
-  @media (min-width:821px){#hero h1.hero-quote{font-size:clamp(28px,min(3.7vw,7.4vh),58px);line-height:1.16;font-weight:600}}
-  @media (max-width:820px){#hero h1.hero-quote{font-size:clamp(26px,7.2vw,36px);font-weight:600}}
+  @media (min-width:821px){#hero h1.hero-quote{font-size:clamp(32px,min(4.5vw,8.6vh),70px);line-height:1.14;font-weight:600}.hero-content{max-width:880px;padding-right:3vw}}
+  @media (max-width:820px){#hero h1.hero-quote{font-size:clamp(30px,8.4vw,42px);font-weight:600}}
 
   /* header signature (colour follows the theme) */
   .brand{gap:0;filter:drop-shadow(0 0 12px rgba(226,185,107,.25))}
   html[data-theme="light"] .brand{filter:drop-shadow(0 0 10px rgba(37,99,235,.15))}
-  .brand .sig{display:block;height:46px;aspect-ratio:1000/237;background:var(--sig);background-size:260% 100%;
+  .brand .sig{display:block;height:46px;aspect-ratio:1000/230;background:var(--sig);background-size:260% 100%;
     -webkit-mask:url(assets/signature.png) center/contain no-repeat;mask:url(assets/signature.png) center/contain no-repeat;animation:brandShine 6s linear infinite}
   header#topnav.scrolled .brand .sig{height:40px}
   @media (max-width:820px){.brand .sig{height:36px}header#topnav.scrolled .brand .sig{height:34px}}
@@ -835,17 +835,17 @@
   @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:.85;transform:scale(1)}}
   @media (prefers-reduced-motion:reduce){.bg-aurora i,.bg-aurora .sp,.brand .sig{animation:none}}
 
-  /* about */
-  .about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 14px}
-  .astat{padding:14px 8px;text-align:center}
-  .astat b{display:block;font-family:'Sora',sans-serif;font-size:clamp(19px,1.9vw,25px);color:var(--gold);line-height:1.15;font-weight:700}
-  .astat span{display:block;font-size:11px;color:var(--dim);margin-top:5px;line-height:1.35}
-  .type-card{display:flex;gap:16px;align-items:center;padding:16px 20px;border-left:3px solid var(--gold);border-radius:6px 16px 16px 6px}
-  .type-ico{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(226,185,107,.13);color:var(--gold)}
-  html[data-theme="light"] .type-ico{background:rgba(29,78,216,.1)}
-  .type-card b{display:block;font-size:14.5px;color:var(--text)}
-  .type-card span{display:block;font-size:13px;color:var(--dim);margin-top:3px;line-height:1.55}
-  @media (max-width:620px){.about-stats{grid-template-columns:repeat(2,1fr)}}
+  /* about: all text inside one box */
+  .about-box{padding:clamp(20px,3.4vh,36px) clamp(22px,2.6vw,40px)}
+  .about-box .eyebrow{margin-bottom:clamp(8px,1.4vh,14px)}
+  .about-text h2{font-size:clamp(21px,min(2.4vw,4.2vh),31px);margin-bottom:clamp(10px,1.8vh,18px);line-height:1.2}
+  .about-text p{font-size:clamp(12.5px,1.8vh,15px);line-height:1.65;margin-bottom:clamp(8px,1.5vh,13px)}
+  .about-text p:last-child{margin-bottom:0}
+  @media (min-width:1061px){.about-grid{grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:44px}}
+
+  /* photos wiggle a little on hover (done in script) */
+  .hero-photo-col .cutout,.about-photo-main,.lphoto img{will-change:rotate,translate}
+  .hero-photo-col .cutout{pointer-events:auto}
 
   /* vertical timelines (education + experience), details open inside the card */
   .vt{max-width:960px}
@@ -869,12 +869,13 @@
   html[data-theme="light"] .vt-full strong{color:#0b1630}
 
   /* project book: cover text always fits (scales with the book) */
-  .report .cover{container-type:size;padding:8cqw 7cqw 7cqw 9.5cqw}
-  .report .cover h4{font-size:17px;font-size:min(5.4cqw,3.9cqh);line-height:1.25;margin:3cqh 0}
+  .report .cover{container-type:size;padding:0}
+  .report .cover .ci{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:26px 24px 22px 32px;padding:8cqw 7cqw 7cqw 10cqw}
+  .report .cover h4{font-size:17px;font-size:min(5.4cqw,3.8cqh);line-height:1.25;margin:3cqh 0}
   .report .cover .tag{font-size:9px;font-size:min(2.9cqw,2.1cqh);line-height:1.5}
-  .report .cover svg{height:12cqh}
+  .report .cover svg{height:60px;height:12cqh}
   .report .cover .uni{font-size:10px;font-size:min(3.2cqw,2.3cqh);line-height:1.4}
-  .report .cover .seal{width:11cqw;height:11cqw;font-size:3.3cqw}
+  .report .cover .seal{width:38px;height:38px;width:11cqw;height:11cqw;font-size:3.3cqw}
 
   /* quotes: centre card large, side cards dim */
   .quotes-wrap{max-width:1140px;padding:0 70px}
@@ -986,21 +987,12 @@
         <div class="about-photo-main"><img src="assets/about-casual.jpg" alt="Anil Kumar Hotta" loading="lazy"></div>
       </div>
     </div>
-    <div class="about-text">
-      <div class="eyebrow" data-reveal>About</div>
+    <div class="about-text about-box glass" data-reveal style="--d:.08s">
+      <div class="eyebrow">About</div>
       <h2 class="split" data-split>Numbers by training, curiosity by nature.</h2>
-      <p data-reveal style="--d:.1s">I'm <strong>Anil Kumar Hotta</strong> — a <strong>CA Intermediate</strong> student pursuing Chartered Accountancy under the Institute of Chartered Accountants of India (ICAI), and a Bachelor of Commerce (Hons) graduate from Khallikote Unitary University, Brahmapur.</p>
-      <p data-reveal style="--d:.18s">Beyond the books, I follow <strong>finance, artificial intelligence and geopolitics</strong> closely, and I enjoy turning ideas into clear designs and working websites. Mathematics has been a constant thread — from the PMSTS scholarship in school to the analytical discipline I now bring to accounting, taxation and audit.</p>
-      <div class="about-stats" data-reveal style="--d:.26s">
-        <div class="astat glass"><b data-count="8.63" data-dec="2">8.63</b><span>B.Com (Hons) CGPA</span></div>
-        <div class="astat glass"><b data-count="13">13</b><span>Certifications</span></div>
-        <div class="astat glass"><b data-count="92" data-prefix="~" data-suffix="%">~92%</b><span>Board exams</span></div>
-        <div class="astat glass"><b data-count="80" data-suffix="+">80+</b><span>Typing speed (WPM)</span></div>
-      </div>
-      <div class="type-card glass" data-reveal style="--d:.34s">
-        <div class="type-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
-        <div><b>Touch typist · 80+ WPM</b><span>Typing at 80+ words per minute places me around the top 5% of typists worldwide.</span></div>
-      </div>
+      <p>I'm <strong>Anil Kumar Hotta</strong>, a <strong>CA Intermediate</strong> student from Brahmapur, Odisha, pursuing Chartered Accountancy under the Institute of Chartered Accountants of India. I also hold a B.Com (Hons) from Khallikote Unitary University, completed with a CGPA of 8.63 after switching from science to commerce. Mathematics has been a constant thread — from the PMSTS scholarship at school to the analytical discipline I now bring to accounting, taxation and audit.</p>
+      <p>Alongside my studies, I work on real assignments. Since September 2024 I have freelanced for Ambitious Professionals, a coaching institute for CA and CMA students — handling digital marketing, graphic design, YouTube and Shorts editing, and building their website. An internship at Welcome Associates, an advocate and tax consultancy firm, gave me hands-on experience in ITR filing, tax audits under Forms 3CB-3CD, GST reconciliation and Tally. I have also completed job simulations with PwC, EY, KPMG, Deloitte, Bank of America and Fidelity.</p>
+      <p>Beyond work, I follow <strong>finance, artificial intelligence and geopolitics</strong> closely. I am also a touch typist — at 80+ words per minute, I am around the top 5% of typists worldwide. I believe the process is always in our hands; the result never fully is.</p>
     </div>
   </div>
 </section>
@@ -1138,14 +1130,14 @@
               <p>Profitability, liquidity, solvency and cash-flow trends for seven Brahmapur businesses, FY 2022–23 to 2024–25.</p>
               <div class="open-hint">Click to open →</div>
             </div>
-            <div class="cover">
+            <div class="cover"><div class="ci">
               <div>
                 <div class="tag">B.Com (Hons) Project · 2023–26</div>
                 <h4>Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City</h4>
               </div>
               <svg viewBox="0 0 260 70" preserveAspectRatio="none"><path d="M0 60 L30 48 L55 54 L85 30 L115 38 L145 18 L175 28 L205 10 L235 16 L260 4"/></svg>
               <div class="uni"><span>Khallikote Unitary University<br>Brahmapur</span><div class="seal">AKH</div></div>
-            </div>
+            </div></div>
           </div>
         </div>
         <div class="report-hint"><i></i>Click the book to open</div>
@@ -1524,6 +1516,15 @@ safe('expand', ()=>{
       lbl.textContent = open ? 'Show less' : 'Read more';
     });
     exp.addEventListener('transitionend', () => { if(window.updateTimeline) window.updateTimeline(); });
+  });
+});
+
+safe('wiggle', ()=>{
+  if(reduceMotion) return;
+  const kf = [{rotate:'0deg',translate:'0 0'},{rotate:'-1.8deg',translate:'-4px 0'},{rotate:'1.6deg',translate:'4px -3px'},{rotate:'-1.2deg',translate:'-3px 0'},{rotate:'.8deg',translate:'2px 0'},{rotate:'0deg',translate:'0 0'}];
+  ['.hero-photo-col .cutout', '.about-photo-main', '.lphoto img'].forEach(sel => {
+    const el = $(sel); if(!el) return; let a = null;
+    el.addEventListener('pointerenter', () => { if(a && a.playState === 'running') return; a = el.animate(kf, {duration:750, easing:'ease-in-out'}); });
   });
 });
 
