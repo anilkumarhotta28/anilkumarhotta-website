@@ -6,10 +6,11 @@
 <title>Anil Kumar Hotta — CA Intermediate · Finance, AI &amp; Geopolitics Enthusiast</title>
 <meta name="description" content="Anil Kumar Hotta — CA Intermediate and B.Com (Hons) graduate from Brahmapur, Odisha. Finance, AI & geopolitics enthusiast.">
 <meta name="theme-color" content="#050b1a">
-<script>try{var _t=localStorage.getItem("theme");if(_t==="light"||_t==="dark")document.documentElement.setAttribute("data-theme",_t)}catch(e){}</script>
+<meta name="color-scheme" content="dark light">
+<script>(function(){try{var l=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;document.documentElement.setAttribute("data-theme",l?"light":"dark");var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=l?"#f3f6fc":"#050b1a"}catch(e){}})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -23,20 +24,20 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
   body{
-    background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.6;
+    background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans',sans-serif; line-height:1.6;
     -webkit-font-smoothing:antialiased; overflow-x:hidden; max-width:100%; position:relative;
   }
   ::selection{background:var(--gold);color:#07102a}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   button{font-family:inherit}
-  .mono{font-family:'JetBrains Mono',monospace}
-  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;color:#fff;letter-spacing:-.01em}
+  .mono{font-family:'Plus Jakarta Sans',sans-serif}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:600;color:#fff;letter-spacing:-.01em}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
   main{position:relative;z-index:2}
   section{position:relative;padding:110px 0}
   .eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
     color:var(--gold);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:16px;
   }
   .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
@@ -64,7 +65,7 @@
   #bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
   .fx-symbols{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
   .fx-symbols span{
-    position:absolute;bottom:-60px;font-family:'JetBrains Mono',monospace;color:var(--gold);opacity:0;
+    position:absolute;bottom:-60px;font-family:'Plus Jakarta Sans',sans-serif;color:var(--gold);opacity:0;
     animation:riseSym 22s linear infinite;
   }
   @keyframes riseSym{
@@ -137,7 +138,7 @@
   }
   header#topnav.scrolled{background:rgba(5,11,26,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
   header#topnav.scrolled .bar{height:64px}
-  .brand{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:#fff}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#fff}
   .brand .mark{width:38px;height:38px;border-radius:50%;overflow:hidden;border:1.5px solid var(--gold);flex:none;box-shadow:0 0 18px rgba(226,185,107,.35)}
   .brand .mark img{width:100%;height:100%;object-fit:cover}
   nav.links{display:flex;gap:30px;align-items:center}
@@ -171,7 +172,7 @@
   }
   #mobileMenu.open{opacity:1;pointer-events:auto}
   #mobileMenu a{
-    font-family:'Playfair Display',serif;font-size:30px;color:#fff;transform:translateX(-24px);opacity:0;
+    font-family:'Sora',sans-serif;font-size:30px;color:#fff;transform:translateX(-24px);opacity:0;
     transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .5s;
   }
   #mobileMenu.open a{transform:none;opacity:1}
@@ -223,7 +224,7 @@
   @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
   .hero-content{position:relative;z-index:3;width:100%;padding:112px 5vw 90px calc(min(88vh,56vw) * .78 + 4vw)}
   .hero-eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;
     margin-bottom:22px;font-weight:600;display:flex;align-items:center;gap:14px;
   }
   .hero-eyebrow::before{content:"";width:0;height:1px;background:var(--gold);animation:growLine 1.2s .4s forwards}
@@ -235,7 +236,7 @@
   }
   @keyframes shimmer{to{background-position:-220% 0}}
   .typewriter-line{
-    font-family:'JetBrains Mono',monospace;font-size:clamp(15px,1.7vw,19px);color:var(--gold2);min-height:30px;margin-bottom:22px;font-weight:500;
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(15px,1.7vw,19px);color:var(--gold2);min-height:30px;margin-bottom:22px;font-weight:500;
   }
   .typewriter-line .cursor{display:inline-block;width:2px;height:1.1em;vertical-align:-3px;background:var(--gold);margin-left:3px;animation:blink .9s step-end infinite}
   @keyframes blink{50%{opacity:0}}
@@ -243,17 +244,17 @@
   .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:38px}
   .hstats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
   .hstat{padding:14px 22px;min-width:118px}
-  .hstat b{display:block;font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:26px;line-height:1.2}
+  .hstat b{display:block;font-family:'Plus Jakarta Sans',sans-serif;color:var(--gold);font-size:26px;line-height:1.2}
   .hstat span{font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
   .role-strip{display:flex;flex-wrap:wrap;gap:10px}
   .role-chip{
-    font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--dim);border:1px solid var(--line);
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;color:var(--dim);border:1px solid var(--line);
     padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.03);transition:all .3s;
   }
   .role-chip:hover{color:#fff;border-color:var(--gold);transform:translateY(-2px)}
   .scroll-cue{
     position:absolute;bottom:26px;right:5vw;z-index:4;display:flex;align-items:center;gap:12px;
-    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase;
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase;
   }
   .scroll-cue .mouse{width:22px;height:34px;border:1.5px solid var(--dim);border-radius:12px;position:relative}
   .scroll-cue .mouse::after{
@@ -269,7 +270,7 @@
   }
   .ticker-track{display:flex;gap:0;width:max-content;animation:marquee 46s linear infinite}
   .ticker span{
-    font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;
     white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:52px;
   }
   .ticker span::after{content:"◆";color:var(--gold);font-size:8px}
@@ -281,7 +282,7 @@
   .about-orbit{position:absolute;inset:0;pointer-events:none}
   .float-icon{
     position:absolute;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;
-    background:rgba(10,20,48,.75);border:1px solid var(--line);color:var(--gold);font-family:'JetBrains Mono',monospace;
+    background:rgba(10,20,48,.75);border:1px solid var(--line);color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;
     font-size:18px;font-weight:700;animation:floatY 5.5s ease-in-out infinite;backdrop-filter:blur(8px);
   }
   .fi-1{top:3%;left:4%}.fi-2{top:10%;right:2%;animation-delay:.8s}.fi-3{bottom:12%;left:0;animation-delay:1.6s}
@@ -335,21 +336,21 @@
     background:var(--bg);border:2px solid rgba(226,185,107,.5);transition:all .5s;
   }
   .vt-item.active .vt-dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 6px rgba(226,185,107,.18),0 0 22px rgba(226,185,107,.8)}
-  .vt-year{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:12.5px;font-weight:600;letter-spacing:.06em;margin-bottom:8px}
+  .vt-year{font-family:'Plus Jakarta Sans',sans-serif;color:var(--gold);font-size:12.5px;font-weight:600;letter-spacing:.06em;margin-bottom:8px}
   .vt-card h3{font-size:21px;margin-bottom:10px;line-height:1.25}
   .vt-card p{color:var(--dim);font-size:14.5px}
   .vt-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-  .vt-tags span{font-size:11.5px;font-family:'JetBrains Mono',monospace;border:1px solid var(--line);padding:5px 11px;border-radius:999px;color:var(--gold2);background:rgba(255,255,255,.04)}
+  .vt-tags span{font-size:11.5px;font-family:'Plus Jakarta Sans',sans-serif;border:1px solid var(--line);padding:5px 11px;border-radius:999px;color:var(--gold2);background:rgba(255,255,255,.04)}
 
   /* ===== CERTIFICATIONS ===== */
   .cert-carousel-wrap{position:relative;max-width:1100px;margin:0 auto;padding:0 64px}
   .cert-viewport{overflow:hidden;border-radius:var(--radius)}
   .cert-track{display:flex;transition:transform .7s cubic-bezier(.65,0,.35,1)}
   .cert-slide{flex:0 0 100%;display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:center;padding:34px}
-  .cert-kicker{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+  .cert-kicker{font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
   .cert-copy h3{font-size:25px;margin-bottom:14px;line-height:1.2}
   .cert-copy p{font-size:14.5px;color:var(--dim);line-height:1.75;margin-bottom:16px}
-  .cert-issuer{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold2)}
+  .cert-issuer{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:var(--gold2)}
   .cert-image{border-radius:12px;overflow:hidden;cursor:zoom-in;aspect-ratio:1.414/1;background:#fff;box-shadow:0 24px 50px -22px rgba(0,0,0,.8);border:1px solid var(--line)}
   .cert-image img{width:100%;height:100%;object-fit:contain;transition:transform .5s ease}
   .cert-image:hover img{transform:scale(1.04)}
@@ -386,14 +387,14 @@
     position:absolute;inset:0;border-radius:4px 12px 12px 4px;background:#f4f6fb;padding:24px 22px;color:#0b1630;
     transform:translateZ(-5px);display:flex;flex-direction:column;gap:10px;
   }
-  .report .inside h5{font-family:'Playfair Display',serif;font-size:15px;color:#0b1630}
+  .report .inside h5{font-family:'Sora',sans-serif;font-size:15px;color:#0b1630}
   .report .inside .mini{display:flex;align-items:flex-end;gap:7px;height:90px;margin-top:4px}
   .report .inside .mini i{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(#4f9dff,#1c4fa8);transform-origin:bottom;animation:grow 2.6s ease-in-out infinite alternate}
   .report .inside .mini i:nth-child(2n){background:linear-gradient(#e2b96b,#b8873a);animation-delay:.3s}
   .report .inside .mini i:nth-child(3n){animation-delay:.6s}
   @keyframes grow{from{transform:scaleY(.45)}to{transform:scaleY(1)}}
   .report .inside p{font-size:11.5px;color:#43507a;line-height:1.5}
-  .report .inside .open-hint{margin-top:auto;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#1c4fa8;letter-spacing:.08em;text-transform:uppercase}
+  .report .inside .open-hint{margin-top:auto;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;color:#1c4fa8;letter-spacing:.08em;text-transform:uppercase}
   .report .cover{
     position:absolute;inset:0;border-radius:4px 14px 14px 4px;transform-origin:left center;transform:translateZ(8px);
     transition:transform .9s cubic-bezier(.2,.8,.2,1);padding:26px 24px 22px 30px;display:flex;flex-direction:column;
@@ -406,23 +407,23 @@
     transform:translateX(-100%);animation:sweep 5s ease-in-out infinite;
   }
   .report:hover .cover,.report:focus-visible .cover{transform:translateZ(8px) rotateY(-42deg)}
-  .report .cover .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+  .report .cover .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
   .report .cover h4{font-size:19px;line-height:1.25;color:#fff;margin:12px 0}
   .report .cover svg{width:100%;height:70px;overflow:visible}
   .report .cover svg path{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 4s ease-in-out infinite}
   @keyframes draw{0%{stroke-dashoffset:420}60%,100%{stroke-dashoffset:0}}
   .report .cover .uni{font-size:11px;color:var(--dim);display:flex;justify-content:space-between;align-items:center;gap:10px}
-  .report .cover .seal{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);font-weight:700;flex:none}
-  .report-hint{margin-top:26px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .report .cover .seal{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;color:var(--gold);font-weight:700;flex:none}
+  .report-hint{margin-top:26px;font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;display:flex;align-items:center;gap:10px}
   .report-hint i{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulseDot 1.6s ease-in-out infinite}
   @keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(53,208,194,.7)}50%{box-shadow:0 0 0 8px rgba(53,208,194,0)}}
   .proj-copy h3{font-size:clamp(26px,3.2vw,36px);margin-bottom:16px;line-height:1.2}
   .proj-copy p{color:var(--dim);font-size:15px;margin-bottom:14px}
   .project-stats{display:flex;gap:30px;margin:22px 0;flex-wrap:wrap}
-  .pstat b{display:block;font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:26px}
+  .pstat b{display:block;font-family:'Plus Jakarta Sans',sans-serif;color:var(--gold);font-size:26px}
   .pstat span{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
   .project-meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
-  .project-meta span{font-size:11.5px;font-family:'JetBrains Mono',monospace;border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--gold2);background:rgba(255,255,255,.04)}
+  .project-meta span{font-size:11.5px;font-family:'Plus Jakarta Sans',sans-serif;border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--gold2);background:rgba(255,255,255,.04)}
   .proj-actions{display:flex;gap:14px;flex-wrap:wrap}
 
   /* analysis modal */
@@ -442,7 +443,7 @@
   .tab{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--dim);font-size:12.5px;font-weight:600;cursor:pointer;transition:all .25s}
   .tab:hover{color:#fff;border-color:var(--gold)}
   .tab.active{background:linear-gradient(120deg,#f6dca0,#e2b96b);color:#1a1204;border-color:transparent}
-  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:6px;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:var(--dim)}
   .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
   .chart-note{font-size:12px;color:var(--dim);margin:6px 0 4px}
   .chart{display:flex;align-items:flex-end;gap:clamp(6px,1.6vw,22px);height:300px;padding:34px 4px 0;border-bottom:1px solid var(--line)}
@@ -456,7 +457,7 @@
   .cbar:hover{filter:brightness(1.25)}
   .cbar::after{
     content:attr(data-v);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
-    font-family:'JetBrains Mono',monospace;font-size:10px;color:#fff;background:#0b1630;border:1px solid var(--line);
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;color:#fff;background:#0b1630;border:1px solid var(--line);
     padding:3px 7px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;z-index:5;
   }
   .cbar:hover::after{opacity:1}
@@ -465,12 +466,12 @@
   .y1{background:linear-gradient(#6fb1ff,#2f6fd0)}.y2{background:linear-gradient(#5fe6d8,#1f9a90)}.y3{background:linear-gradient(#f6dca0,#c8964a)}
   .ov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
   .ov-card{padding:20px 22px}
-  .ov-card b{display:block;font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:26px;margin-bottom:4px}
+  .ov-card b{display:block;font-family:'Plus Jakarta Sans',sans-serif;color:var(--gold);font-size:26px;margin-bottom:4px}
   .ov-card span{font-size:12.5px;color:var(--dim);line-height:1.5;display:block}
   .find-list{display:grid;gap:12px}
   .find{display:flex;gap:16px;padding:16px 18px;opacity:0;transform:translateY(16px);animation:findIn .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * 90ms)}
   @keyframes findIn{to{opacity:1;transform:none}}
-  .find i{font-style:normal;font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:13px;flex:none;padding-top:2px}
+  .find i{font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;color:var(--gold);font-size:13px;flex:none;padding-top:2px}
   .find p{font-size:14px;color:#cfd9f2;line-height:1.6}
   .find p strong{color:#fff}
   .modal-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--dim)}
@@ -483,9 +484,9 @@
     flex:0 0 100%;padding:60px 52px;text-align:center;display:flex;flex-direction:column;gap:22px;align-items:center;justify-content:center;
     min-height:300px;position:relative;overflow:hidden;
   }
-  .quote-card::before{content:"\201C";position:absolute;top:-30px;left:24px;font-family:'Playfair Display',serif;font-size:170px;color:rgba(226,185,107,.14);line-height:1}
-  .quote-card p{font-family:'Playfair Display',serif;font-size:clamp(19px,2.5vw,27px);line-height:1.5;font-weight:500;color:#fff;position:relative}
-  .qwho b{display:block;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gold2);letter-spacing:.04em}
+  .quote-card::before{content:"\201C";position:absolute;top:-30px;left:24px;font-family:'Sora',sans-serif;font-size:170px;color:rgba(226,185,107,.14);line-height:1}
+  .quote-card p{font-family:'Sora',sans-serif;font-size:clamp(19px,2.5vw,27px);line-height:1.5;font-weight:500;color:#fff;position:relative}
+  .qwho b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--gold2);letter-spacing:.04em}
   .qwho span{display:block;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
   .quote-in{animation:quoteIn .7s cubic-bezier(.2,.8,.2,1)}
   @keyframes quoteIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
@@ -497,8 +498,8 @@
   .lphoto img{width:100%;height:100%;object-fit:cover;border-radius:50%;filter:grayscale(1) contrast(1.05);border:3px solid rgba(255,255,255,.2);position:relative;z-index:2}
   .lring{position:absolute;inset:-16px;border-radius:50%;border:1px dashed rgba(226,185,107,.6);animation:spin 38s linear infinite;z-index:1}
   .lring.r2{inset:-32px;border-color:rgba(79,157,255,.4);animation-duration:58s;animation-direction:reverse}
-  #learning blockquote{font-family:'Playfair Display',serif;font-size:clamp(16px,1.7vw,19px);line-height:1.75;font-weight:500;color:#e9eefb;position:relative}
-  #learning cite{display:block;margin-top:22px;font-family:'JetBrains Mono',monospace;font-style:normal;font-size:12.5px;color:var(--gold)}
+  #learning blockquote{font-family:'Sora',sans-serif;font-size:clamp(16px,1.7vw,19px);line-height:1.75;font-weight:500;color:#e9eefb;position:relative}
+  #learning cite{display:block;margin-top:22px;font-family:'Plus Jakarta Sans',sans-serif;font-style:normal;font-size:12.5px;color:var(--gold)}
 
   /* ===== CONTACT ===== */
   .contact-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:start}
@@ -506,7 +507,7 @@
   .form-field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
   .form-field label{font-size:12px;font-weight:600;color:var(--gold2);letter-spacing:.06em;text-transform:uppercase}
   .form-field input,.form-field textarea{
-    border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;font-family:'Inter',sans-serif;
+    border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;font-family:'Plus Jakarta Sans',sans-serif;
     background:rgba(255,255,255,.05);color:#fff;outline:none;transition:border-color .25s,box-shadow .25s,background .25s;resize:vertical;
   }
   .form-field input::placeholder,.form-field textarea::placeholder{color:#6f7fa6}
@@ -527,7 +528,7 @@
   .contact-card span{font-size:13.5px;color:var(--dim);word-break:break-word}
   footer{position:relative;z-index:3;border-top:1px solid var(--line);background:rgba(5,11,26,.8);padding:42px 0 34px}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-  .foot-brand{font-family:'Playfair Display',serif;color:#fff;font-size:17px}
+  .foot-brand{font-family:'Sora',sans-serif;color:#fff;font-size:17px}
   .foot-links{display:flex;gap:22px}
   .foot-links a{font-size:13px;color:var(--dim);transition:color .25s}
   .foot-links a:hover{color:var(--gold)}
@@ -601,7 +602,7 @@
   .contact-globe{display:flex;flex-direction:column;align-items:center;margin:-6px auto 50px}
   .globe-wrap{width:min(560px,92vw);aspect-ratio:1}
   #globeCanvas{display:block;width:100%;height:100%}
-  .globe-cap{margin-top:-8px;display:flex;align-items:center;gap:10px;justify-content:center;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
+  .globe-cap{margin-top:-8px;display:flex;align-items:center;gap:10px;justify-content:center;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
   .globe-cap i{width:8px;height:8px;border-radius:50%;background:var(--teal);flex:none;animation:pulseDot 1.6s ease-in-out infinite}
   /* carousel arrows: below the card on phones/tablets, never on top of it */
   @media (max-width:760px){
@@ -676,7 +677,7 @@
   .proj-grid{grid-template-columns:.8fr 1.2fr;gap:56px}
   .report-stage{padding:10px}
   .proj-grid .report{width:min(250px,64vw)}
-  .proj-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .proj-tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
   /* contact: globe | form | icons */
   .contact-globe{display:flex;flex-direction:column;align-items:center;margin:0}
   .globe-wrap{width:min(420px,84vw);aspect-ratio:1}
@@ -719,7 +720,7 @@
   /* ===== V4: reference-style typography, one-screen sections ===== */
   h1,h2,h3,h4{letter-spacing:0}
   .brand{font-size:20px}
-  .brand-name{font-family:'Playfair Display',serif;font-weight:700;background:linear-gradient(100deg,#fff 0%,#fff 34%,#f6dca0 46%,#e2b96b 50%,#f6dca0 54%,#fff 66%,#fff 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brandShine 4.8s linear infinite}
+  .brand-name{font-family:'Sora',sans-serif;font-weight:700;background:linear-gradient(100deg,#fff 0%,#fff 34%,#f6dca0 46%,#e2b96b 50%,#f6dca0 54%,#fff 66%,#fff 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brandShine 4.8s linear infinite}
   @keyframes brandShine{from{background-position:130% 0}to{background-position:-130% 0}}
   html[data-theme="light"] .brand-name{background-image:linear-gradient(100deg,#0b1630 0%,#0b1630 34%,#3b82f6 46%,#0d9488 50%,#3b82f6 54%,#0b1630 66%,#0b1630 100%)}
   .section-head{margin-bottom:24px}
@@ -729,10 +730,10 @@
   .about-text h2{font-size:clamp(26px,2.8vw,34px);margin-bottom:16px}
   .about-text p{font-size:14.5px;margin-bottom:12px}
   .hero-quote em{font-style:italic;background:linear-gradient(100deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .typewriter-line{font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.26em;font-size:clamp(11px,1.2vw,14px);font-weight:500;color:var(--gold)}
+  .typewriter-line{font-family:'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:.26em;font-size:clamp(11px,1.2vw,14px);font-weight:500;color:var(--gold)}
   .hero-sub{font-size:clamp(15px,1.4vw,18px);max-width:520px}
   .vt-sum{font-size:13.5px;color:var(--dim);line-height:1.65}
-  .vt-more{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .vt-more{font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:14px}
   .vt-card{cursor:pointer}
   #eduText{font-size:14.5px;color:var(--dim);line-height:1.75;margin:10px 0 16px}
   .proj-center{display:flex;flex-direction:column;align-items:center}
@@ -753,16 +754,6 @@
     .about-photos{padding:26px}
     .about-photo-frame{max-width:min(250px,calc((100svh - 250px) * .75))}
     .precision-box{margin-top:16px;padding:14px 22px}
-    /* education: three cards in a row, details on click */
-    .vt{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1120px;padding:14px 0 0}
-    .vt-line,.vt-fill,.vt-pointer{display:none}
-    .vt-item{display:block;margin:0}
-    .vt-card,.vt-item:nth-child(odd) .vt-card{margin:0;opacity:1;transform:none;padding:24px 22px 18px;height:100%;display:flex;flex-direction:column}
-    .vt-item .vt-card:hover{transform:translateY(-4px);border-color:var(--gold)}
-    .vt-dot{left:22px;top:-7px;margin:0;width:14px;height:14px}
-    .vt-card h3{font-size:18px;margin-bottom:8px}
-    .vt-card .vt-tags{display:none}
-    .vt-more{margin-top:auto;padding-top:14px}
     /* quotes: one-row heading */
     #quotes .section-head{max-width:none;margin-bottom:20px}
     #quotes .section-head h2{white-space:nowrap;font-size:clamp(24px,3vw,34px)}
@@ -802,12 +793,117 @@
   #quotes .section-head h2::after{margin-left:auto;margin-right:auto}
   @keyframes cutIn{from{opacity:0;clip-path:inset(-60px 100% 0 -60px)}to{opacity:1;clip-path:inset(-60px -60px 0 -60px)}}
   @media (max-width:520px){#quotes .section-head h2{white-space:normal}}
+
+  /* ===== V5: new fonts, signature, vertical timelines, centre-focus quotes, glowing background ===== */
+  :root{--sig:linear-gradient(100deg,#e2b96b 0%,#e2b96b 38%,#fff3c9 50%,#e2b96b 62%,#e2b96b 100%);--aur1:rgba(79,157,255,.30);--aur2:rgba(53,208,194,.20);--aur3:rgba(226,185,107,.17);--shine:rgba(150,190,255,.13);--spk:#cfe0ff}
+  html[data-theme="light"]{--sig:linear-gradient(100deg,#1e3a8a 0%,#1e3a8a 38%,#4f8bff 50%,#1e3a8a 62%,#1e3a8a 100%);--aur1:rgba(59,130,246,.24);--aur2:rgba(13,148,136,.14);--aur3:rgba(250,204,21,.15);--shine:rgba(37,99,235,.09);--spk:#3b82f6}
+
+  /* typography */
+  body{font-family:'Plus Jakarta Sans',sans-serif}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:600;letter-spacing:-.015em}
+  .hero-quote em{font-style:normal;font-weight:700}
+  .section-head h2{font-size:clamp(24px,2.6vw,32px)}
+  .about-text h2{font-size:clamp(24px,2.5vw,31px)}
+  .cert-copy h3{font-size:20px}
+  #quotes .section-head h2{font-size:clamp(22px,2.6vw,32px)}
+  #learning blockquote{font-family:'Plus Jakarta Sans',sans-serif;font-weight:500}
+  .about-text p{font-size:15px;line-height:1.7}
+  @media (min-width:821px){#hero h1.hero-quote{font-size:clamp(28px,min(3.7vw,7.4vh),58px);line-height:1.16;font-weight:600}}
+  @media (max-width:820px){#hero h1.hero-quote{font-size:clamp(26px,7.2vw,36px);font-weight:600}}
+
+  /* header signature (colour follows the theme) */
+  .brand{gap:0;filter:drop-shadow(0 0 12px rgba(226,185,107,.25))}
+  html[data-theme="light"] .brand{filter:drop-shadow(0 0 10px rgba(37,99,235,.15))}
+  .brand .sig{display:block;height:46px;aspect-ratio:1000/237;background:var(--sig);background-size:260% 100%;
+    -webkit-mask:url(assets/signature.png) center/contain no-repeat;mask:url(assets/signature.png) center/contain no-repeat;animation:brandShine 6s linear infinite}
+  header#topnav.scrolled .brand .sig{height:40px}
+  @media (max-width:820px){.brand .sig{height:36px}header#topnav.scrolled .brand .sig{height:34px}}
+  @media (min-width:1061px) and (max-width:1250px){nav.links{gap:18px}}
+
+  /* glowing background: drifting aurora lights, a slow light beam and soft twinkles */
+  .bg-aurora{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+  .bg-aurora i{position:absolute;border-radius:50%;will-change:transform}
+  .bg-aurora .a1{width:64vmax;height:64vmax;left:-20vmax;top:-24vmax;background:radial-gradient(circle,var(--aur1),transparent 66%);animation:aurA 24s ease-in-out infinite alternate}
+  .bg-aurora .a2{width:56vmax;height:56vmax;right:-22vmax;top:14vh;background:radial-gradient(circle,var(--aur2),transparent 66%);animation:aurB 30s ease-in-out infinite alternate}
+  .bg-aurora .a3{width:60vmax;height:60vmax;left:18vw;bottom:-34vmax;background:radial-gradient(circle,var(--aur3),transparent 66%);animation:aurC 36s ease-in-out infinite alternate}
+  .bg-aurora .beam{top:-25%;bottom:-25%;left:-40vw;width:30vw;border-radius:0;background:linear-gradient(90deg,transparent,var(--shine),transparent);transform:rotate(16deg);animation:beam 16s ease-in-out infinite}
+  .bg-aurora .sp{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--spk);box-shadow:0 0 9px 2px var(--spk);opacity:0;animation:twinkle 6s ease-in-out infinite}
+  @keyframes aurA{to{transform:translate3d(16vmax,12vmax,0) scale(1.12)}}
+  @keyframes aurB{to{transform:translate3d(-14vmax,10vmax,0) scale(1.15)}}
+  @keyframes aurC{to{transform:translate3d(-12vmax,-8vmax,0) scale(1.1)}}
+  @keyframes beam{0%{transform:translateX(0) rotate(16deg);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translateX(190vw) rotate(16deg);opacity:0}}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:.85;transform:scale(1)}}
+  @media (prefers-reduced-motion:reduce){.bg-aurora i,.bg-aurora .sp,.brand .sig{animation:none}}
+
+  /* about */
+  .about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 14px}
+  .astat{padding:14px 8px;text-align:center}
+  .astat b{display:block;font-family:'Sora',sans-serif;font-size:clamp(19px,1.9vw,25px);color:var(--gold);line-height:1.15;font-weight:700}
+  .astat span{display:block;font-size:11px;color:var(--dim);margin-top:5px;line-height:1.35}
+  .type-card{display:flex;gap:16px;align-items:center;padding:16px 20px;border-left:3px solid var(--gold);border-radius:6px 16px 16px 6px}
+  .type-ico{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(226,185,107,.13);color:var(--gold)}
+  html[data-theme="light"] .type-ico{background:rgba(29,78,216,.1)}
+  .type-card b{display:block;font-size:14.5px;color:var(--text)}
+  .type-card span{display:block;font-size:13px;color:var(--dim);margin-top:3px;line-height:1.55}
+  @media (max-width:620px){.about-stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* vertical timelines (education + experience), details open inside the card */
+  .vt{max-width:960px}
+  @media (min-width:821px){.vt-item{margin-bottom:38px}.vt-card{padding:24px 28px}}
+  .vt-card{cursor:pointer}
+  .vt-card h3{font-size:18px;line-height:1.3;margin-bottom:8px}
+  .vt-role{font-size:13px;font-weight:600;color:var(--gold2);margin:-2px 0 10px}
+  .vt-sum{font-size:14px;line-height:1.65;color:var(--dim)}
+  .vt-exp{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.8,.2,1)}
+  .vt-card.open .vt-exp{grid-template-rows:1fr}
+  .vt-full{overflow:hidden;min-height:0;font-size:14px;line-height:1.75;color:var(--dim)}
+  .vt-full .in{padding-top:14px}
+  .vt-full p{font-size:14px;margin:0 0 10px}
+  .vt-full ul{margin:0 0 4px 18px;display:grid;gap:8px}
+  .vt-full strong{color:var(--text);font-weight:600}
+  .vt-full a{color:var(--gold);border-bottom:1px solid currentColor}
+  .vt-card .vt-tags{display:flex}
+  .vt-card .vt-more{display:inline-flex;align-items:center;gap:8px;background:none;border:none;color:var(--gold);cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:14px;padding:4px 0}
+  .vt-more .ch{display:inline-block;transition:transform .4s}
+  .vt-card.open .vt-more .ch{transform:rotate(180deg)}
+  html[data-theme="light"] .vt-full strong{color:#0b1630}
+
+  /* project book: cover text always fits (scales with the book) */
+  .report .cover{container-type:size;padding:8cqw 7cqw 7cqw 9.5cqw}
+  .report .cover h4{font-size:17px;font-size:min(5.4cqw,3.9cqh);line-height:1.25;margin:3cqh 0}
+  .report .cover .tag{font-size:9px;font-size:min(2.9cqw,2.1cqh);line-height:1.5}
+  .report .cover svg{height:12cqh}
+  .report .cover .uni{font-size:10px;font-size:min(3.2cqw,2.3cqh);line-height:1.4}
+  .report .cover .seal{width:11cqw;height:11cqw;font-size:3.3cqw}
+
+  /* quotes: centre card large, side cards dim */
+  .quotes-wrap{max-width:1140px;padding:0 70px}
+  .quotes-stage{position:relative;height:320px;touch-action:pan-y}
+  .quote-card{--sx:66%;position:absolute;left:50%;top:50%;flex:none;width:54%;height:270px;min-height:0;padding:30px 40px;gap:14px;cursor:pointer;
+    visibility:hidden;opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(.6);
+    transition:transform .75s cubic-bezier(.22,.8,.2,1),opacity .75s ease,filter .75s ease,border-color .5s,box-shadow .5s,visibility 0s linear .75s}
+  .quote-card[data-pos="0"]{visibility:visible;opacity:1;z-index:3;pointer-events:auto;cursor:default;transform:translate(-50%,-50%) scale(1);transition-delay:0s;
+    border-color:rgba(226,185,107,.45);box-shadow:0 30px 70px -30px rgba(226,185,107,.35)}
+  .quote-card[data-pos="-1"],.quote-card[data-pos="1"]{visibility:visible;opacity:.4;z-index:2;pointer-events:auto;filter:saturate(.7) blur(.5px);transition-delay:0s}
+  .quote-card[data-pos="-1"]{transform:translate(calc(-50% - var(--sx)),-50%) scale(.82)}
+  .quote-card[data-pos="1"]{transform:translate(calc(-50% + var(--sx)),-50%) scale(.82)}
+  .quote-card[data-pos="-2"]{transform:translate(calc(-50% - var(--sx) * 1.5),-50%) scale(.62)}
+  .quote-card[data-pos="2"]{transform:translate(calc(-50% + var(--sx) * 1.5),-50%) scale(.62)}
+  .quote-card p{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:clamp(16px,1.5vw,20px);line-height:1.55}
+  html[data-theme="light"] .quote-card[data-pos="0"]{border-color:rgba(29,78,216,.4);box-shadow:0 26px 56px -30px rgba(29,78,216,.4)}
+  @media (max-width:820px){
+    .quotes-stage{height:350px}
+    .quote-card{--sx:77%;width:82%;height:310px;padding:26px 22px}
+    .quote-card p{font-size:15px}
+  }
+
 </style>
 </head>
 <body>
 
 <div class="bg-base"></div>
 <div class="bg-shine"></div>
+<div class="bg-aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="beam"></i></div>
 <canvas id="bgCanvas"></canvas>
 <div id="cursorGlow"></div>
 <div id="progress"></div>
@@ -815,11 +911,12 @@
 <!-- ================= NAV ================= -->
 <header id="topnav">
   <div class="bar">
-    <a href="#hero" class="brand"><span class="mark"><img src="assets/hero-professional.jpg" alt="Anil Kumar Hotta"></span><span class="brand-name">Anil Kumar Hotta</span></a>
+    <a href="#hero" class="brand" aria-label="Anil Kumar Hotta — back to top"><span class="sig" role="img" aria-label="Anil Kumar Hotta (signature)"></span></a>
     <nav class="links">
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#certs">Certifications</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#quotes">Quotes</a>
       <a href="#learning">My Learnings</a>
@@ -838,6 +935,7 @@
   <a href="#about">About</a>
   <a href="#education">Education</a>
   <a href="#certs">Certifications</a>
+  <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
   <a href="#quotes">Quotes</a>
   <a href="#learning">My Learnings</a>
@@ -866,7 +964,7 @@
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="tickerTrack">
     <span>Income Tax</span><span>GST</span><span>Audit &amp; Assurance</span><span>Financial Management</span>
-    <span>Corporate Law</span><span>Cost &amp; Management Accounting</span><span>Geopolitics</span><span>Global Markets</span><span>Artificial Intelligence</span>
+    <span>Corporate Law</span><span>Cost &amp; Management Accounting</span><span>Geopolitics</span><span>Global Markets</span><span>Artificial Intelligence</span><span>Touch Typing · 80+ WPM</span>
   </div>
 </div>
 
@@ -891,11 +989,17 @@
     <div class="about-text">
       <div class="eyebrow" data-reveal>About</div>
       <h2 class="split" data-split>Numbers by training, curiosity by nature.</h2>
-      <p data-reveal style="--d:.1s">I'm <strong>Anil Kumar Hotta</strong> — a <strong>CA Intermediate</strong> student pursuing Chartered Accountancy under the Institute of Chartered Accountants of India (ICAI). I've also graduated with a Bachelor of Commerce (Hons) from Khallikote Unitary University, Brahmapur.</p>
-      <p data-reveal style="--d:.18s">Alongside my studies, I follow <strong>finance, artificial intelligence and geopolitics</strong> closely — I like understanding how systems, markets and technology actually move.</p>
-      <p data-reveal style="--d:.26s">Mathematics has been a constant thread through my life — from winning school-level scholarship exams like PMSTS to applying that same analytical discipline to accounting, taxation, audit and financial management today.</p>
-      <div class="precision-box glass" data-reveal style="--d:.34s">
-        <p>"The process is always in our hands; the result never fully is. Yet the world remembers results, not excuses."</p>
+      <p data-reveal style="--d:.1s">I'm <strong>Anil Kumar Hotta</strong> — a <strong>CA Intermediate</strong> student pursuing Chartered Accountancy under the Institute of Chartered Accountants of India (ICAI), and a Bachelor of Commerce (Hons) graduate from Khallikote Unitary University, Brahmapur.</p>
+      <p data-reveal style="--d:.18s">Beyond the books, I follow <strong>finance, artificial intelligence and geopolitics</strong> closely, and I enjoy turning ideas into clear designs and working websites. Mathematics has been a constant thread — from the PMSTS scholarship in school to the analytical discipline I now bring to accounting, taxation and audit.</p>
+      <div class="about-stats" data-reveal style="--d:.26s">
+        <div class="astat glass"><b data-count="8.63" data-dec="2">8.63</b><span>B.Com (Hons) CGPA</span></div>
+        <div class="astat glass"><b data-count="13">13</b><span>Certifications</span></div>
+        <div class="astat glass"><b data-count="92" data-prefix="~" data-suffix="%">~92%</b><span>Board exams</span></div>
+        <div class="astat glass"><b data-count="80" data-suffix="+">80+</b><span>Typing speed (WPM)</span></div>
+      </div>
+      <div class="type-card glass" data-reveal style="--d:.34s">
+        <div class="type-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
+        <div><b>Touch typist · 80+ WPM</b><span>Typing at 80+ words per minute places me around the top 5% of typists worldwide.</span></div>
       </div>
     </div>
   </div>
@@ -911,16 +1015,17 @@
     </div>
     <div class="vt" id="vt">
       <div class="vt-line"></div>
-      <div class="vt-fill" id="vtFill"></div>
-      <div class="vt-pointer" id="vtPointer"></div>
+      <div class="vt-fill"></div>
+      <div class="vt-pointer"></div>
 
       <div class="vt-item" data-reveal style="--d:0s">
         <div class="vt-dot"></div>
         <div class="vt-card glass">
           <div class="vt-year">2009 — 2023</div>
           <h3>Saraswati Shishu Vidya Mandir, Neelakantha Nagar</h3>
-          <p class="vt-sum">Kindergarten to +2 Science at Saraswati Shishu Vidya Mandir, with about 92% in both board exams and several scholarship and science-quiz recognitions.</p><div class="vt-full" hidden>Schooling from Kindergarten through +2 Science (Physics, Chemistry, Mathematics, Electronics, English, Sanskrit) — Class 10th under BSE Odisha, +2 under CHSE Odisha, scoring an average of about 92% in both board exams. Won multiple scholarship awards for academic excellence, notably in Mathematics (PMSTS), and was consistently recognised for mathematics ability. Took part in School Parade, Drawing, Debate, Essay Writing, and cultural and academic events; won an inter-school science quiz and a school science exhibition.</div>
-          <div class="vt-tags"><span>Mathematics</span><span>PMSTS Scholar</span><span>~92% Boards</span><span>Science Exhibition Winner</span></div><div class="vt-more">Click for full details →</div>
+          <p class="vt-sum">Kindergarten to +2 Science — about 92% in both board exams, with several scholarship and quiz awards.</p>
+          <div class="vt-exp"><div class="vt-full"><div class="in">Schooling from Kindergarten through +2 Science (Physics, Chemistry, Mathematics, Electronics, English, Sanskrit) — Class 10th under BSE Odisha, +2 under CHSE Odisha, scoring an average of about 92% in both board exams. Won multiple scholarship awards for academic excellence, notably in Mathematics (PMSTS), and was consistently recognised for mathematics ability. Took part in School Parade, Drawing, Debate, Essay Writing, and cultural and academic events; won an inter-school science quiz and a school science exhibition.<div class="vt-tags"><span>Mathematics</span><span>PMSTS Scholar</span><span>~92% Boards</span><span>Science Exhibition Winner</span></div></div></div></div>
+          <button type="button" class="vt-more" aria-expanded="false"><span class="lbl">Read more</span><span class="ch" aria-hidden="true">↓</span></button>
         </div>
       </div>
 
@@ -929,8 +1034,9 @@
         <div class="vt-card glass">
           <div class="vt-year">2023 — 2026</div>
           <h3>Khallikote Unitary University, Brahmapur</h3>
-          <p class="vt-sum">B.Com (Hons) — a switch from science to commerce. Graduated with 8.63 CGPA and a final-year research project on Brahmapur taxpayers.</p><div class="vt-full" hidden>Bachelor of Commerce (Hons) — the switch from science to commerce, building the foundation for a career in finance and accountancy. Graduated with a CGPA of 8.63. As my final-year project, I researched and wrote "Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City," analysing the financial performance and tax compliance behaviour of seven Brahmapur businesses.</div>
-          <div class="vt-tags"><span>B.Com (Hons) — Graduated</span><span>8.63 CGPA</span></div><div class="vt-more">Click for full details →</div>
+          <p class="vt-sum">B.Com (Hons), 8.63 CGPA — with a final-year research project on Brahmapur taxpayers.</p>
+          <div class="vt-exp"><div class="vt-full"><div class="in">Bachelor of Commerce (Hons) — the switch from science to commerce, building the foundation for a career in finance and accountancy. Graduated with a CGPA of 8.63. As my final-year project, I researched and wrote "Financial Performance Analysis of Selected Income Taxpayers (Businessmen) of Brahmapur City," analysing the financial performance and tax compliance behaviour of seven Brahmapur businesses.<div class="vt-tags"><span>B.Com (Hons) — Graduated</span><span>8.63 CGPA</span></div></div></div></div>
+          <button type="button" class="vt-more" aria-expanded="false"><span class="lbl">Read more</span><span class="ch" aria-hidden="true">↓</span></button>
         </div>
       </div>
 
@@ -939,8 +1045,9 @@
         <div class="vt-card glass">
           <div class="vt-year">2023 — Present</div>
           <h3>The Institute of Chartered Accountants of India</h3>
-          <p class="vt-sum">Currently at CA Intermediate — Foundation 256/400 and Group 2 of Intermediate 173/300, with a working base in tax, audit and law.</p><div class="vt-full" hidden>Pursuing Chartered Accountancy, currently at the CA Intermediate stage. Scored 256 out of 400 in CA Foundation, including 92 marks in Paper 3 (Business Mathematics, Logical Reasoning &amp; Statistics), and 173 out of 300 in Group 2 of CA Intermediate, including 79 marks in Cost &amp; Management Accounting. Built working knowledge of Accounting, Taxation (Income Tax, GST), Financial Management, Audit, and Corporate Law, and attended conferences hosted by ICAI.</div>
-          <div class="vt-tags"><span>CA Intermediate</span><span>Foundation: 256/400</span><span>Inter Group 2: 173/300</span><span>Taxation</span><span>Audit</span></div><div class="vt-more">Click for full details →</div>
+          <p class="vt-sum">CA Intermediate — Foundation 256/400 and Inter Group 2 173/300, with a working base in tax, audit and law.</p>
+          <div class="vt-exp"><div class="vt-full"><div class="in">Pursuing Chartered Accountancy, currently at the CA Intermediate stage. Scored 256 out of 400 in CA Foundation, including 92 marks in Paper 3 (Business Mathematics, Logical Reasoning &amp; Statistics), and 173 out of 300 in Group 2 of CA Intermediate, including 79 marks in Cost &amp; Management Accounting. Built working knowledge of Accounting, Taxation (Income Tax, GST), Financial Management, Audit, and Corporate Law, and attended conferences hosted by ICAI.<div class="vt-tags"><span>CA Intermediate</span><span>Foundation: 256/400</span><span>Inter Group 2: 173/300</span><span>Taxation</span><span>Audit</span></div></div></div></div>
+          <button type="button" class="vt-more" aria-expanded="false"><span class="lbl">Read more</span><span class="ch" aria-hidden="true">↓</span></button>
         </div>
       </div>
     </div>
@@ -962,6 +1069,51 @@
         <button class="arrow r" onclick="certMove(1)" aria-label="Next certificate">&#8250;</button>
       </div>
       <div class="dots" id="certDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Experience</div>
+      <h2>Learning by doing.</h2>
+      <p>Freelance creative work and hands-on tax &amp; audit practice.</p>
+    </div>
+    <div class="vt" id="vt2">
+      <div class="vt-line"></div>
+      <div class="vt-fill"></div>
+      <div class="vt-pointer"></div>
+
+      <div class="vt-item" data-reveal style="--d:0s">
+        <div class="vt-dot"></div>
+        <div class="vt-card glass">
+          <div class="vt-year">Sep 2024 — Present</div>
+          <h3>Ambitious Professionals</h3><div class="vt-role">Freelance Digital Marketer &amp; Graphic Designer</div>
+          <p class="vt-sum">Freelancing for a coaching institute for CA and CMA students — digital marketing, graphic design, YouTube management and the institute’s website.</p>
+          <div class="vt-exp"><div class="vt-full"><div class="in"><p>Ambitious Professionals is a coaching institute for professional-exam students such as CA and CMA aspirants. Since September 2024, I have worked with them as a freelancer across marketing, design and video.</p><ul>
+<li><strong>Digital marketing:</strong> created posters, advertisement videos and other promotional creatives.</li>
+<li><strong>YouTube:</strong> managed the channel and edited YouTube Shorts.</li>
+<li><strong>Graphic design:</strong> designed posters and books for the institute.</li>
+<li><strong>Website:</strong> designed and built the institute’s website, <a href="https://ambitiousprofessionals.in" target="_blank" rel="noopener">ambitiousprofessionals.in</a>.</li></ul><div class="vt-tags"><span>Digital Marketing</span><span>Graphic Design</span><span>Video &amp; Shorts Editing</span><span>YouTube Management</span><span>Web Design</span></div></div></div></div>
+          <button type="button" class="vt-more" aria-expanded="false"><span class="lbl">Read more</span><span class="ch" aria-hidden="true">↓</span></button>
+        </div>
+      </div>
+
+      <div class="vt-item" data-reveal style="--d:.12s">
+        <div class="vt-dot"></div>
+        <div class="vt-card glass">
+          <div class="vt-year">Sep 2026 — Oct 2026 · 1 month</div>
+          <h3>Welcome Associates</h3><div class="vt-role">Intern — Tax &amp; Audit</div>
+          <p class="vt-sum">One-month internship at an advocate and tax consultancy firm — ITR filing, tax audits under Forms 3CB-3CD and GST reconciliation.</p>
+          <div class="vt-exp"><div class="vt-full"><div class="in"><p>Welcome Associates is an advocate and tax consultancy firm. During this one-month internship I worked on hands-on tax, audit and accounting assignments.</p><ul>
+<li><strong>Income tax:</strong> prepared and filed ITRs and carried out tax audits under Forms 3CB-3CD for entities with a turnover of about ₹2–5 crore.</li>
+<li><strong>Compliance data:</strong> worked with Form 26AS and TIS (Taxpayer Information Summary) reports, and prepared financial statements.</li>
+<li><strong>GST &amp; accounting:</strong> handled GST reconciliations and Tally work.</li></ul><div class="vt-tags"><span>ITR Filing</span><span>Tax Audit (3CB-3CD)</span><span>Form 26AS &amp; TIS</span><span>GST Reconciliation</span><span>Tally</span></div></div></div></div>
+          <button type="button" class="vt-more" aria-expanded="false"><span class="lbl">Read more</span><span class="ch" aria-hidden="true">↓</span></button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1013,7 +1165,7 @@
     <div data-reveal="zoom">
       <div class="quotes-wrap">
         <button class="arrow l" onclick="quoteMove(-1)" aria-label="Previous quote">&#8249;</button>
-        <div class="quotes-viewport glass"><div class="quotes-track" id="quotesTrack"></div></div>
+        <div class="quotes-stage" id="quotesStage"></div>
         <button class="arrow r" onclick="quoteMove(1)" aria-label="Next quote">&#8250;</button>
       </div>
       <div class="dots" id="quoteDots"></div>
@@ -1108,17 +1260,6 @@
       <span>Figures taken from the project report (secondary data from seven assessees' financial statements).</span>
       <a class="btn btn-gold" href="assets/Financial-Performance-Analysis-Brahmapur-AKH.pdf" target="_blank" rel="noopener"><span class="bl">Read the full report (PDF)</span></a>
     </div>
-  </div>
-</div>
-
-<!-- education details -->
-<div class="modal" id="eduModal" role="dialog" aria-modal="true" aria-labelledby="eduTitle">
-  <div class="modal-panel glass" style="max-width:680px">
-    <button class="modal-close" id="eduClose" aria-label="Close">&times;</button>
-    <div class="vt-year" id="eduYear"></div>
-    <h3 id="eduTitle"></h3>
-    <p id="eduText"></p>
-    <div class="vt-tags" id="eduTags"></div>
   </div>
 </div>
 
@@ -1249,7 +1390,7 @@ safe('basics', ()=>{
   window.showToast = function(message){
     const t = document.createElement('div');
     t.textContent = message;
-    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0b1630;color:#fff;border:1px solid rgba(226,185,107,.5);padding:14px 22px;border-radius:12px;font-family:Inter,sans-serif;font-size:13.5px;z-index:900;box-shadow:0 14px 34px -12px rgba(0,0,0,.6);max-width:88vw;text-align:center;';
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0b1630;color:#fff;border:1px solid rgba(226,185,107,.5);padding:14px 22px;border-radius:12px;font-family:Plus Jakarta Sans,sans-serif;font-size:13.5px;z-index:900;box-shadow:0 14px 34px -12px rgba(0,0,0,.6);max-width:88vw;text-align:center;';
     document.body.appendChild(t);
     setTimeout(()=>{ t.style.transition = 'opacity .5s'; t.style.opacity = '0'; setTimeout(()=>t.remove(), 500); }, 4500);
   };
@@ -1309,7 +1450,7 @@ safe('counters', ()=>{
 
 /* ================= TYPEWRITER ================= */
 safe('typewriter', ()=>{
-  const roles = ["CA Intermediate", "Graphic Designer", "AI Assisted Web Developer", "Digital Marketer", "Finance, AI & Geopolitics Enthusiast"];
+  const roles = ["CA Intermediate", "Touch Typist", "Graphic Designer", "AI Assisted Web Developer", "Digital Marketer", "Finance, AI & Geopolitics Enthusiast"];
   const el = $('#typewriter');
   let r = 0, c = 0, del = false;
   (function loop(){
@@ -1327,7 +1468,7 @@ safe('typewriter', ()=>{
 safe('nav', ()=>{
   const header = $('#topnav'), prog = $('#progress');
   const burger = $('#burgerBtn'), menu = $('#mobileMenu');
-  const ids = ['about','education','certs','projects','quotes','learning','contact'];
+  const ids = ['about','education','certs','experience','projects','quotes','learning','contact'];
   const links = {};
   $$('nav.links a').forEach(a => { links[a.getAttribute('href').slice(1)] = a; });
   function toggleMenu(open){
@@ -1373,18 +1514,27 @@ safe('spot', ()=>{
   });
 });
 
-safe('edu', ()=>{
-  const m = $('#eduModal'), yr = $('#eduYear'), tt = $('#eduTitle'), tx = $('#eduText'), tg = $('#eduTags');
-  const close = () => { m.classList.remove('open'); document.documentElement.style.overflow = ''; };
+safe('expand', ()=>{
   $$('.vt-card').forEach(c => {
-    const open = () => { yr.textContent = $('.vt-year', c).textContent; tt.textContent = $('h3', c).textContent; tx.textContent = $('.vt-full', c).textContent.trim(); tg.innerHTML = $('.vt-tags', c).innerHTML; m.classList.add('open'); document.documentElement.style.overflow = 'hidden'; };
-    c.tabIndex = 0; c.setAttribute('role', 'button');
-    c.addEventListener('click', open);
-    c.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+    const btn = $('.vt-more', c), lbl = $('.lbl', btn), exp = $('.vt-exp', c);
+    c.addEventListener('click', e => {
+      if(e.target.closest('a')) return;
+      const open = c.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      lbl.textContent = open ? 'Show less' : 'Read more';
+    });
+    exp.addEventListener('transitionend', () => { if(window.updateTimeline) window.updateTimeline(); });
   });
-  $('#eduClose').addEventListener('click', close);
-  m.addEventListener('click', e => { if(e.target === m) close(); });
-  addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
+});
+
+safe('sparkles', ()=>{
+  const host = $('.bg-aurora'); if(!host || reduceMotion) return;
+  const n = isMobile ? 9 : 18;
+  for(let i = 0; i < n; i++){
+    const d = document.createElement('b'); d.className = 'sp';
+    d.style.cssText = `left:${(Math.random() * 100).toFixed(1)}%;top:${(Math.random() * 100).toFixed(1)}%;animation-delay:${(Math.random() * 8).toFixed(1)}s;animation-duration:${(4 + Math.random() * 5).toFixed(1)}s`;
+    host.appendChild(d);
+  }
 });
 
 safe('cursor', ()=>{
@@ -1583,16 +1733,18 @@ safe('background', ()=>{
   if(reduceMotion){ drawBg(1000); drawG(1000); } else requestAnimationFrame(frame);
 });
 
-/* ================= EDUCATION: vertical timeline with scroll pointer ================= */
+/* ================= VERTICAL TIMELINES (education + experience) ================= */
 safe('timeline', ()=>{
-  const vt = $('#vt'), fill = $('#vtFill'), pointer = $('#vtPointer'), items = $$('.vt-item', vt);
+  const list = $$('.vt').map(vt => ({ vt, fill: $('.vt-fill', vt), pointer: $('.vt-pointer', vt), items: $$('.vt-item', vt) }));
   window.updateTimeline = function(){
-    const r = vt.getBoundingClientRect();
-    let p = innerHeight * 0.55 - r.top;
-    p = Math.max(0, Math.min(vt.offsetHeight, p));
-    fill.style.height = p + 'px';
-    pointer.style.top = p + 'px';
-    items.forEach(it => it.classList.toggle('active', p >= it.offsetTop + 34));
+    list.forEach(o => {
+      const r = o.vt.getBoundingClientRect();
+      let p = innerHeight * 0.55 - r.top;
+      p = Math.max(0, Math.min(o.vt.offsetHeight, p));
+      o.fill.style.height = p + 'px';
+      o.pointer.style.top = p + 'px';
+      o.items.forEach(it => it.classList.toggle('active', p >= it.offsetTop + 34));
+    });
   };
   window.updateTimeline();
 });
@@ -1637,36 +1789,36 @@ safe('lightbox', ()=>{
   document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
 });
 
-/* ================= QUOTES CAROUSEL ================= */
+/* ================= QUOTES: centre-focus carousel ================= */
 safe('quotes', ()=>{
-  const QN = quotes.length, QV = 1;
-  const data = [...quotes.slice(-QV), ...quotes, ...quotes.slice(0, QV)];
-  const track = $('#quotesTrack'), dots = $('#quoteDots');
-  data.forEach(q => {
+  const N = quotes.length, stage = $('#quotesStage'), dots = $('#quoteDots');
+  let idx = 0, auto;
+  const cards = quotes.map((q, i) => {
     const c = document.createElement('div');
-    c.className = 'quote-card';
+    c.className = 'quote-card glass';
     c.innerHTML = `<p>&ldquo;${q.text}&rdquo;</p><div class="qwho"><b>— ${q.who}</b><span>${q.tag}</span></div>`;
-    track.appendChild(c);
+    c.addEventListener('click', () => { if(c.dataset.pos !== '0'){ idx = i; render(); restart(); } });
+    stage.appendChild(c);
+    return c;
   });
-  quotes.forEach((_, i) => { const d = document.createElement('span'); d.addEventListener('click', () => go(i)); dots.appendChild(d); });
-  let idx = QV, auto;
-  function move(anim = true){
-    track.style.transition = anim ? 'transform .7s cubic-bezier(.65,0,.35,1)' : 'none';
-    track.style.transform = `translateX(-${idx * 100}%)`;
-    const real = ((idx - QV) % QN + QN) % QN;
-    Array.from(dots.children).forEach((d, i) => d.classList.toggle('active', i === real));
-    const card = track.children[idx];
-    if(card){ card.classList.remove('quote-in'); void card.offsetWidth; card.classList.add('quote-in'); }
+  quotes.forEach((_, i) => { const d = document.createElement('span'); d.addEventListener('click', () => { idx = i; render(); restart(); }); dots.appendChild(d); });
+  function render(){
+    cards.forEach((c, i) => {
+      let d = ((i - idx) % N + N) % N; if(d > N / 2) d -= N;
+      c.dataset.pos = d < -1 ? '-2' : d > 1 ? '2' : String(d);
+      c.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+    });
+    Array.from(dots.children).forEach((d, i) => d.classList.toggle('active', i === idx));
   }
-  track.addEventListener('transitionend', e => {
-    if(e.target !== track) return;
-    if(idx >= QN + QV){ idx -= QN; move(false); void track.offsetWidth; }
-    else if(idx < QV){ idx += QN; move(false); void track.offsetWidth; }
-  });
-  function restart(){ clearInterval(auto); auto = setInterval(() => { idx++; move(); }, 5800); }
-  function go(i){ idx = QV + i; move(); restart(); }
-  window.quoteMove = d => { idx += d; move(); restart(); };
-  move(false); restart();
+  function step(k){ idx = (idx + k + N) % N; render(); }
+  function restart(){ clearInterval(auto); auto = setInterval(() => step(1), 5600); }
+  window.quoteMove = k => { step(k); restart(); };
+  let x0 = null;
+  stage.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', e => { if(x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if(Math.abs(dx) > 40) window.quoteMove(dx < 0 ? 1 : -1); }, { passive: true });
+  stage.addEventListener('mouseenter', () => clearInterval(auto));
+  stage.addEventListener('mouseleave', restart);
+  render(); restart();
 });
 
 /* ================= PROJECT: 3D report + analysis dashboard ================= */
@@ -1747,12 +1899,12 @@ safe('project', ()=>{
 /* ================= EMAIL LINKS: Gmail compose on desktop, native app on phones ================= */
 safe('theme', ()=>{
   const root = document.documentElement, btn = $('#themeBtn'), meta = document.querySelector('meta[name="theme-color"]');
+  const mq = window.matchMedia('(prefers-color-scheme: light)');
   function apply(t){ root.setAttribute('data-theme', t); if(meta) meta.content = t === 'light' ? '#f3f6fc' : '#050b1a'; window.dispatchEvent(new Event('themechange')); }
-  apply(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
-  btn.addEventListener('click', () => {
-    const n = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    apply(n); try{ localStorage.setItem('theme', n); }catch(e){}
-  });
+  apply(mq.matches ? 'light' : 'dark');            // always open in the device's own theme
+  btn.addEventListener('click', () => apply(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
+  const follow = e => apply(e.matches ? 'light' : 'dark');
+  if(mq.addEventListener) mq.addEventListener('change', follow); else if(mq.addListener) mq.addListener(follow);
 });
 
 safe('email', ()=>{
